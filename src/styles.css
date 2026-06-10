@@ -1,0 +1,823 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap");
+
+:root {
+  --cream: #f8f1e7;
+  --cream2: #efe3d4;
+  --linen: #fbf7f0;
+  --sage: #5f705e;
+  --sage-dark: #243d31;
+  --sage-deep: #173529;
+  --sage-soft: #d9ded2;
+  --clay: #c86643;
+  --clay-dark: #a94f34;
+  --ink: #27231d;
+  --muted: #766d63;
+  --line: rgba(39, 35, 29, 0.13);
+  --white-soft: rgba(255, 255, 255, 0.76);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.site {
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--cream);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px;
+  background: rgba(248, 241, 231, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  color: var(--sage-dark);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav a {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #322d28;
+}
+
+.nav a:hover {
+  color: var(--clay);
+}
+
+.navButton {
+  background: var(--sage-dark);
+  color: var(--linen) !important;
+  padding: 17px 26px;
+  margin-left: 8px;
+}
+
+.menuButton {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: var(--sage-dark);
+}
+
+.hero {
+  min-height: calc(100vh - 74px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--cream);
+}
+
+.heroText {
+  padding: 88px 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  margin: 0 0 28px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--clay);
+  font-weight: 500;
+}
+
+.terra {
+  color: var(--clay);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  color: var(--sage-dark);
+}
+
+h1 {
+  font-size: clamp(64px, 7vw, 106px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin-bottom: 30px;
+}
+
+h1 span,
+h2 em,
+h1 em {
+  display: block;
+  color: var(--clay);
+  font-style: italic;
+}
+
+h2 {
+  font-size: clamp(44px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin-bottom: 26px;
+}
+
+h3 {
+  font-size: 31px;
+  line-height: 1.08;
+  margin-bottom: 16px;
+}
+
+.lede {
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #5a5048;
+  margin-bottom: 42px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.button {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 16px 30px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.22s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button.dark {
+  background: var(--sage-dark);
+  color: var(--linen);
+}
+
+.button.clay {
+  background: var(--clay);
+  color: var(--linen);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.textLink:hover {
+  color: var(--clay);
+}
+
+.stats {
+  margin-top: 70px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 720px;
+}
+
+.stats strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  color: var(--clay);
+  font-size: 31px;
+  font-weight: 400;
+}
+
+.stats span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.heroVisual {
+  background:
+    radial-gradient(circle at 70% 20%, rgba(200, 102, 67, 0.18), transparent 28%),
+    linear-gradient(135deg, var(--sage-dark), var(--sage-deep));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 74px 5vw;
+  position: relative;
+}
+
+.portraitCard {
+  width: min(560px, 100%);
+  min-height: 660px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 18px;
+}
+
+.portraitCard img {
+  width: 100%;
+  height: 624px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) brightness(1.05) contrast(1.02);
+  opacity: 0.86;
+}
+
+.quoteCard {
+  position: absolute;
+  left: 38px;
+  right: 38px;
+  bottom: 38px;
+  background: rgba(248, 241, 231, 0.92);
+  padding: 28px;
+  backdrop-filter: blur(12px);
+}
+
+.quoteCard p {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--sage-dark);
+  font-size: 33px;
+  line-height: 1.08;
+  margin-bottom: 10px;
+}
+
+.quoteCard span {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clay);
+  font-weight: 500;
+}
+
+.section {
+  padding: 105px 6vw;
+}
+
+.cream {
+  background: var(--linen);
+}
+
+.sageLight {
+  background: var(--sage-soft);
+}
+
+.darkSection {
+  background:
+    radial-gradient(circle at top right, rgba(200, 102, 67, 0.12), transparent 26%),
+    linear-gradient(135deg, var(--sage-dark), var(--sage-deep));
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.darkSection h2,
+.darkSection h3 {
+  color: var(--cream);
+}
+
+.darkSection p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.split {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.split p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #5a5048;
+}
+
+.softPanel {
+  min-height: 470px;
+  border-radius: 150px 150px 8px 8px;
+  background:
+    radial-gradient(circle at 78% 34%, rgba(200, 102, 67, 0.16), transparent 22%),
+    radial-gradient(circle at 22% 72%, rgba(95, 112, 94, 0.14), transparent 20%),
+    var(--cream2);
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 1px solid var(--line);
+}
+
+.softPanel svg {
+  color: var(--sage);
+  margin-bottom: 28px;
+}
+
+.softPanel h3 {
+  color: var(--sage-dark);
+}
+
+.softPanel p {
+  margin-bottom: 0;
+}
+
+.sectionTop {
+  max-width: 1280px;
+  margin: 0 auto 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 42px;
+}
+
+.sectionTop > div {
+  max-width: 740px;
+}
+
+.topCopy {
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #5a5048;
+}
+
+.darkSection .topCopy {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.cardGrid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cardGrid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cardGrid.two {
+  grid-template-columns: repeat(2, 1fr);
+  border-color: rgba(39, 35, 29, 0.12);
+}
+
+.serviceCard {
+  min-height: 360px;
+  padding: 44px;
+  background: rgba(255, 255, 255, 0.055);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.serviceCard span {
+  color: var(--clay);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-style: italic;
+}
+
+.serviceCard p {
+  line-height: 1.85;
+  margin-bottom: 30px;
+}
+
+.serviceCard small {
+  color: rgba(255, 255, 255, 0.48);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.methodGrid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(39, 35, 29, 0.12);
+  border: 1px solid rgba(39, 35, 29, 0.12);
+}
+
+.methodCard {
+  min-height: 330px;
+  padding: 36px 28px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.bigLetter {
+  position: absolute;
+  right: 22px;
+  top: 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 100px;
+  color: rgba(36, 61, 49, 0.08);
+  font-style: italic;
+}
+
+.phase {
+  position: relative;
+  z-index: 1;
+  color: var(--clay);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.methodCard h3,
+.methodCard p:not(.phase) {
+  position: relative;
+  z-index: 1;
+}
+
+.methodCard p:not(.phase) {
+  color: #5a5048;
+  line-height: 1.78;
+}
+
+.resourceCard {
+  background: rgba(255, 255, 255, 0.45);
+  padding: 42px;
+  border: 1px solid rgba(39, 35, 29, 0.07);
+}
+
+.iconCircle {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: var(--sage-dark);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.resourceType {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--clay);
+  font-weight: 500;
+}
+
+.resourceCard p {
+  color: #5a5048;
+  line-height: 1.78;
+}
+
+.resourceCard button {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--sage-dark);
+  padding: 12px 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  cursor: default;
+}
+
+.communityForm,
+.contactForm {
+  background: rgba(255, 255, 255, 0.48);
+  padding: 44px;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 56px rgba(39, 35, 29, 0.06);
+}
+
+.contactForm {
+  background: rgba(255, 255, 255, 0.62);
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+  color: #7c7167;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-top: 9px;
+  border: 1px solid rgba(39, 35, 29, 0.14);
+  background: rgba(255, 255, 255, 0.45);
+  padding: 15px 16px;
+  color: var(--ink);
+  outline: none;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--sage);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.formNote {
+  margin-top: 18px !important;
+  margin-bottom: 0;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: var(--muted) !important;
+}
+
+.reviewStrip {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(320px, 36%);
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 22px;
+  scroll-snap-type: inline mandatory;
+}
+
+.reviewCard {
+  scroll-snap-align: start;
+  min-height: 280px;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stars {
+  color: var(--clay);
+  display: flex;
+  gap: 5px;
+  margin-bottom: 24px;
+}
+
+.reviewCard p {
+  line-height: 1.8;
+}
+
+.reviewCard small {
+  color: rgba(255, 255, 255, 0.44);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 10px;
+}
+
+.contactSection {
+  background: var(--cream2);
+}
+
+.contactList {
+  display: grid;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.contactList a,
+.contactList span {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--sage-dark);
+  font-size: 16px;
+}
+
+.contactList svg {
+  color: var(--clay);
+}
+
+.footer {
+  background: var(--sage-deep);
+  color: rgba(255, 255, 255, 0.72);
+  padding: 34px 6vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 1050px) {
+  .hero,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .heroVisual {
+    min-height: 720px;
+  }
+
+  .sectionTop {
+    display: block;
+  }
+
+  .topCopy {
+    margin-top: 20px;
+  }
+
+  .cardGrid.three,
+  .cardGrid.two,
+  .methodGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px;
+    gap: 0;
+  }
+
+  .navOpen {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .navButton {
+    margin-left: 0;
+    margin-top: 12px;
+    text-align: center;
+    border-bottom: 0 !important;
+  }
+
+  .heroText,
+  .section {
+    padding: 66px 22px;
+  }
+
+  h1 {
+    font-size: 62px;
+  }
+
+  h2 {
+    font-size: 46px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    margin-top: 44px;
+  }
+
+  .heroVisual {
+    padding: 44px 22px;
+    min-height: auto;
+  }
+
+  .portraitCard {
+    min-height: 520px;
+  }
+
+  .portraitCard img {
+    height: 500px;
+  }
+
+  .quoteCard {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    padding: 22px;
+  }
+
+  .quoteCard p {
+    font-size: 28px;
+  }
+
+  .softPanel,
+  .communityForm,
+  .contactForm {
+    padding: 30px;
+  }
+
+  .softPanel {
+    border-radius: 90px 90px 8px 8px;
+  }
+
+  .cardGrid.three,
+  .cardGrid.two,
+  .methodGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceCard,
+  .resourceCard {
+    padding: 32px;
+  }
+
+  .reviewStrip {
+    grid-auto-columns: 86%;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .actions,
+  .button {
+    width: 100%;
+  }
+
+  .textLink {
+    justify-content: center;
+    width: 100%;
+  }
+}
