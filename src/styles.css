@@ -142,7 +142,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(64px, 7vw, 106px);
+  font-size: clamp(58px, 6.2vw, 96px);
   line-height: 0.92;
   letter-spacing: 0;
   margin-bottom: 30px;
@@ -165,7 +165,7 @@ h2 em {
 }
 
 h2 {
-  font-size: clamp(44px, 5vw, 72px);
+  font-size: clamp(40px, 4.4vw, 66px);
   line-height: 1;
   letter-spacing: 0;
   margin-bottom: 26px;
@@ -346,7 +346,7 @@ h3 {
 
 .whoIntro h2 {
   color: var(--linen);
-  font-size: clamp(54px, 4.6vw, 82px);
+  font-size: clamp(48px, 4vw, 72px);
   line-height: 1.02;
   max-width: 610px;
   margin-bottom: 0;
@@ -444,7 +444,7 @@ h3 {
 }
 
 .servicesTop h2 {
-  font-size: clamp(48px, 5.6vw, 86px);
+  font-size: clamp(44px, 4.8vw, 74px);
   margin-bottom: 0;
 }
 
@@ -591,7 +591,7 @@ h3 {
 }
 
 .learnMoreBox h2 {
-  font-size: clamp(44px, 4.8vw, 70px);
+  font-size: clamp(40px, 4.2vw, 62px);
   line-height: 1.04;
   margin-bottom: 0;
 }
@@ -653,7 +653,7 @@ h3 {
 
 .reviewsHeadline h2 {
   color: var(--linen);
-  font-size: clamp(58px, 7vw, 118px);
+  font-size: clamp(48px, 6vw, 92px);
   line-height: 0.96;
   margin-bottom: 0;
 }
@@ -676,7 +676,7 @@ h3 {
 
 .reviewCard {
   scroll-snap-align: start;
-  min-height: 300px;
+  min-height: 360px;
   padding: 34px;
   background: rgba(251, 247, 240, 0.055);
   border: 1px solid rgba(251, 247, 240, 0.11);
@@ -695,6 +695,9 @@ h3 {
 .reviewCard p {
   line-height: 1.8;
   color: rgba(251, 247, 240, 0.72);
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 8px;
 }
 
 .reviewCard small {
@@ -713,6 +716,10 @@ h3 {
   padding: 44px;
   border: 1px solid var(--line);
   box-shadow: 0 18px 56px rgba(39, 35, 29, 0.06);
+}
+
+.hiddenField {
+  display: none;
 }
 
 label {
@@ -842,7 +849,7 @@ textarea:focus {
   }
 
   .whoIntro h2 {
-    font-size: clamp(48px, 6vw, 64px);
+    font-size: clamp(44px, 5.4vw, 58px);
   }
 }
 
@@ -895,11 +902,11 @@ textarea:focus {
   }
 
   h1 {
-    font-size: 62px;
+    font-size: 56px;
   }
 
   h2 {
-    font-size: 46px;
+    font-size: 42px;
   }
 
   .stats {
@@ -944,7 +951,7 @@ textarea:focus {
   }
 
   .whoIntro h2 {
-    font-size: clamp(44px, 13vw, 62px);
+    font-size: clamp(40px, 11vw, 56px);
     line-height: 1.04;
     max-width: 640px;
   }
@@ -1009,11 +1016,11 @@ textarea:focus {
   }
 
   h1 {
-    font-size: 56px;
+    font-size: 50px;
   }
 
   h2 {
-    font-size: 42px;
+    font-size: 38px;
   }
 
   .stats {
@@ -1036,7 +1043,7 @@ textarea:focus {
   }
 
   .whoIntro h2 {
-    font-size: 44px;
+    font-size: 40px;
   }
 
   .whoItem {
