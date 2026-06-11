@@ -34,6 +34,7 @@ const reviews = [
 
 function App() {
   const [menuOpen, setMenuOpen] = React.useState(false);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -65,18 +66,11 @@ function Header({ menuOpen, setMenuOpen, closeMenu }) {
       </button>
 
       <nav className={menuOpen ? "nav navOpen" : "nav"}>
-        <a onClick={closeMenu} href="#who-this-is-for">Who This Is For</a>
-        <a onClick={closeMenu} href="#method">SELF Method</a>
-        <a onClick={closeMenu} href="/work-with-me/">Work With Me</a>
-        <a onClick={closeMenu} href="#reviews">Reviews</a>
-        <a onClick={closeMenu} href="#contact">Contact</a>
-        <a
-          onClick={closeMenu}
-          className="navButton"
-          href={BOOKING_LINK}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a onClick={closeMenu} href="#home">Home</a>
+        <a onClick={closeMenu} href="/work-with-me/">Work With Me / Services</a>
+        <a onClick={closeMenu} href="/about/">About Me</a>
+        <a onClick={closeMenu} href="/resources/">Resources</a>
+        <a onClick={closeMenu} className="navButton" href={BOOKING_LINK} target="_blank" rel="noreferrer">
           Book a Session
         </a>
       </nav>
@@ -102,8 +96,8 @@ function Home() {
             Book a Session
           </a>
           <a className="textLink" href="/work-with-me/">
-  Explore services <ArrowRight size={16} />
-</a>
+            Explore services <ArrowRight size={16} />
+          </a>
         </div>
 
         <div className="stats">
@@ -168,42 +162,6 @@ function WhoThisIsFor() {
   );
 }
 
-function SelfMethod() {
-  const phases = [
-    ["S", "Shed the Story", "Identify the beliefs, roles, and survival patterns that taught you who you had to be."],
-    ["E", "Embrace the Fire", "Learn to feel anger, grief, shame, fear, and resentment without being consumed by them."],
-    ["L", "Liberate Your Voice", "Reconnect with needs, boundaries, truth, desire, and the parts of you that learned to stay quiet."],
-    ["F", "Forge a New Way", "Practice self-trust, emotional steadiness, and a more rooted relationship with yourself."]
-  ];
-
-  return (
-    <section id="method" className="section cream">
-      <div className="sectionTop">
-        <div>
-          <p className="eyebrow terra">The SELF Method</p>
-          <h2>A framework for learning to love your SELF.</h2>
-        </div>
-        <p className="topCopy">
-          The SELF Method is the heart of this work: a four-phase therapy framework
-          for understanding what shaped you and building a more honest relationship
-          with yourself.
-        </p>
-      </div>
-
-      <div className="methodGrid">
-        {phases.map(([letter, title, text]) => (
-          <article className="methodCard" key={letter}>
-            <div className="bigLetter">{letter}</div>
-            <p className="phase">Phase {letter}</p>
-            <h3>{title}</h3>
-            <p>{text}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function Services() {
   return (
     <section id="services" className="section servicesSection">
@@ -255,6 +213,42 @@ function Services() {
   );
 }
 
+function SelfMethod() {
+  const phases = [
+    ["S", "Shed the Story", "Identify the beliefs, roles, and survival patterns that taught you who you had to be."],
+    ["E", "Embrace the Fire", "Learn to feel anger, grief, shame, fear, and resentment without being consumed by them."],
+    ["L", "Liberate Your Voice", "Reconnect with needs, boundaries, truth, desire, and the parts of you that learned to stay quiet."],
+    ["F", "Forge a New Way", "Practice self-trust, emotional steadiness, and a more rooted relationship with yourself."]
+  ];
+
+  return (
+    <section id="method" className="section cream">
+      <div className="sectionTop">
+        <div>
+          <p className="eyebrow terra">The SELF Method</p>
+          <h2>A framework for learning to love your SELF.</h2>
+        </div>
+        <p className="topCopy">
+          The SELF Method is the heart of this work: a four-phase therapy framework
+          for understanding what shaped you and building a more honest relationship
+          with yourself.
+        </p>
+      </div>
+
+      <div className="methodGrid">
+        {phases.map(([letter, title, text]) => (
+          <article className="methodCard" key={letter}>
+            <div className="bigLetter">{letter}</div>
+            <p className="phase">Phase {letter}</p>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function LearnMore() {
   return (
     <section className="section learnMoreSection">
@@ -270,8 +264,8 @@ function LearnMore() {
             reflections and resources created for the moments between sessions.
           </p>
           <div className="learnMoreActions">
-            <a href="#contact">About Me</a>
-            <a href="/work-with-me/">Support for Moments in Between</a>
+            <a href="/about/">About Me</a>
+            <a href="/resources/">Support for Moments in Between</a>
           </div>
         </div>
       </div>
@@ -372,6 +366,7 @@ function Contact() {
           <button className="button dark" type="submit">
             Send Message
           </button>
+
         </form>
       </div>
     </section>
