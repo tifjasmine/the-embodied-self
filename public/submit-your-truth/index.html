@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Your Truth | The Embodied Self</title>
+    <meta name="description" content="Submit an anonymous community reflection to The Dysregulated Truth." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.11), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 72px 22px;
+      }
+
+      .label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        color: var(--clay);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--clay);
+      }
+
+      h1 {
+        max-width: 760px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(52px, 8vw, 92px);
+        font-weight: 300;
+        letter-spacing: -0.045em;
+        line-height: 0.94;
+      }
+
+      h1 em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .intro {
+        max-width: 680px;
+        margin-top: 28px;
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      form {
+        margin-top: 44px;
+        background: rgba(250, 246, 240, 0.86);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 38px;
+        box-shadow: 0 18px 52px rgba(28, 23, 18, 0.06);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      label,
+      legend {
+        color: #8f6d5a;
+        font-size: 10.5px;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.6;
+        outline: none;
+        padding: 14px 15px;
+        border-radius: 0;
+      }
+
+      textarea {
+        min-height: 180px;
+        resize: vertical;
+      }
+
+      fieldset {
+        border: 0;
+        margin: 2px 0 20px;
+      }
+
+      .checks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .check {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        background: var(--cream);
+        padding: 12px;
+        color: var(--brown);
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .check input {
+        width: 16px;
+        height: 16px;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      button,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--charcoal);
+        background: var(--charcoal);
+        color: var(--cream);
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        padding: 15px 30px;
+        text-transform: uppercase;
+      }
+
+      .button {
+        background: var(--cream);
+        color: var(--charcoal);
+        border-color: rgba(28, 23, 18, 0.18);
+      }
+
+      .status {
+        margin-top: 18px;
+        color: var(--brown);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 700px) {
+        .wrap {
+          padding: 58px 22px;
+        }
+
+        form {
+          padding: 30px 22px;
+        }
+
+        .grid,
+        .checks {
+          grid-template-columns: 1fr;
+        }
+
+        .actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        button,
+        .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="label">Community</div>
+      <h1>Submit your <em>truth.</em></h1>
+      <p class="intro">
+        Share the thought, feeling, or moment you have been carrying quietly. You
+        can include your name or stay anonymous. Submissions are reviewed before
+        anything is shared publicly.
+      </p>
+
+      <form id="truthForm">
+        <div class="field">
+          <label for="response">I've been thinking...</label>
+          <textarea id="response" name="response" required></textarea>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="name">Name or initials, optional</label>
+            <input id="name" name="name" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="email">Email, optional</label>
+            <input id="email" name="email" type="email" />
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>How old are your kids?</legend>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="kidsAge" value="Baby (0-1)" /> Baby (0-1)</label>
+            <label class="check"><input type="checkbox" name="kidsAge" value="Toddler/Preschool (2-4)" /> Toddler/Preschool (2-4)</label>
+            <label class="check"><input type="checkbox" name="kidsAge" value="Elementary (5-10)" /> Elementary (5-10)</label>
+            <label class="check"><input type="checkbox" name="kidsAge" value="Tween (11-12)" /> Tween (11-12)</label>
+            <label class="check"><input type="checkbox" name="kidsAge" value="Teen (13-17)" /> Teen (13-17)</label>
+            <label class="check"><input type="checkbox" name="kidsAge" value="Adult kids (18+)" /> Adult kids (18+)</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="heardFrom">How did you hear about this?</label>
+          <select id="heardFrom" name="heardFrom">
+            <option value="">Select one</option>
+            <option>Friends</option>
+            <option>Google</option>
+            <option>Instagram</option>
+            <option>Facebook</option>
+            <option>Provider</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Submit</button>
+          <a class="button" href="/community/">Back to Community</a>
+        </div>
+
+        <p class="status" id="status"></p>
+      </form>
+    </main>
+
+    <script>
+      const form = document.getElementById("truthForm");
+      const status = document.getElementById("status");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        status.textContent = "Submitting...";
+
+        const formData = new FormData(form);
+        const payload = {
+          formType: "truth",
+          response: formData.get("response"),
+          name: formData.get("name"),
+          email: formData.get("email"),
+          heardFrom: formData.get("heardFrom"),
+          kidsAge: formData.getAll("kidsAge"),
+        };
+
+        try {
+          const response = await fetch("/.netlify/functions/community-submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            throw new Error(data.error || "Submission failed.");
+          }
+
+          form.reset();
+          status.textContent = "Thank you. Your reflection was submitted for review.";
+        } catch (error) {
+          status.textContent =
+            "This form is ready, but Airtable still needs to be connected in Netlify before submissions can save.";
+        }
+      });
+    </script>
+  </body>
+</html>
