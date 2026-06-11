@@ -1,1057 +1,385 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap");
-
-:root {
-  --cream: #f6efe6;
-  --cream2: #e5d9c8;
-  --linen: #fbf7f0;
-  --charcoal: #1b1510;
-  --charcoal-soft: #2a211b;
-  --clay: #bd7558;
-  --clay-soft: #d8b9a8;
-  --ink: #1b1510;
-  --muted: #645a52;
-  --line: rgba(39, 35, 29, 0.13);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: "Jost", sans-serif;
-  font-weight: 300;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-.site {
-  width: 100%;
-  overflow-x: hidden;
-  background: var(--cream);
-}
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 34px;
-  background: rgba(248, 241, 231, 0.92);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-}
-
-.brand {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
-  letter-spacing: 0.02em;
-  color: var(--charcoal);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav a {
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #322d28;
-}
-
-.nav a:hover {
-  color: var(--clay);
-}
-
-.navButton {
-  background: var(--charcoal);
-  color: var(--linen) !important;
-  padding: 17px 26px;
-  margin-left: 8px;
-}
-
-.menuButton {
-  display: none;
-  border: 0;
-  background: transparent;
-  color: var(--charcoal);
-}
-
-.hero {
-  min-height: calc(100vh - 74px);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--cream);
-}
-
-.heroText {
-  padding: 88px 6vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.eyebrow {
-  margin: 0 0 28px;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--clay);
-  font-weight: 500;
-}
-
-.terra {
-  color: var(--clay);
-}
-
-h1,
-h2,
-h3,
-p {
-  margin-top: 0;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 300;
-  color: var(--charcoal);
-}
-
-h1 {
-  font-size: clamp(58px, 6.2vw, 96px);
-  line-height: 0.92;
-  letter-spacing: 0;
-  margin-bottom: 30px;
-}
-
-h1 span,
-h2 em,
-h1 em {
-  font-style: italic;
-}
-
-h1 span {
-  display: block;
-  color: var(--charcoal);
-}
-
-h1 em,
-h2 em {
-  color: var(--clay);
-}
-
-h2 {
-  font-size: clamp(40px, 4.4vw, 66px);
-  line-height: 1;
-  letter-spacing: 0;
-  margin-bottom: 26px;
-}
-
-h3 {
-  font-size: 31px;
-  line-height: 1.08;
-  margin-bottom: 16px;
-}
-
-.lede {
-  max-width: 560px;
-  font-size: 18px;
-  line-height: 1.9;
-  color: #5a5048;
-  margin-bottom: 42px;
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.button {
-  border: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 16px 30px;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.22s ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button.dark {
-  background: var(--charcoal);
-  color: var(--linen);
-}
-
-.button.clay {
-  background: var(--clay);
-  color: var(--linen);
-}
-
-.textLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.textLink:hover {
-  color: var(--clay);
-}
-
-.stats {
-  margin-top: 70px;
-  padding-top: 34px;
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 720px;
-}
-
-.stats strong {
-  display: block;
-  font-family: "Cormorant Garamond", serif;
-  color: var(--clay);
-  font-size: 31px;
-  font-weight: 400;
-}
-
-.stats span {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 6px;
-}
-
-.heroVisual {
-  background: var(--cream2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 32px;
-  position: relative;
-}
-
-.portraitCard {
-  width: min(700px, 100%);
-  min-height: calc(100vh - 74px);
-  position: relative;
-  background: var(--linen);
-  padding: 0;
-}
-
-.portraitCard img {
-  width: 100%;
-  height: calc(100vh - 74px);
-  min-height: 680px;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(100%) brightness(1.08) contrast(1.03);
-  opacity: 0.88;
-}
-
-.quoteCard {
-  position: absolute;
-  left: 44px;
-  right: 44px;
-  top: 42px;
-  background: rgba(251, 247, 240, 0.94);
-  padding: 38px 42px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 18px 54px rgba(27, 21, 16, 0.12);
-}
-
-.quoteCard p {
-  font-family: "Cormorant Garamond", serif;
-  font-style: italic;
-  color: var(--charcoal);
-  font-size: 33px;
-  line-height: 1.08;
-  margin-bottom: 10px;
-}
-
-.quoteCard span {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--clay);
-  font-weight: 500;
-}
-
-.section {
-  padding: 105px 6vw;
-}
-
-.cream {
-  background: var(--linen);
-}
-
-.servicesSection {
-  background: var(--cream);
-}
-
-.whoSection {
-  background: var(--charcoal);
-  color: rgba(255, 255, 255, 0.72);
-  padding-top: 118px;
-  padding-bottom: 118px;
-}
-
-.whoWrap {
-  max-width: 1320px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(360px, 0.88fr) minmax(480px, 1.12fr);
-  gap: clamp(70px, 8vw, 140px);
-  align-items: center;
-}
-
-.whoIntro h2 {
-  color: var(--linen);
-  font-size: clamp(48px, 4vw, 72px);
-  line-height: 1.02;
-  max-width: 610px;
-  margin-bottom: 0;
-}
-
-.whoIntro h2 em {
-  display: inline;
-  color: var(--linen);
-}
-
-.mutedEyebrow {
-  color: rgba(248, 241, 231, 0.58);
-  position: relative;
-}
-
-.mutedEyebrow::after {
-  content: "";
-  display: inline-block;
-  width: 44px;
-  height: 1px;
-  margin-left: 16px;
-  vertical-align: middle;
-  background: rgba(248, 241, 231, 0.35);
-}
-
-.whoList {
-  border-top: 1px solid rgba(248, 241, 231, 0.09);
-}
-
-.whoItem {
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 28px;
-  padding: 32px 0;
-  border-bottom: 1px solid rgba(248, 241, 231, 0.09);
-}
-
-.whoItem span {
-  color: var(--clay);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-  font-style: italic;
-}
-
-.whoItem h3 {
-  color: rgba(248, 241, 231, 0.84);
-  font-family: "Jost", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.whoItem p {
-  color: rgba(248, 241, 231, 0.58);
-  font-size: 15px;
-  line-height: 1.75;
-  margin-bottom: 0;
-}
-
-.split {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 72px;
-  align-items: center;
-}
-
-.split p {
-  font-size: 17px;
-  line-height: 1.9;
-  color: #5a5048;
-}
-
-.sectionTop {
-  max-width: 1280px;
-  margin: 0 auto 54px;
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 42px;
-}
-
-.sectionTop > div {
-  max-width: 740px;
-}
-
-.servicesTop {
-  align-items: center;
-  margin-bottom: 60px;
-}
-
-.servicesTop > div {
-  max-width: none;
-}
-
-.servicesTop h2 {
-  font-size: clamp(44px, 4.8vw, 74px);
-  margin-bottom: 0;
-}
-
-.servicesTop h2 em {
-  display: inline;
-}
-
-.topCopy {
-  max-width: 520px;
-  font-size: 16px;
-  line-height: 1.85;
-  color: #5a5048;
-}
-
-.cardGrid {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1px;
-  border: 1px solid rgba(39, 35, 29, 0.12);
-}
-
-.cardGrid.three {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.serviceCard {
-  min-height: 376px;
-  padding: 54px 42px;
-  background: rgba(251, 247, 240, 0.42);
-  border-right: 1px solid rgba(39, 35, 29, 0.12);
-  position: relative;
-  overflow: hidden;
-}
-
-.serviceNumber {
-  position: absolute;
-  right: 38px;
-  top: 36px;
-  color: rgba(27, 21, 16, 0.055);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 116px;
-  line-height: 1;
-  font-style: italic;
-  pointer-events: none;
-}
-
-.serviceCard .serviceKicker {
-  color: var(--clay);
-  font-family: "Jost", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-}
-
-.serviceCard p {
-  color: #5a5048;
-  font-size: 18px;
-  line-height: 1.85;
-  margin-bottom: 30px;
-}
-
-.serviceCard h3 {
-  position: relative;
-  z-index: 1;
-  font-size: 38px;
-}
-
-.serviceCard small {
-  color: #8a7667;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.methodGrid {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(39, 35, 29, 0.12);
-  border: 1px solid rgba(39, 35, 29, 0.12);
-}
-
-.methodCard {
-  min-height: 330px;
-  padding: 36px 28px;
-  background: var(--cream);
-  position: relative;
-  overflow: hidden;
-}
-
-.bigLetter {
-  position: absolute;
-  right: 22px;
-  top: 8px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 100px;
-  color: rgba(27, 21, 16, 0.08);
-  font-style: italic;
-}
-
-.phase {
-  position: relative;
-  z-index: 1;
-  color: var(--clay);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-.methodCard h3,
-.methodCard p:not(.phase) {
-  position: relative;
-  z-index: 1;
-}
-
-.methodCard p:not(.phase) {
-  color: #5a5048;
-  line-height: 1.78;
-}
-
-.learnMoreSection {
-  background: var(--linen);
-  padding-top: 92px;
-  padding-bottom: 92px;
-}
-
-.learnMoreBox {
-  max-width: 1280px;
-  margin: 0 auto;
-  border: 1px solid rgba(39, 35, 29, 0.12);
-  box-shadow: 0 22px 80px rgba(39, 35, 29, 0.05);
-  padding: clamp(44px, 6vw, 72px);
-  display: grid;
-  grid-template-columns: 0.92fr 1fr;
-  gap: clamp(42px, 7vw, 92px);
-  align-items: center;
-}
-
-.learnMoreBox h2 {
-  font-size: clamp(40px, 4.2vw, 62px);
-  line-height: 1.04;
-  margin-bottom: 0;
-}
-
-.learnMoreBox h2 em {
-  display: inline;
-}
-
-.learnMoreCopy p {
-  color: #5a5048;
-  font-size: 18px;
-  line-height: 1.9;
-  margin-bottom: 34px;
-}
-
-.learnMoreActions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.learnMoreActions a {
-  min-height: 56px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(39, 35, 29, 0.14);
-  padding: 16px 28px;
-  color: var(--charcoal);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.learnMoreActions a:hover {
-  border-color: var(--clay);
-  color: var(--clay);
-}
-
-.reviewsSection {
-  background: var(--charcoal);
-  color: rgba(255, 255, 255, 0.72);
-  padding-top: 110px;
-}
-
-.reviewsIntro {
-  max-width: 1280px;
-  margin: 0 auto 70px;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 48px;
-}
-
-.reviewsHeadline {
-  max-width: 760px;
-}
-
-.reviewsHeadline h2 {
-  color: var(--linen);
-  font-size: clamp(48px, 6vw, 92px);
-  line-height: 0.96;
-  margin-bottom: 0;
-}
-
-.reviewsHeadline h2 em {
-  display: block;
-}
-
-.reviewStrip {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(340px, 34%);
-  gap: 18px;
-  overflow-x: auto;
-  padding-bottom: 22px;
-  scroll-snap-type: inline mandatory;
-}
-
-.reviewCard {
-  scroll-snap-align: start;
-  min-height: 360px;
-  padding: 34px;
-  background: rgba(251, 247, 240, 0.055);
-  border: 1px solid rgba(251, 247, 240, 0.11);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.stars {
-  color: var(--clay);
-  display: flex;
-  gap: 5px;
-  margin-bottom: 24px;
-}
-
-.reviewCard p {
-  line-height: 1.8;
-  color: rgba(251, 247, 240, 0.72);
-  max-height: 220px;
-  overflow-y: auto;
-  padding-right: 8px;
-}
-
-.reviewCard small {
-  color: rgba(255, 255, 255, 0.44);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 10px;
-}
-
-.contactSection {
-  background: var(--cream2);
-}
-
-.contactForm {
-  background: rgba(255, 255, 255, 0.62);
-  padding: 44px;
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 56px rgba(39, 35, 29, 0.06);
-}
-
-.hiddenField {
-  display: none;
-}
-
-label {
-  display: block;
-  margin-bottom: 20px;
-  color: #7c7167;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 11px;
-  font-weight: 500;
-}
-
-input,
-textarea {
-  width: 100%;
-  margin-top: 9px;
-  border: 1px solid rgba(39, 35, 29, 0.14);
-  background: rgba(255, 255, 255, 0.45);
-  padding: 15px 16px;
-  color: var(--ink);
-  outline: none;
-}
-
-textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-input:focus,
-textarea:focus {
-  border-color: var(--clay);
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.formNote {
-  margin-top: 18px !important;
-  margin-bottom: 0;
-  font-size: 13px !important;
-  line-height: 1.6 !important;
-  color: var(--muted) !important;
-}
-
-.contactList {
-  display: grid;
-  gap: 18px;
-  margin-top: 36px;
-}
-
-.contactList a,
-.contactList span {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: var(--charcoal);
-  font-size: 16px;
-}
-
-.contactList svg {
-  color: var(--clay);
-}
-
-.footer {
-  background: var(--charcoal);
-  color: rgba(255, 255, 255, 0.72);
-  padding: 34px 6vw;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.footer p {
-  margin: 0;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-}
-
-@media (max-width: 1120px) {
-  .header {
-    padding: 0 24px;
-  }
-
-  .nav {
-    gap: 16px;
-  }
-
-  .nav a {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 1050px) {
-  .hero,
-  .split {
-    grid-template-columns: 1fr;
-  }
-
-  .heroVisual {
-    min-height: auto;
-  }
-
-  .sectionTop,
-  .reviewsIntro {
-    display: block;
-  }
-
-  .topCopy {
-    margin-top: 20px;
-  }
-
-  .cardGrid.three,
-  .methodGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .servicesTop .button,
-  .reviewsIntro .button {
-    margin-top: 28px;
-  }
-
-  .learnMoreBox {
-    grid-template-columns: 1fr;
-  }
-
-  .whoWrap {
-    grid-template-columns: minmax(300px, 0.9fr) minmax(360px, 1.1fr);
-    gap: 54px;
-  }
-
-  .whoIntro h2 {
-    font-size: clamp(44px, 5.4vw, 58px);
-  }
-}
-
-@media (max-width: 860px) {
-  .header {
-    padding: 0 20px;
-  }
-
-  .brand {
-    font-size: 23px;
-  }
-
-  .menuButton {
-    display: block;
-  }
-
-  .nav {
-    position: fixed;
-    top: 74px;
-    left: 0;
-    right: 0;
-    background: var(--cream);
-    border-bottom: 1px solid var(--line);
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 22px;
-    gap: 0;
-  }
-
-  .navOpen {
-    display: flex;
-  }
-
-  .nav a {
-    padding: 16px 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .navButton {
-    margin-left: 0;
-    margin-top: 12px;
-    text-align: center;
-    border-bottom: 0 !important;
-  }
-
-  .heroText,
-  .section {
-    padding: 66px 22px;
-  }
-
-  h1 {
-    font-size: 56px;
-  }
-
-  h2 {
-    font-size: 42px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-    margin-top: 44px;
-  }
-
-  .heroVisual {
-    padding: 0 18px 34px;
-    min-height: auto;
-  }
-
-  .portraitCard {
-    min-height: auto;
-  }
-
-  .portraitCard img {
-    height: min(126vw, 560px);
-    min-height: 0;
-  }
-
-  .quoteCard {
-    left: 28px;
-    right: 28px;
-    top: 28px;
-    padding: 22px 20px;
-  }
-
-  .quoteCard p {
-    font-size: clamp(26px, 8vw, 36px);
-  }
-
-  .whoSection {
-    padding-top: 72px;
-    padding-bottom: 72px;
-  }
-
-  .whoWrap {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-
-  .whoIntro h2 {
-    font-size: clamp(40px, 11vw, 56px);
-    line-height: 1.04;
-    max-width: 640px;
-  }
-
-  .whoItem {
-    grid-template-columns: 42px 1fr;
-    gap: 18px;
-    padding: 28px 0;
-  }
-
-  .contactForm {
-    padding: 30px;
-  }
-
-  .cardGrid.three,
-  .methodGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .serviceCard {
-    padding: 32px;
-  }
-
-  .reviewStrip {
-    grid-auto-columns: 86%;
-  }
-
-  .footer {
-    flex-direction: column;
-  }
-
-  .actions,
-  .button {
-    width: 100%;
-  }
-
-  .textLink {
-    justify-content: center;
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    height: 68px;
-  }
-
-  .brand {
-    font-size: 21px;
-  }
-
-  .nav {
-    top: 68px;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .heroText {
-    padding: 52px 20px;
-  }
-
-  h1 {
-    font-size: 50px;
-  }
-
-  h2 {
-    font-size: 38px;
-  }
-
-  .stats {
-    gap: 18px;
-  }
-
-  .portraitCard img {
-    height: 520px;
-  }
-
-  .quoteCard {
-    left: 22px;
-    right: 22px;
-    top: 22px;
-    padding: 20px 18px;
-  }
-
-  .quoteCard p {
-    font-size: 28px;
-  }
-
-  .whoIntro h2 {
-    font-size: 40px;
-  }
-
-  .whoItem {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .reviewStrip {
-    grid-auto-columns: 92%;
-  }
-}
+import React from "react";
+import { createRoot } from "react-dom/client";
+import {
+  ArrowRight,
+  Mail,
+  Heart,
+  Sparkles,
+  Star,
+  Menu,
+  X
+} from "lucide-react";
+import "./styles.css";
+
+const HERO_IMAGE_URL =
+  "https://dl.dropboxusercontent.com/scl/fi/c5m6rewrg2y0ye72c3981/5725e7_4bd68c9a9ec14df5817c59a2d826c15b-mv2.png?rlkey=ceyesmbpu6kpbv2ym7cqlj4x7";
+
+const GOOGLE_REVIEW_LINK =
+  "http://search.google.com/local/writereview?placeid=ChIJnXdEjpBbR00RO4nMP55egGE";
+
+const EMAIL = "theembodiedself@proton.me";
+const BOOKING_LINK = "https://calendly.com/therapywithtiffany/therapy-session";
+
+const reviews = [
+  "Tiffany is a great Therapist. This was exactly what I needed to break free from my insecurities and start truly loving myself. The resources she sent on top of sessions were so helpful in guiding me towards a more positive mindset and self-image. I highly recommend Tiffany to anyone who wants to improve their relationship with themselves.",
+  "What can I say about the person who has helped me climb out of the darkness? Her understanding and encouragement can't even be put into words. I am so grateful for her help as I strive to reclaim the person I once strived to be. Thank you.",
+  "Tiffany Wright truly is a remarkable human. I have learned and grown so much from her workshops. I'm so glad I found her.",
+  "Thank you to Tiffany for coming into our lives and creating this space! I can speak for myself when I say, not being a morning person, I look forward to Sundays now. I am grateful for Tiffany. She came into my life when I was at an all-time low. I am learning something new every Sunday but also from everyone else who joins in. You can never learn enough.",
+  "I can't express enough how grateful I am for the support and guidance I've received from Tiffany. Throughout the final stages of college and the various challenges I faced at home, she has been an unwavering pillar of strength and compassion. From the very first session, I felt an instant connection with her. She created a safe and nurturing environment where I could freely express my thoughts and emotions without any judgment. Her genuine empathy and active listening skills made me feel truly heard and understood, providing me with the courage to confront my deepest fears and struggles.",
+  "First time joining in the Self Care Sundays with Tiffany. Felt very welcomed and she is very great in guiding the group in discussions and reflections. I highly recommend others to join and acquire in additional helpful to be more present and center in life.",
+  "Tiffany’s self-love workshop has been so beneficial to my healing process. Our weekly meetings of meditation and writing has helped me process a lot of the anger I’ve been carrying around. I’m feeling better about myself and life more and more each week. I appreciate Tiffany taking time out of each week to offer these sessions. The space is welcoming, supportive and full of love!",
+  "Living Wright has helped me through my darkest times and made me feel like myself again! I would definitely recommend.",
+  "Started therapy a few weeks ago, in just one session she helped me regain my confidence and uplifted my spirit. No matter where you are in life a therapist is needed. She let me feel safe to share my thoughts, experiences and issues I may have. She is educated, non-judgmental, understanding, and she definitely helps me to understand my inner thoughts. After 3 sections I am able to heal from multiple traumas, and increase my personal growth. I definitely recommend her 100%. Starting therapy is recommended at any point in life. It’s never too late."
+];
+
+function App() {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
+  return (
+    <div className="site">
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} closeMenu={closeMenu} />
+      <main>
+        <Home />
+        <WhoThisIsFor />
+        <SelfMethod />
+        <Services />
+        <LearnMore />
+        <Reviews />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function Header({ menuOpen, setMenuOpen, closeMenu }) {
+  return (
+    <header className="header">
+      <a href="#home" className="brand" onClick={closeMenu}>
+        The Embodied Self
+      </a>
+
+      <button className="menuButton" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <X size={22} /> : <Menu size={22} />}
+      </button>
+
+      <nav className={menuOpen ? "nav navOpen" : "nav"}>
+        <a onClick={closeMenu} href="#home">Home</a>
+        <a onClick={closeMenu} href="/work-with-me/">Work With Me / Services</a>
+        <a onClick={closeMenu} href="/about/">About Me</a>
+        <a onClick={closeMenu} href="/resources/">Resources</a>
+        <a onClick={closeMenu} className="navButton" href={BOOKING_LINK} target="_blank" rel="noreferrer">
+          Book a Session
+        </a>
+      </nav>
+    </header>
+  );
+}
+
+function Home() {
+  return (
+    <section id="home" className="hero">
+      <div className="heroText">
+        <p className="eyebrow">Virtual therapy · Pennsylvania & New Jersey</p>
+        <h1>
+          Come back <span>to your<em>self.</em></span>
+        </h1>
+        <p className="lede">
+          Therapy for women carrying emotional overload, burnout, self-disconnection,
+          and the quiet weight of holding everything together.
+        </p>
+
+        <div className="actions">
+          <a className="button dark" href={BOOKING_LINK} target="_blank" rel="noreferrer">
+            Book a Session
+          </a>
+          <a className="textLink" href="/work-with-me/">
+            Explore services <ArrowRight size={16} />
+          </a>
+        </div>
+
+        <div className="stats">
+          <div><strong>PA & NJ</strong><span>Virtual therapy</span></div>
+          <div><strong>12+</strong><span>Years in practice</span></div>
+          <div><strong>400+</strong><span>Clients supported</span></div>
+        </div>
+      </div>
+
+      <div className="heroVisual">
+        <div className="portraitCard">
+          <img src={HERO_IMAGE_URL} alt="The Embodied Self therapy visual" />
+          <div className="quoteCard">
+            <p>You are not broken. You are coming home.</p>
+            <span>The Embodied Self</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhoThisIsFor() {
+  const items = [
+    [
+      "Emotionally overwhelmed",
+      "Your nervous system feels always on, even when life looks manageable from the outside."
+    ],
+    [
+      "Disconnected from yourself",
+      "You know what everyone else needs, but your own voice, desires, and needs feel harder to access."
+    ],
+    [
+      "Ready for something deeper",
+      "You want more than coping skills. You want to understand what is underneath and create real change."
+    ]
+  ];
+
+  return (
+    <section id="who-this-is-for" className="section whoSection">
+      <div className="whoWrap">
+        <div className="whoIntro">
+          <p className="eyebrow mutedEyebrow">Who this is for</p>
+          <h2>
+            For the woman who looks fine — and feels far from <em>herself.</em>
+          </h2>
+        </div>
+
+        <div className="whoList">
+          {items.map(([title, text], index) => (
+            <article className="whoItem" key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  return (
+    <section id="services" className="section servicesSection">
+      <div className="sectionTop servicesTop">
+        <div>
+          <p className="eyebrow terra">Therapeutic offerings</p>
+          <h2>Support that meets you <em>where you are.</em></h2>
+        </div>
+        <a className="button dark" href={BOOKING_LINK} target="_blank" rel="noreferrer">
+          Book a Session
+        </a>
+      </div>
+
+      <div className="cardGrid three">
+        <article className="serviceCard">
+          <p className="serviceKicker">50-minute sessions</p>
+          <span className="serviceNumber">01</span>
+          <h3>Outpatient Therapy</h3>
+          <p>
+            Weekly 50-minute therapy for anxiety, burnout, self-doubt, emotional overwhelm,
+            identity shifts, and rebuilding a steadier relationship with yourself.
+          </p>
+          <small>Virtual · PA & NJ</small>
+        </article>
+
+        <article className="serviceCard">
+          <p className="serviceKicker">3-hour immersives</p>
+          <span className="serviceNumber">02</span>
+          <h3>Therapy Intensives</h3>
+          <p>
+            Extended sessions for deeper emotional work, clarity, and integration when
+            you need more space than weekly therapy can offer.
+          </p>
+          <small>Virtual · PA & NJ</small>
+        </article>
+
+        <article className="serviceCard">
+          <p className="serviceKicker">Mind-body support</p>
+          <span className="serviceNumber">03</span>
+          <h3>Mindful Movement</h3>
+          <p>
+            Somatic support using grounding, breath, and movement to help you reconnect
+            with your body and regulate your nervous system.
+          </p>
+          <small>No location restrictions</small>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+function SelfMethod() {
+  const phases = [
+    ["S", "Shed the Story", "Identify the beliefs, roles, and survival patterns that taught you who you had to be."],
+    ["E", "Embrace the Fire", "Learn to feel anger, grief, shame, fear, and resentment without being consumed by them."],
+    ["L", "Liberate Your Voice", "Reconnect with needs, boundaries, truth, desire, and the parts of you that learned to stay quiet."],
+    ["F", "Forge a New Way", "Practice self-trust, emotional steadiness, and a more rooted relationship with yourself."]
+  ];
+
+  return (
+    <section id="method" className="section cream">
+      <div className="sectionTop">
+        <div>
+          <p className="eyebrow terra">The SELF Method</p>
+          <h2>A framework for learning to love your SELF.</h2>
+        </div>
+        <p className="topCopy">
+          The SELF Method is the heart of this work: a four-phase therapy framework
+          for understanding what shaped you and building a more honest relationship
+          with yourself.
+        </p>
+      </div>
+
+      <div className="methodGrid">
+        {phases.map(([letter, title, text]) => (
+          <article className="methodCard" key={letter}>
+            <div className="bigLetter">{letter}</div>
+            <p className="phase">Phase {letter}</p>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LearnMore() {
+  return (
+    <section className="section learnMoreSection">
+      <div className="learnMoreBox">
+        <div>
+          <p className="eyebrow terra">Explore more</p>
+          <h2>Learn more about the person and the support behind the <em>work.</em></h2>
+        </div>
+
+        <div className="learnMoreCopy">
+          <p>
+            Visit the About page to get a fuller sense of who I am, or explore
+            reflections and resources created for the moments between sessions.
+          </p>
+          <div className="learnMoreActions">
+            <a href="/about/">About Me</a>
+            <a href="/resources/">Support for Moments in Between</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Reviews() {
+  return (
+    <section id="reviews" className="section reviewsSection">
+      <div className="reviewsIntro">
+        <div className="reviewsHeadline">
+          <p className="eyebrow terra">Google reviews</p>
+          <h2>Words from people who have felt supported in this <em>work.</em></h2>
+        </div>
+        <a className="button clay" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noreferrer">
+          Leave a Review
+        </a>
+      </div>
+
+      <div className="reviewStrip">
+        {reviews.map((review, index) => (
+          <article className="reviewCard" key={index}>
+            <div className="stars">
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
+              <Star size={16} fill="currentColor" />
+            </div>
+            <p>“{review}”</p>
+            <small>Google review highlight</small>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="section contactSection">
+      <div className="split">
+        <div>
+          <p className="eyebrow terra">Get in touch</p>
+          <h2>Let’s start with a conversation.</h2>
+          <p>
+            Reaching out is often the hardest step. Whether you have questions about
+            therapy, intensives, mindful movement, or fit, you are welcome to begin here.
+          </p>
+
+          <div className="contactList">
+            <a href={`mailto:${EMAIL}`}>
+              <Mail size={18} /> {EMAIL}
+            </a>
+            <a href={BOOKING_LINK} target="_blank" rel="noreferrer">
+              <Heart size={18} /> Book a consultation
+            </a>
+            <span>
+              <Sparkles size={18} /> Virtual therapy in Pennsylvania & New Jersey
+            </span>
+          </div>
+        </div>
+
+        <form
+          className="contactForm"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thank-you/"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p className="hiddenField">
+            <label>
+              Don’t fill this out if you’re human
+              <input name="bot-field" />
+            </label>
+          </p>
+
+          <h3>Send a message</h3>
+
+          <label>
+            Your name
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            Email address
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" required />
+          </label>
+
+          <button className="button dark" type="submit">
+            Send Message
+          </button>
+
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>The Embodied Self</p>
+      <p>Virtual therapy in PA & NJ · © {new Date().getFullYear()}</p>
+    </footer>
+  );
+}
+
+createRoot(document.getElementById("root")).render(<App />);
