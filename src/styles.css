@@ -1,16 +1,16 @@
+/* src/styles.css */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap");
 
 :root {
-  --cream: #f8f1e7;
-  --cream2: #efe3d4;
+  --cream: #f6efe6;
+  --cream2: #e5d9c8;
   --linen: #fbf7f0;
-  --sage: #5f705e;
-  --sage-dark: #243d31;
-  --sage-deep: #173529;
-  --sage-soft: #d9ded2;
-  --clay: #c86643;
-  --ink: #27231d;
-  --muted: #766d63;
+  --charcoal: #1b1510;
+  --charcoal-soft: #2a211b;
+  --clay: #bd7558;
+  --clay-soft: #d8b9a8;
+  --ink: #1b1510;
+  --muted: #645a52;
   --line: rgba(39, 35, 29, 0.13);
 }
 
@@ -65,7 +65,7 @@ textarea {
   font-family: "Cormorant Garamond", serif;
   font-size: 26px;
   letter-spacing: 0.02em;
-  color: var(--sage-dark);
+  color: var(--charcoal);
 }
 
 .nav {
@@ -87,7 +87,7 @@ textarea {
 }
 
 .navButton {
-  background: var(--sage-dark);
+  background: var(--charcoal);
   color: var(--linen) !important;
   padding: 17px 26px;
   margin-left: 8px;
@@ -97,7 +97,7 @@ textarea {
   display: none;
   border: 0;
   background: transparent;
-  color: var(--sage-dark);
+  color: var(--charcoal);
 }
 
 .hero {
@@ -139,7 +139,7 @@ h2,
 h3 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  color: var(--sage-dark);
+  color: var(--charcoal);
 }
 
 h1 {
@@ -206,7 +206,7 @@ h3 {
 }
 
 .button.dark {
-  background: var(--sage-dark);
+  background: var(--charcoal);
   color: var(--linen);
 }
 
@@ -255,48 +255,47 @@ h3 {
 }
 
 .heroVisual {
-  background:
-    radial-gradient(circle at 70% 20%, rgba(200, 102, 67, 0.18), transparent 28%),
-    linear-gradient(135deg, var(--sage-dark), var(--sage-deep));
+  background: var(--cream2);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 74px 5vw;
+  padding: 0 32px;
   position: relative;
 }
 
 .portraitCard {
-  width: min(560px, 100%);
-  min-height: 660px;
+  width: min(700px, 100%);
+  min-height: calc(100vh - 74px);
   position: relative;
-  background: rgba(255, 255, 255, 0.11);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 18px;
+  background: var(--linen);
+  padding: 0;
 }
 
 .portraitCard img {
   width: 100%;
-  height: 624px;
+  height: calc(100vh - 74px);
+  min-height: 680px;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%) brightness(1.05) contrast(1.02);
-  opacity: 0.86;
+  filter: grayscale(100%) brightness(1.08) contrast(1.03);
+  opacity: 0.88;
 }
 
 .quoteCard {
   position: absolute;
-  left: 38px;
-  right: 38px;
-  top: 38px;
-  background: rgba(248, 241, 231, 0.92);
-  padding: 28px;
+  left: 44px;
+  right: 44px;
+  top: 42px;
+  background: rgba(251, 247, 240, 0.94);
+  padding: 38px 42px;
   backdrop-filter: blur(12px);
+  box-shadow: 0 18px 54px rgba(27, 21, 16, 0.12);
 }
 
 .quoteCard p {
   font-family: "Cormorant Garamond", serif;
   font-style: italic;
-  color: var(--sage-dark);
+  color: var(--charcoal);
   font-size: 33px;
   line-height: 1.08;
   margin-bottom: 10px;
@@ -319,9 +318,7 @@ h3 {
 }
 
 .darkSection {
-  background:
-    radial-gradient(circle at top right, rgba(200, 102, 67, 0.12), transparent 26%),
-    linear-gradient(135deg, var(--sage-dark), var(--sage-deep));
+  background: var(--charcoal);
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -335,23 +332,27 @@ h3 {
 }
 
 .whoSection {
-  background: #19140f;
+  background: var(--charcoal);
   color: rgba(255, 255, 255, 0.72);
+  padding-top: 118px;
+  padding-bottom: 118px;
 }
 
 .whoWrap {
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 84px;
+  grid-template-columns: minmax(360px, 0.88fr) minmax(480px, 1.12fr);
+  gap: clamp(70px, 8vw, 140px);
   align-items: center;
 }
 
 .whoIntro h2 {
   color: var(--linen);
-  font-size: clamp(48px, 5.8vw, 86px);
-  line-height: 1.03;
+  font-size: clamp(54px, 4.6vw, 82px);
+  line-height: 1.02;
+  max-width: 610px;
+  margin-bottom: 0;
 }
 
 .whoIntro h2 em {
@@ -375,15 +376,15 @@ h3 {
 }
 
 .whoList {
-  border-top: 1px solid rgba(248, 241, 231, 0.1);
+  border-top: 1px solid rgba(248, 241, 231, 0.09);
 }
 
 .whoItem {
   display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 32px;
-  padding: 34px 0;
-  border-bottom: 1px solid rgba(248, 241, 231, 0.1);
+  grid-template-columns: 52px 1fr;
+  gap: 28px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(248, 241, 231, 0.09);
 }
 
 .whoItem span {
@@ -396,15 +397,15 @@ h3 {
 .whoItem h3 {
   color: rgba(248, 241, 231, 0.84);
   font-family: "Jost", sans-serif;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .whoItem p {
   color: rgba(248, 241, 231, 0.58);
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.75;
   margin-bottom: 0;
 }
 
@@ -509,7 +510,7 @@ h3 {
   top: 8px;
   font-family: "Cormorant Garamond", serif;
   font-size: 100px;
-  color: rgba(36, 61, 49, 0.08);
+  color: rgba(27, 21, 16, 0.08);
   font-style: italic;
 }
 
@@ -574,7 +575,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: var(--sage);
+  border-color: var(--clay);
   background: rgba(255, 255, 255, 0.72);
 }
 
@@ -642,7 +643,7 @@ textarea:focus {
   display: flex;
   align-items: center;
   gap: 14px;
-  color: var(--sage-dark);
+  color: var(--charcoal);
   font-size: 16px;
 }
 
@@ -651,7 +652,7 @@ textarea:focus {
 }
 
 .footer {
-  background: var(--sage-deep);
+  background: var(--charcoal);
   color: rgba(255, 255, 255, 0.72);
   padding: 34px 6vw;
   display: flex;
@@ -665,15 +666,28 @@ textarea:focus {
   letter-spacing: 0.08em;
 }
 
+@media (max-width: 1120px) {
+  .header {
+    padding: 0 24px;
+  }
+
+  .nav {
+    gap: 16px;
+  }
+
+  .nav a {
+    font-size: 11px;
+  }
+}
+
 @media (max-width: 1050px) {
   .hero,
-  .split,
-  .whoWrap {
+  .split {
     grid-template-columns: 1fr;
   }
 
   .heroVisual {
-    min-height: 720px;
+    min-height: auto;
   }
 
   .sectionTop {
@@ -689,12 +703,17 @@ textarea:focus {
     grid-template-columns: 1fr 1fr;
   }
 
-  .nav {
-    gap: 18px;
+  .whoWrap {
+    grid-template-columns: minmax(300px, 0.9fr) minmax(360px, 1.1fr);
+    gap: 54px;
+  }
+
+  .whoIntro h2 {
+    font-size: clamp(48px, 6vw, 64px);
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .header {
     padding: 0 20px;
   }
@@ -756,37 +775,51 @@ textarea:focus {
   }
 
   .heroVisual {
-    padding: 44px 22px;
+    padding: 0 18px 34px;
     min-height: auto;
   }
 
   .portraitCard {
-    min-height: 520px;
+    min-height: auto;
   }
 
   .portraitCard img {
-    height: 500px;
+    height: min(126vw, 560px);
+    min-height: 0;
   }
 
   .quoteCard {
-    left: 24px;
-    right: 24px;
-    top: 24px;
-    padding: 22px;
+    left: 28px;
+    right: 28px;
+    top: 28px;
+    padding: 22px 20px;
   }
 
   .quoteCard p {
-    font-size: 28px;
+    font-size: clamp(26px, 8vw, 36px);
+  }
+
+  .whoSection {
+    padding-top: 72px;
+    padding-bottom: 72px;
   }
 
   .whoWrap {
-    gap: 38px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .whoIntro h2 {
+    font-size: clamp(44px, 13vw, 62px);
+    line-height: 1.04;
+    max-width: 640px;
   }
 
   .whoItem {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 30px 0;
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+    padding: 28px 0;
   }
 
   .communityForm,
@@ -819,5 +852,67 @@ textarea:focus {
   .textLink {
     justify-content: center;
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 68px;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .nav {
+    top: 68px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .heroText {
+    padding: 52px 20px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  .stats {
+    gap: 18px;
+  }
+
+  .portraitCard img {
+    height: 520px;
+  }
+
+  .quoteCard {
+    left: 22px;
+    right: 22px;
+    top: 22px;
+    padding: 20px 18px;
+  }
+
+  .quoteCard p {
+    font-size: 28px;
+  }
+
+  .whoIntro h2 {
+    font-size: 44px;
+  }
+
+  .whoItem {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .reviewStrip {
+    grid-auto-columns: 92%;
   }
 }
