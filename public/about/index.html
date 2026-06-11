@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Tiffany | The Embodied Self</title>
+    <meta
+      name="description"
+      content="Meet Tiffany Wright, licensed psychotherapist and founder of The Embodied Self."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+        --line: rgba(28, 23, 18, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .about-hero {
+        min-height: 90vh;
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        align-items: center;
+        gap: 64px;
+        padding: 88px 6vw;
+        background:
+          radial-gradient(ellipse at 12% 12%, rgba(196, 121, 90, 0.12), transparent 36%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+      }
+
+      .about-photo-wrap {
+        position: relative;
+        max-width: 540px;
+        justify-self: center;
+      }
+
+      .about-photo-card {
+        background: var(--cream);
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        padding: 16px;
+        box-shadow: 0 24px 70px rgba(28, 23, 18, 0.12);
+      }
+
+      .about-photo-card img {
+        display: block;
+        width: 100%;
+        height: 640px;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%) contrast(1.03) brightness(1.04);
+      }
+
+      .about-floating-note {
+        position: absolute;
+        right: -38px;
+        bottom: 44px;
+        width: min(330px, 82%);
+        background: rgba(250, 246, 240, 0.94);
+        border: 1px solid rgba(28, 23, 18, 0.08);
+        box-shadow: 0 18px 48px rgba(28, 23, 18, 0.1);
+        padding: 28px 26px;
+        backdrop-filter: blur(10px);
+      }
+
+      .about-floating-note p {
+        margin-bottom: 12px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(27px, 2.5vw, 40px);
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .about-floating-note span {
+        display: block;
+        color: var(--clay);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .about-hero-copy {
+        max-width: 760px;
+      }
+
+      .about-kicker,
+      .about-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 28px;
+        color: var(--clay);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .about-kicker::before,
+      .about-label::after {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: var(--clay);
+        flex-shrink: 0;
+      }
+
+      .about-h1 {
+        margin-bottom: 30px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(58px, 7.5vw, 116px);
+        font-weight: 300;
+        line-height: 0.88;
+        letter-spacing: 0;
+      }
+
+      .about-h1 em,
+      .about-title em,
+      .about-title-light em,
+      .about-cta-title em,
+      .about-know-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .about-hero-text {
+        max-width: 650px;
+        margin-bottom: 40px;
+        color: var(--brown);
+        font-size: clamp(17px, 1.35vw, 20px);
+        line-height: 1.85;
+      }
+
+      .about-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .about-btn-dark,
+      .about-btn-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 32px;
+        font-family: "Jost", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .about-btn-dark {
+        background: var(--charcoal);
+        color: var(--cream) !important;
+        border: 1px solid var(--charcoal);
+      }
+
+      .about-btn-dark:hover {
+        background: var(--brown);
+        border-color: var(--brown);
+        transform: translateY(-1px);
+      }
+
+      .about-btn-light {
+        background: rgba(250, 246, 240, 0.78);
+        color: var(--charcoal) !important;
+        border: 1px solid rgba(28, 23, 18, 0.18);
+      }
+
+      .about-btn-light:hover {
+        background: var(--cream);
+        transform: translateY(-1px);
+      }
+
+      .about-section {
+        padding: 96px 6vw;
+      }
+
+      .about-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .about-title {
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(40px, 5vw, 74px);
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .about-title-light {
+        color: var(--cream);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(38px, 4.7vw, 68px);
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .about-copy {
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .about-story {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .about-story-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 76px;
+        align-items: start;
+      }
+
+      .about-story-copy {
+        display: grid;
+        gap: 20px;
+      }
+
+      .about-story-card {
+        background: rgba(250, 246, 240, 0.055);
+        border: 1px solid rgba(250, 246, 240, 0.12);
+        padding: 32px;
+      }
+
+      .about-story-card p {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .about-story-card strong {
+        color: var(--cream);
+        font-weight: 500;
+      }
+
+      .about-credentials {
+        background: var(--cream);
+      }
+
+      .about-credentials-head {
+        max-width: 860px;
+        margin-bottom: 50px;
+      }
+
+      .about-credentials-head .about-copy {
+        max-width: 720px;
+        margin-top: 24px;
+      }
+
+      .about-credentials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .about-credential-card {
+        min-height: 295px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: var(--cream-deep);
+        border: 1px solid var(--line);
+        padding: 34px 30px;
+      }
+
+      .about-credential-card h3 {
+        margin-bottom: 16px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 35px;
+        font-weight: 300;
+        line-height: 1.02;
+      }
+
+      .about-credential-card p {
+        color: var(--brown);
+        font-size: 14.5px;
+        line-height: 1.74;
+      }
+
+      .about-credential-card span {
+        display: block;
+        margin-top: 28px;
+        color: var(--clay);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .about-approach,
+      .about-get-to-know {
+        position: relative;
+        overflow: hidden;
+        background: var(--tan);
+      }
+
+      .about-approach::before,
+      .about-get-to-know::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 92% 12%, rgba(196, 121, 90, 0.15), transparent 45%),
+          radial-gradient(ellipse at 8% 88%, rgba(250, 246, 240, 0.42), transparent 50%);
+        pointer-events: none;
+      }
+
+      .about-approach .about-inner,
+      .about-get-inner {
+        position: relative;
+        z-index: 2;
+      }
+
+      .about-approach-grid {
+        display: grid;
+        grid-template-columns: 0.88fr 1.12fr;
+        gap: 70px;
+        align-items: start;
+      }
+
+      .about-approach-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .about-approach-item {
+        background: rgba(250, 246, 240, 0.72);
+        border: 1px solid var(--line);
+        padding: 28px;
+        backdrop-filter: blur(8px);
+      }
+
+      .about-approach-item h3 {
+        margin-bottom: 12px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 1.04;
+      }
+
+      .about-approach-item p {
+        color: var(--brown);
+        font-size: 14.5px;
+        line-height: 1.74;
+      }
+
+      .about-get-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .about-know-head {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 64px;
+        align-items: end;
+        margin-bottom: 46px;
+      }
+
+      .about-know-title {
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(42px, 5.6vw, 82px);
+        font-weight: 300;
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .about-know-intro {
+        background: rgba(250, 246, 240, 0.7);
+        border: 1px solid var(--line);
+        padding: 34px 32px;
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.82;
+        backdrop-filter: blur(8px);
+      }
+
+      .about-carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(360px, 48%);
+        gap: 18px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: inline mandatory;
+        scroll-behavior: smooth;
+        padding: 4px 4px 22px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .about-carousel::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .about-carousel::-webkit-scrollbar-track {
+        background: rgba(28, 23, 18, 0.08);
+      }
+
+      .about-carousel::-webkit-scrollbar-thumb {
+        background: rgba(28, 23, 18, 0.28);
+      }
+
+      .about-know-card {
+        scroll-snap-align: start;
+        min-height: 430px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: rgba(250, 246, 240, 0.82);
+        border: 1px solid var(--line);
+        padding: 38px 34px;
+        backdrop-filter: blur(8px);
+        transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      }
+
+      .about-know-card:hover {
+        transform: translateY(-3px);
+        background: rgba(250, 246, 240, 0.94);
+        box-shadow: 0 20px 50px rgba(28, 23, 18, 0.08);
+      }
+
+      .about-know-card.about-quote-card {
+        background: var(--charcoal);
+        color: var(--cream);
+        border-color: rgba(250, 246, 240, 0.12);
+      }
+
+      .about-know-card.about-soft-card {
+        background: var(--cream-deep);
+      }
+
+      .about-card-eyebrow {
+        margin-bottom: 18px;
+        color: var(--clay);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .about-know-card h3 {
+        margin-bottom: 24px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 3.4vw, 54px);
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .about-quote-card h3 {
+        color: var(--cream);
+        font-style: italic;
+      }
+
+      .about-know-card p {
+        color: var(--brown);
+        font-size: 15.5px;
+        line-height: 1.82;
+      }
+
+      .about-quote-card p {
+        color: rgba(250, 246, 240, 0.74);
+      }
+
+      .about-card-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .about-card-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        padding: 12px 20px;
+        background: var(--charcoal);
+        color: var(--cream) !important;
+        border: 1px solid var(--charcoal);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+      }
+
+      .about-card-link:hover {
+        background: var(--brown);
+        border-color: var(--brown);
+        transform: translateY(-1px);
+      }
+
+      .about-quote-card .about-card-link {
+        background: var(--cream);
+        color: var(--charcoal) !important;
+        border-color: var(--cream);
+      }
+
+      .about-carousel-hint {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+        margin-top: 22px;
+        color: var(--brown);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .about-carousel-dots {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .about-carousel-dots a {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: rgba(28, 23, 18, 0.28);
+        transition: all 0.2s ease;
+      }
+
+      .about-carousel-dots a:hover {
+        background: var(--clay);
+        transform: scale(1.25);
+      }
+
+      .about-cta {
+        position: relative;
+        overflow: hidden;
+        background: var(--tan);
+        padding: 104px 6vw;
+        text-align: center;
+      }
+
+      .about-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 0%, rgba(196, 121, 90, 0.16) 0%, transparent 55%);
+        pointer-events: none;
+      }
+
+      .about-cta-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .about-cta .about-label {
+        justify-content: center;
+      }
+
+      .about-cta-title {
+        margin-bottom: 24px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(42px, 5.2vw, 78px);
+        font-weight: 300;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .about-cta-text {
+        max-width: 650px;
+        margin: 0 auto 40px;
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .about-cta .about-actions {
+        justify-content: center;
+      }
+
+      @media (max-width: 1080px) {
+        .about-hero,
+        .about-story-grid,
+        .about-approach-grid,
+        .about-know-head {
+          grid-template-columns: 1fr;
+        }
+
+        .about-hero {
+          min-height: auto;
+        }
+
+        .about-photo-wrap {
+          width: 100%;
+          max-width: 620px;
+        }
+
+        .about-photo-card img {
+          height: 560px;
+        }
+
+        .about-carousel {
+          grid-auto-columns: minmax(340px, 72%);
+        }
+
+        .about-credentials-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .about-hero {
+          padding: 68px 22px;
+          gap: 42px;
+        }
+
+        .about-kicker,
+        .about-label {
+          margin-bottom: 22px;
+          font-size: 10px;
+          line-height: 1.6;
+        }
+
+        .about-kicker::before,
+        .about-label::after {
+          width: 20px;
+        }
+
+        .about-h1 {
+          font-size: clamp(54px, 16vw, 78px);
+          margin-bottom: 26px;
+        }
+
+        .about-hero-text {
+          margin-bottom: 34px;
+          font-size: 15.5px;
+          line-height: 1.75;
+        }
+
+        .about-actions {
+          align-items: stretch;
+          gap: 14px;
+        }
+
+        .about-btn-dark,
+        .about-btn-light {
+          width: 100%;
+          padding: 15px 20px;
+        }
+
+        .about-photo-card {
+          padding: 12px;
+        }
+
+        .about-photo-card img {
+          height: 430px;
+        }
+
+        .about-floating-note {
+          position: relative;
+          right: auto;
+          bottom: auto;
+          width: 100%;
+          margin-top: 12px;
+          padding: 24px 22px;
+        }
+
+        .about-section,
+        .about-cta {
+          padding: 66px 22px;
+        }
+
+        .about-story-card,
+        .about-credential-card,
+        .about-approach-item,
+        .about-know-card,
+        .about-know-intro {
+          padding: 30px 24px;
+        }
+
+        .about-carousel {
+          grid-auto-columns: 88%;
+          gap: 14px;
+          padding-bottom: 18px;
+        }
+
+        .about-know-card {
+          min-height: 420px;
+        }
+
+        .about-carousel-hint {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .about-carousel-dots {
+          justify-content: flex-start;
+        }
+
+        .about-card-link {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="about-hero">
+        <div class="about-photo-wrap">
+          <div class="about-photo-card">
+            <img
+              src="https://dl.dropboxusercontent.com/scl/fi/ibyd16m9qnunqsxm6hx6m/IMG_6316-copy-2.JPG?rlkey=368vjc6gt57bk5zx3kp4tb8ra"
+              alt="Tiffany Wright, therapist and mind-body healing practitioner"
+            />
+          </div>
+
+          <div class="about-floating-note">
+            <p>Therapy can be warm, honest, human, and deeply grounding.</p>
+            <span>Meet Tiffany</span>
+          </div>
+        </div>
+
+        <div class="about-hero-copy">
+          <div class="about-kicker">About Tiffany</div>
+
+          <h1 class="about-h1">
+            The person behind The Embodied <em>Self.</em>
+          </h1>
+
+          <p class="about-hero-text">
+            I am Tiffany Wright, a licensed psychotherapist who blends
+            traditional talk therapy with body-based, mindfulness-informed, and
+            self-love centered healing. My work is for people who are tired of
+            carrying everything alone and are ready to build a more honest,
+            compassionate relationship with themselves.
+          </p>
+
+          <div class="about-actions">
+            <a
+              class="about-btn-dark"
+              href="https://calendly.com/therapywithtiffany/therapy-session"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Session
+            </a>
+
+            <a class="about-btn-light" href="/work-with-me/">
+              Work with me
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section about-story">
+        <div class="about-inner about-story-grid">
+          <div>
+            <div class="about-label">My story</div>
+            <h2 class="about-title-light">
+              I have always been interested in what helps people come back to
+              themselves.
+            </h2>
+          </div>
+
+          <div class="about-story-copy">
+            <div class="about-story-card">
+              <p>
+                <strong>
+                  My path into healing has always included both the mind and
+                  the body.
+                </strong>
+                I have studied psychology since 2010 and became a licensed
+                psychotherapist after earning my Master of Science degree in
+                Mental Health Counseling.
+              </p>
+            </div>
+
+            <div class="about-story-card">
+              <p>
+                Over the years, I have worked in partial care, crisis,
+                intensive outpatient, school, community, and behavioral health
+                settings. Those experiences taught me how much people carry,
+                how hard it can be to ask for support, and how powerful it can
+                be to feel truly seen.
+              </p>
+            </div>
+
+            <div class="about-story-card">
+              <p>
+                Alongside therapy, I found my way into yoga, mindfulness,
+                acrobatics, dance, flexibility, and movement-based practices.
+                These spaces helped shape the way I understand healing: not as
+                something we only think through, but something we also feel,
+                practice, and embody.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section about-credentials">
+        <div class="about-inner">
+          <div class="about-credentials-head">
+            <div class="about-label">Training and background</div>
+            <h2 class="about-title">
+              A blend of clinical training, creativity, and embodied practice.
+            </h2>
+            <p class="about-copy">
+              My work is grounded in evidence-based therapy while also honoring
+              the body, nervous system, creativity, lived experience, and the
+              deeper relationship you are building with yourself.
+            </p>
+          </div>
+
+          <div class="about-credentials-grid">
+            <div class="about-credential-card">
+              <div>
+                <h3>Clinical foundation</h3>
+                <p>
+                  I am a Licensed Professional Counselor with a Master of
+                  Science degree in Mental Health Counseling and years of
+                  experience supporting adults, children, teens, and families
+                  across a range of mental health settings.
+                </p>
+              </div>
+              <span>Psychotherapy</span>
+            </div>
+
+            <div class="about-credential-card">
+              <div>
+                <h3>Mind-body training</h3>
+                <p>
+                  My background includes yoga, therapeutic yoga training,
+                  mindfulness, movement-based practices, and somatic awareness.
+                  I often help clients notice how emotions, stress, and old
+                  patterns live in the body.
+                </p>
+              </div>
+              <span>Embodiment</span>
+            </div>
+
+            <div class="about-credential-card">
+              <div>
+                <h3>Creative movement</h3>
+                <p>
+                  My movement background includes gymnastics, cheerleading,
+                  acroyoga, contortion, dance, and circus-inspired practices.
+                  These experiences influence the way I understand strength,
+                  softness, courage, discipline, and self-trust.
+                </p>
+              </div>
+              <span>Movement</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section about-approach">
+        <div class="about-inner about-approach-grid">
+          <div>
+            <div class="about-label">My approach</div>
+            <h2 class="about-title">
+              Compassionate, direct, and rooted in the whole <em>self.</em>
+            </h2>
+            <p class="about-copy" style="margin-top: 24px;">
+              I do not believe therapy has to feel cold or overly clinical. I
+              believe therapy can be a space where you feel safe enough to be
+              honest, supported enough to go deeper, and challenged enough to
+              grow.
+            </p>
+          </div>
+
+          <div class="about-approach-list">
+            <div class="about-approach-item">
+              <h3>We look beneath the symptom.</h3>
+              <p>
+                Anxiety, burnout, self-criticism, people-pleasing, resentment,
+                and disconnection often make more sense when we understand the
+                story underneath them.
+              </p>
+            </div>
+
+            <div class="about-approach-item">
+              <h3>We include the body.</h3>
+              <p>
+                The body often holds what the mind has learned to explain away.
+                We may use grounding, breath, awareness, movement, or nervous
+                system support when it feels useful.
+              </p>
+            </div>
+
+            <div class="about-approach-item">
+              <h3>We rebuild self-trust.</h3>
+              <p>
+                Together, we work toward a relationship with yourself that
+                feels less harsh, less performative, and more honest,
+                compassionate, and rooted.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section about-get-to-know">
+        <div class="about-get-inner">
+          <div class="about-know-head">
+            <div>
+              <div class="about-label">Get to know me</div>
+              <h2 class="about-know-title">
+                The human part belongs here <em>too.</em>
+              </h2>
+            </div>
+
+            <div class="about-know-intro">
+              Therapy is professional, but I believe it should also feel
+              deeply human. You are not sitting across from a blank wall — you
+              are working with a real person who brings warmth, creativity,
+              groundedness, curiosity, reflection, and a little playfulness
+              into the room. My hope is that this helps therapy feel honest and
+              supportive, while still leaving space for depth, movement,
+              self-discovery, and the kind of healing that helps you come home
+              to yourself.
+            </div>
+          </div>
+
+          <div class="about-carousel">
+            <article class="about-know-card about-soft-card" id="about-gtkm-1">
+              <div class="about-card-eyebrow">Inner child joy</div>
+              <h3>What my inner child loves</h3>
+              <p>
+                Being upside down! Handstands, acrobatics, contortion, flying
+                through the air with aerials, and dancing — especially partner
+                dancing like Bachata and Brazilian Zouk.
+              </p>
+              <div class="about-card-actions">
+                <a class="about-card-link" href="/media/">View more media</a>
+              </div>
+            </article>
+
+            <article class="about-know-card" id="about-gtkm-2">
+              <div class="about-card-eyebrow">Life outside therapy</div>
+              <h3>How I spend my free time</h3>
+              <p>
+                Being a mommy to two beautiful little humans, growing as a
+                woman, partner, therapist, and business owner, creating
+                whenever I can, and learning constantly. Honestly, learning
+                might be one of my favorite hobbies.
+              </p>
+            </article>
+
+            <article class="about-know-card about-quote-card" id="about-gtkm-3">
+              <div class="about-card-eyebrow">What I wish more women knew</div>
+              <h3>You do not have to earn rest.</h3>
+              <p>
+                You do not have to prove your worthiness or carry everything
+                alone. Your enoughness is not something you achieve. You are
+                allowed to choose yourself without apology, rest without guilt,
+                and love yourself without permission.
+              </p>
+            </article>
+
+            <article class="about-know-card" id="about-gtkm-4">
+              <div class="about-card-eyebrow">Places that shaped me</div>
+              <h3>Countries I have traveled to</h3>
+              <p>
+                Indonesia, Thailand, Jamaica, Spain, Italy, France, the United
+                Kingdom, Mexico, China, Malaysia, the Bahamas — and counting.
+                Thailand was especially meaningful because I spent five months
+                there deepening my relationship with healing, movement, and
+                myself.
+              </p>
+            </article>
+
+            <article class="about-know-card about-soft-card" id="about-gtkm-5">
+              <div class="about-card-eyebrow">Travel lessons</div>
+              <h3>What traveling has taught me</h3>
+              <p>
+                Happiness is not hidden in faraway places. It is something you
+                carry with you. You can find joy with very little, peace in
+                unexpected moments, and clarity when you finally slow down. The
+                world has taught me that life is choreography — a dance of
+                people, places, and quiet pauses that shape who we become.
+              </p>
+            </article>
+
+            <article class="about-know-card" id="about-gtkm-6">
+              <div class="about-card-eyebrow">Another lifetime, same calling</div>
+              <h3>If therapy were not my career</h3>
+              <p>
+                I would still find some way to teach, heal, and perform. I
+                started teaching movement in high school — gymnastics,
+                acrobatics, yoga, dance — and I never really stopped. That will
+                always be part of me. I love the joy of telling a story without
+                words.
+              </p>
+            </article>
+
+            <article class="about-know-card about-quote-card" id="about-gtkm-7">
+              <div class="about-card-eyebrow">A lesson life keeps teaching me</div>
+              <h3>Peace is something I choose.</h3>
+              <p>
+                Life keeps reminding me that I always have the option to
+                respond differently, breathe deeper, and come back to myself
+                before reaching for anything outside of me.
+              </p>
+            </article>
+
+            <article class="about-know-card about-soft-card" id="about-gtkm-8">
+              <div class="about-card-eyebrow">Healing favorite</div>
+              <h3>My most-used app for healing</h3>
+              <p>
+                Insight Timer. It is my favorite meditation app, hands down —
+                and it is free. I love having simple practices available for
+                grounding, reflection, breath, sleep, and returning to myself.
+              </p>
+            </article>
+
+            <article class="about-know-card" id="about-gtkm-9">
+              <div class="about-card-eyebrow">Learn about my journey</div>
+              <h3>The person sitting across from you has a story too.</h3>
+              <p>
+                Let’s get real: you deserve to know the person sitting across
+                from you. My journey page will be a place to share more about
+                how therapy, movement, travel, motherhood, creativity, and
+                self-love shaped the way I show up in this work.
+              </p>
+              <div class="about-card-actions">
+                <a class="about-card-link" href="/my-journey/">Read my journey</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="about-carousel-hint">
+            <span>Swipe or scroll to explore</span>
+            <div class="about-carousel-dots" aria-label="Get to know me carousel links">
+              <a href="#about-gtkm-1" aria-label="Go to card 1"></a>
+              <a href="#about-gtkm-2" aria-label="Go to card 2"></a>
+              <a href="#about-gtkm-3" aria-label="Go to card 3"></a>
+              <a href="#about-gtkm-4" aria-label="Go to card 4"></a>
+              <a href="#about-gtkm-5" aria-label="Go to card 5"></a>
+              <a href="#about-gtkm-6" aria-label="Go to card 6"></a>
+              <a href="#about-gtkm-7" aria-label="Go to card 7"></a>
+              <a href="#about-gtkm-8" aria-label="Go to card 8"></a>
+              <a href="#about-gtkm-9" aria-label="Go to card 9"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-cta">
+        <div class="about-cta-inner">
+          <div class="about-label">Begin here</div>
+
+          <h2 class="about-cta-title">
+            If you are ready to feel more like yourself, we can start there.
+          </h2>
+
+          <p class="about-cta-text">
+            Therapy is not about having the perfect words before you begin. It
+            is about having a place where your real self is allowed to show up.
+          </p>
+
+          <div class="about-actions">
+            <a
+              class="about-btn-dark"
+              href="https://calendly.com/therapywithtiffany/therapy-session"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Session
+            </a>
+
+            <a class="about-btn-light" href="mailto:theembodiedself@proton.me">
+              Email Tiffany directly
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
