@@ -6,14 +6,13 @@
   --linen: #fbf7f0;
   --sage: #5f705e;
   --sage-dark: #243d31;
-  --sage-deep: #173529;
-  --sage-soft: #d9ded2;
+  --sage-deep: #143226;
+  --near-black: #18120d;
   --clay: #c86643;
   --clay-dark: #a94f34;
   --ink: #27231d;
   --muted: #766d63;
   --line: rgba(39, 35, 29, 0.13);
-  --white-soft: rgba(255, 255, 255, 0.76);
 }
 
 * {
@@ -49,6 +48,10 @@ textarea {
   background: var(--cream);
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -58,7 +61,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
   padding: 0 34px;
-  background: rgba(248, 241, 231, 0.92);
+  background: rgba(248, 241, 231, 0.94);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
@@ -73,7 +76,7 @@ textarea {
 .nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 .nav a {
@@ -91,7 +94,7 @@ textarea {
 .navButton {
   background: var(--sage-dark);
   color: var(--linen) !important;
-  padding: 17px 26px;
+  padding: 17px 24px;
   margin-left: 8px;
 }
 
@@ -129,6 +132,10 @@ textarea {
   color: var(--clay);
 }
 
+.mutedEyebrow {
+  color: #a58f7d;
+}
+
 h1,
 h2,
 h3,
@@ -152,8 +159,7 @@ h1 {
 }
 
 h1 span,
-h2 em,
-h1 em {
+h2 em {
   display: block;
   color: var(--clay);
   font-style: italic;
@@ -258,7 +264,7 @@ h3 {
 
 .heroVisual {
   background:
-    radial-gradient(circle at 70% 20%, rgba(200, 102, 67, 0.18), transparent 28%),
+    radial-gradient(circle at 70% 20%, rgba(200, 102, 67, 0.16), transparent 28%),
     linear-gradient(135deg, var(--sage-dark), var(--sage-deep));
   display: flex;
   align-items: center;
@@ -268,31 +274,37 @@ h3 {
 }
 
 .portraitCard {
-  width: min(560px, 100%);
-  min-height: 660px;
+  width: min(580px, 100%);
+  min-height: 680px;
   position: relative;
-  background: rgba(255, 255, 255, 0.11);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 18px;
 }
 
 .portraitCard img {
   width: 100%;
-  height: 624px;
+  height: 644px;
   object-fit: cover;
+  object-position: center center;
   display: block;
   filter: grayscale(100%) brightness(1.05) contrast(1.02);
-  opacity: 0.86;
+  opacity: 0.9;
 }
 
 .quoteCard {
   position: absolute;
   left: 38px;
   right: 38px;
-  bottom: 38px;
-  background: rgba(248, 241, 231, 0.92);
+  background: rgba(248, 241, 231, 0.94);
   padding: 28px;
   backdrop-filter: blur(12px);
+  box-shadow: 0 18px 44px rgba(24, 18, 13, 0.12);
+}
+
+.quoteTop {
+  top: 38px;
+  bottom: auto;
 }
 
 .quoteCard p {
@@ -309,7 +321,7 @@ h3 {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--clay);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .section {
@@ -320,65 +332,65 @@ h3 {
   background: var(--linen);
 }
 
-.sageLight {
-  background: var(--sage-soft);
+.nearBlack {
+  background: var(--near-black);
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.darkSection {
-  background:
-    radial-gradient(circle at top right, rgba(200, 102, 67, 0.12), transparent 26%),
-    linear-gradient(135deg, var(--sage-dark), var(--sage-deep));
-  color: rgba(255, 255, 255, 0.75);
+.nearBlack h2,
+.nearBlack h3 {
+  color: var(--linen);
 }
 
-.darkSection h2,
-.darkSection h3 {
-  color: var(--cream);
+.nearBlack p {
+  color: rgba(255, 255, 255, 0.63);
 }
 
-.darkSection p {
-  color: rgba(255, 255, 255, 0.68);
-}
-
-.split {
+.whoGrid {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 72px;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 92px;
   align-items: center;
 }
 
-.split p {
-  font-size: 17px;
-  line-height: 1.9;
-  color: #5a5048;
+.whoGrid h2 {
+  font-size: clamp(48px, 5.6vw, 82px);
 }
 
-.softPanel {
-  min-height: 470px;
-  border-radius: 150px 150px 8px 8px;
-  background:
-    radial-gradient(circle at 78% 34%, rgba(200, 102, 67, 0.16), transparent 22%),
-    radial-gradient(circle at 22% 72%, rgba(95, 112, 94, 0.14), transparent 20%),
-    var(--cream2);
-  padding: 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  border: 1px solid var(--line);
+.whoList {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.softPanel svg {
-  color: var(--sage);
-  margin-bottom: 28px;
+.whoItem {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 22px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.softPanel h3 {
-  color: var(--sage-dark);
+.whoItem span {
+  color: var(--clay);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.2;
 }
 
-.softPanel p {
+.whoItem h3 {
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--linen);
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.whoItem p {
+  font-family: "Jost", sans-serif;
+  line-height: 1.8;
   margin-bottom: 0;
 }
 
@@ -392,7 +404,7 @@ h3 {
 }
 
 .sectionTop > div {
-  max-width: 740px;
+  max-width: 760px;
 }
 
 .topCopy {
@@ -400,53 +412,6 @@ h3 {
   font-size: 16px;
   line-height: 1.85;
   color: #5a5048;
-}
-
-.darkSection .topCopy {
-  color: rgba(255, 255, 255, 0.62);
-}
-
-.cardGrid {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.cardGrid.three {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.cardGrid.two {
-  grid-template-columns: repeat(2, 1fr);
-  border-color: rgba(39, 35, 29, 0.12);
-}
-
-.serviceCard {
-  min-height: 360px;
-  padding: 44px;
-  background: rgba(255, 255, 255, 0.055);
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.serviceCard span {
-  color: var(--clay);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-  font-style: italic;
-}
-
-.serviceCard p {
-  line-height: 1.85;
-  margin-bottom: 30px;
-}
-
-.serviceCard small {
-  color: rgba(255, 255, 255, 0.48);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  font-size: 11px;
 }
 
 .methodGrid {
@@ -498,59 +463,81 @@ h3 {
   line-height: 1.78;
 }
 
-.resourceCard {
-  background: rgba(255, 255, 255, 0.45);
-  padding: 42px;
-  border: 1px solid rgba(39, 35, 29, 0.07);
+.sageSection {
+  background:
+    radial-gradient(circle at top right, rgba(200, 102, 67, 0.12), transparent 26%),
+    linear-gradient(135deg, var(--sage-dark), var(--sage-deep));
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.iconCircle {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  background: var(--sage-dark);
+.sageSection h2,
+.sageSection h3 {
   color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 26px;
 }
 
-.resourceType {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+.sageSection p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.cardGrid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1px;
+}
+
+.cardGrid.three {
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.serviceCard {
+  min-height: 360px;
+  padding: 44px;
+  background: rgba(255, 255, 255, 0.055);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.serviceCard span {
   color: var(--clay);
-  font-weight: 500;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-style: italic;
 }
 
-.resourceCard p {
-  color: #5a5048;
-  line-height: 1.78;
+.serviceCard p {
+  line-height: 1.85;
+  margin-bottom: 30px;
 }
 
-.resourceCard button {
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--sage-dark);
-  padding: 12px 18px;
+.serviceCard small {
+  color: rgba(255, 255, 255, 0.48);
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
   font-size: 11px;
-  cursor: default;
+}
+
+.split {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.split p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #5a5048;
 }
 
 .communityForm,
 .contactForm {
-  background: rgba(255, 255, 255, 0.48);
+  background: rgba(255, 255, 255, 0.55);
   padding: 44px;
   border: 1px solid var(--line);
   box-shadow: 0 18px 56px rgba(39, 35, 29, 0.06);
-}
-
-.contactForm {
-  background: rgba(255, 255, 255, 0.62);
 }
 
 label {
@@ -585,30 +572,23 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.formNote {
-  margin-top: 18px !important;
-  margin-bottom: 0;
-  font-size: 13px !important;
-  line-height: 1.6 !important;
-  color: var(--muted) !important;
-}
-
 .reviewStrip {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(320px, 36%);
+  grid-auto-columns: minmax(340px, 42%);
   gap: 18px;
   overflow-x: auto;
-  padding-bottom: 22px;
+  padding: 4px 4px 24px;
   scroll-snap-type: inline mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .reviewCard {
   scroll-snap-align: start;
-  min-height: 280px;
-  padding: 32px;
+  min-height: 360px;
+  padding: 34px 30px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.11);
   display: flex;
@@ -625,6 +605,9 @@ textarea:focus {
 
 .reviewCard p {
   line-height: 1.8;
+  max-height: 255px;
+  overflow-y: auto;
+  padding-right: 8px;
 }
 
 .reviewCard small {
@@ -674,7 +657,8 @@ textarea:focus {
 
 @media (max-width: 1050px) {
   .hero,
-  .split {
+  .split,
+  .whoGrid {
     grid-template-columns: 1fr;
   }
 
@@ -691,7 +675,6 @@ textarea:focus {
   }
 
   .cardGrid.three,
-  .cardGrid.two,
   .methodGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -774,32 +757,28 @@ textarea:focus {
   .quoteCard {
     left: 24px;
     right: 24px;
-    bottom: 24px;
     padding: 22px;
+  }
+
+  .quoteTop {
+    top: 24px;
   }
 
   .quoteCard p {
     font-size: 28px;
   }
 
-  .softPanel,
   .communityForm,
   .contactForm {
     padding: 30px;
   }
 
-  .softPanel {
-    border-radius: 90px 90px 8px 8px;
-  }
-
   .cardGrid.three,
-  .cardGrid.two,
   .methodGrid {
     grid-template-columns: 1fr;
   }
 
-  .serviceCard,
-  .resourceCard {
+  .serviceCard {
     padding: 32px;
   }
 
