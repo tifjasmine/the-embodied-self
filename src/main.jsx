@@ -21,11 +21,15 @@ const EMAIL = "theembodiedself@proton.me";
 const BOOKING_LINK = "https://calendly.com/therapywithtiffany/therapy-session";
 
 const reviews = [
-  "Tiffany is a great Therapist. This was exactly what I needed to break free from my insecurities and start truly loving myself.",
-  "Her understanding and encouragement can't even be put into words. I am so grateful for her help.",
-  "Tiffany Wright truly is a remarkable human. I have learned and grown so much from her workshops.",
-  "The space is welcoming, supportive and full of love!",
-  "She created a safe and nurturing environment where I could freely express my thoughts and emotions without judgment."
+  "Tiffany is a great Therapist. This was exactly what I needed to break free from my insecurities and start truly loving myself. The resources she sent on top of sessions were so helpful in guiding me towards a more positive mindset and self-image. I highly recommend Tiffany to anyone who wants to improve their relationship with themselves.",
+  "What can I say about the person who has helped me climb out of the darkness? Her understanding and encouragement can't even be put into words. I am so grateful for her help as I strive to reclaim the person I once strived to be. Thank you.",
+  "Tiffany Wright truly is a remarkable human. I have learned and grown so much from her workshops. I'm so glad I found her.",
+  "Thank you to Tiffany for coming into our lives and creating this space! I can speak for myself when I say, not being a morning person, I look forward to Sundays now. I am grateful for Tiffany. She came into my life when I was at an all-time low. I am learning something new every Sunday but also from everyone else who joins in. You can never learn enough.",
+  "I can't express enough how grateful I am for the support and guidance I've received from Tiffany. Throughout the final stages of college and the various challenges I faced at home, she has been an unwavering pillar of strength and compassion. From the very first session, I felt an instant connection with her. She created a safe and nurturing environment where I could freely express my thoughts and emotions without any judgment. Her genuine empathy and active listening skills made me feel truly heard and understood, providing me with the courage to confront my deepest fears and struggles.",
+  "First time joining in the Self Care Sundays with Tiffany. Felt very welcomed and she is very great in guiding the group in discussions and reflections. I highly recommend others to join and acquire in additional helpful to be more present and center in life.",
+  "Tiffany’s self-love workshop has been so beneficial to my healing process. Our weekly meetings of meditation and writing has helped me process a lot of the anger I’ve been carrying around. I’m feeling better about myself and life more and more each week. I appreciate Tiffany taking time out of each week to offer these sessions. The space is welcoming, supportive and full of love!",
+  "Living Wright has helped me through my darkest times and made me feel like myself again! I would definitely recommend.",
+  "Started therapy a few weeks ago, in just one session she helped me regain my confidence and uplifted my spirit. No matter where you are in life a therapist is needed. She let me feel safe to share my thoughts, experiences and issues I may have. She is educated, non-judgmental, understanding, and she definitely helps me to understand my inner thoughts. After 3 sections I am able to heal from multiple traumas, and increase my personal growth. I definitely recommend her 100%. Starting therapy is recommended at any point in life. It’s never too late."
 ];
 
 function App() {
@@ -332,22 +336,36 @@ function Contact() {
           </div>
         </div>
 
-        <form className="contactForm" onSubmit={(e) => e.preventDefault()}>
+        <form
+          className="contactForm"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p className="hiddenField">
+            <label>
+              Don’t fill this out if you’re human
+              <input name="bot-field" />
+            </label>
+          </p>
+
           <h3>Send a message</h3>
 
           <label>
             Your name
-            <input type="text" />
+            <input type="text" name="name" required />
           </label>
 
           <label>
             Email address
-            <input type="email" />
+            <input type="email" name="email" required />
           </label>
 
           <label>
             Message
-            <textarea />
+            <textarea name="message" required />
           </label>
 
           <button className="button dark" type="submit">
@@ -355,7 +373,7 @@ function Contact() {
           </button>
 
           <p className="formNote">
-            Placeholder form. We can connect this to Netlify Forms, Airtable, or Google Apps Script next.
+            Your message will be sent through Netlify Forms.
           </p>
         </form>
       </div>
