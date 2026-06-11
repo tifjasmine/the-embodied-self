@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community | The Embodied Self</title>
+    <meta
+      name="description"
+      content="The Dysregulated Truth, a community space for honest anonymous reflections and therapist support."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+        --line: rgba(28, 23, 18, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .tc-section {
+        padding: 84px 6vw;
+      }
+
+      .tc-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .tc-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 24px;
+        color: var(--clay);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .tc-label::before {
+        content: "";
+        width: 24px;
+        height: 1px;
+        background: var(--clay);
+        flex-shrink: 0;
+      }
+
+      .tc-title {
+        max-width: 850px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(46px, 5.8vw, 82px);
+        font-weight: 300;
+        letter-spacing: -0.035em;
+        line-height: 0.98;
+      }
+
+      .tc-title em,
+      .tc-section-title em,
+      .tc-small-title em,
+      .tc-question em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tc-copy {
+        color: var(--brown);
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.85;
+      }
+
+      .tc-btn-dark,
+      .tc-btn-light,
+      .tc-btn-soft {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        border: 1px solid var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .tc-btn-dark {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .tc-btn-dark:hover {
+        background: var(--brown);
+        border-color: var(--brown);
+        transform: translateY(-1px);
+      }
+
+      .tc-btn-light,
+      .tc-btn-soft {
+        background: var(--cream);
+        color: var(--charcoal);
+        border-color: rgba(28, 23, 18, 0.18);
+      }
+
+      .tc-btn-light:hover,
+      .tc-btn-soft:hover {
+        background: var(--charcoal);
+        color: var(--cream);
+        border-color: var(--charcoal);
+        transform: translateY(-1px);
+      }
+
+      .tc-hero {
+        padding: 88px 6vw 72px;
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.11), transparent 38%),
+          radial-gradient(ellipse at 88% 12%, rgba(122, 139, 110, 0.09), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+      }
+
+      .tc-hero-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 0.72fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .tc-hero-text {
+        max-width: 640px;
+        margin-top: 28px;
+      }
+
+      .tc-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 36px;
+      }
+
+      .tc-hero-card {
+        background: rgba(250, 246, 240, 0.82);
+        border: 1px solid var(--line);
+        padding: 36px 34px;
+        box-shadow: 0 18px 52px rgba(28, 23, 18, 0.06);
+      }
+
+      .tc-hero-card h2 {
+        margin-bottom: 18px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 3.4vw, 48px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.04;
+      }
+
+      .tc-hero-card p {
+        color: var(--brown);
+        font-size: 15.5px;
+        line-height: 1.82;
+      }
+
+      .tc-prompt {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .tc-prompt-panel {
+        max-width: 920px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .tc-prompt-panel .tc-label {
+        justify-content: center;
+      }
+
+      .tc-question {
+        margin-bottom: 28px;
+        color: var(--cream);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(36px, 4.6vw, 62px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.04;
+      }
+
+      .tc-prompt .tc-copy {
+        max-width: 680px;
+        margin: 0 auto;
+        color: rgba(250, 246, 240, 0.74);
+      }
+
+      .tc-prompt .tc-actions {
+        justify-content: center;
+      }
+
+      .tc-prompt .tc-btn-light {
+        background: var(--cream);
+        color: var(--charcoal);
+        border-color: var(--cream);
+      }
+
+      .tc-prompt .tc-btn-light:hover {
+        background: var(--tan);
+        border-color: var(--tan);
+      }
+
+      .tc-feed {
+        background: var(--cream-deep);
+      }
+
+      .tc-section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+        margin-bottom: 42px;
+      }
+
+      .tc-section-title {
+        max-width: 760px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(36px, 4.3vw, 60px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.04;
+      }
+
+      .tc-section-note {
+        max-width: 410px;
+        color: var(--brown);
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .tc-slider {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(320px, 32%);
+        gap: 18px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: inline mandatory;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
+        padding: 4px 4px 24px;
+      }
+
+      .tc-slider::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .tc-slider::-webkit-scrollbar-track {
+        background: rgba(28, 23, 18, 0.08);
+      }
+
+      .tc-slider::-webkit-scrollbar-thumb {
+        background: rgba(28, 23, 18, 0.28);
+      }
+
+      .tc-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 310px;
+        padding: 32px 28px;
+        background: var(--cream);
+        border: 1px solid var(--line);
+        scroll-snap-align: start;
+        box-shadow: 0 16px 42px rgba(28, 23, 18, 0.04);
+      }
+
+      .tc-quote-mark {
+        margin-bottom: 22px;
+        color: var(--clay);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 72px;
+        line-height: 0.58;
+      }
+
+      .tc-card-text {
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(25px, 2.2vw, 35px);
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .tc-card-name {
+        margin-top: 28px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        color: #8f6d5a;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      .tc-empty {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        padding: 30px 28px;
+        color: var(--brown);
+        font-size: 15.5px;
+        line-height: 1.75;
+      }
+
+      .tc-hint {
+        margin-top: 8px;
+        color: #8f6d5a;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .tc-perspective {
+        background: var(--cream);
+      }
+
+      .tc-perspective-grid {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 64px;
+        align-items: start;
+      }
+
+      .tc-perspective-box {
+        background: var(--cream-deep);
+        border: 1px solid var(--line);
+        padding: 40px 38px;
+      }
+
+      .tc-small-title {
+        margin-bottom: 22px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 3.7vw, 52px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.04;
+      }
+
+      .tc-perspective-box p {
+        margin-bottom: 20px;
+        color: var(--brown);
+        font-size: 15.5px;
+        line-height: 1.82;
+        white-space: pre-line;
+      }
+
+      .tc-tool {
+        margin-top: 28px;
+        padding-top: 26px;
+        border-top: 1px solid rgba(28, 23, 18, 0.12);
+      }
+
+      .tc-tool h3 {
+        margin-bottom: 14px;
+        color: var(--clay);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tc-how {
+        background: var(--tan);
+      }
+
+      .tc-how-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: 40px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+
+      .tc-how-card {
+        background: var(--cream);
+        padding: 32px 28px;
+      }
+
+      .tc-how-card small {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--clay);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .tc-how-card h3 {
+        margin-bottom: 14px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+      }
+
+      .tc-how-card p {
+        color: var(--brown);
+        font-size: 14.5px;
+        line-height: 1.72;
+      }
+
+      .tc-note {
+        max-width: 860px;
+        margin-top: 34px;
+        color: var(--brown);
+        font-size: 13.5px;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 980px) {
+        .tc-hero-inner,
+        .tc-perspective-grid {
+          grid-template-columns: 1fr;
+          gap: 44px;
+        }
+
+        .tc-how-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tc-slider {
+          grid-auto-columns: minmax(310px, 72%);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .tc-hero {
+          padding: 62px 22px 56px;
+        }
+
+        .tc-section {
+          padding: 60px 22px;
+        }
+
+        .tc-title {
+          font-size: clamp(44px, 13vw, 64px);
+          line-height: 0.98;
+        }
+
+        .tc-hero-text,
+        .tc-copy,
+        .tc-section-note,
+        .tc-perspective-box p {
+          font-size: 15.5px;
+          line-height: 1.75;
+        }
+
+        .tc-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .tc-btn-dark,
+        .tc-btn-light,
+        .tc-btn-soft {
+          width: 100%;
+          padding: 15px 20px;
+        }
+
+        .tc-hero-card,
+        .tc-perspective-box,
+        .tc-how-card {
+          padding: 28px 24px;
+        }
+
+        .tc-section-head {
+          align-items: flex-start;
+          flex-direction: column;
+          margin-bottom: 30px;
+        }
+
+        .tc-section-title,
+        .tc-question {
+          font-size: clamp(34px, 10vw, 48px);
+        }
+
+        .tc-slider {
+          grid-auto-columns: 86%;
+          gap: 14px;
+        }
+
+        .tc-card {
+          min-height: 290px;
+          padding: 28px 24px;
+        }
+
+        .tc-card-text {
+          font-size: clamp(24px, 7.5vw, 32px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="tc-hero">
+        <div class="tc-hero-inner">
+          <div>
+            <div class="tc-label">Community</div>
+
+            <h1 class="tc-title">The Dysregulated <em>Truth.</em></h1>
+
+            <p class="tc-copy tc-hero-text">
+              A soft place for the thoughts many mothers carry quietly - the ones
+              about exhaustion, resentment, identity, love, guilt, overstimulation,
+              and needing more support.
+            </p>
+
+            <div class="tc-actions">
+              <a class="tc-btn-dark submit-link" href="/submit-your-truth/">
+                Submit Your Truth
+              </a>
+
+              <a class="tc-btn-light ask-link" href="/ask-tiffany/">
+                Ask a Question
+              </a>
+            </div>
+          </div>
+
+          <div class="tc-hero-card">
+            <h2>No names required. No perfect words needed.</h2>
+
+            <p>
+              Submit what you are actually feeling. Selected reflections are shared
+              anonymously after review so another mother can feel less alone in what
+              she has been holding.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tc-prompt">
+        <div class="tc-section">
+          <div class="tc-prompt-panel">
+            <div class="tc-label">This month's question</div>
+
+            <h2 class="tc-question" id="currentQuestion"></h2>
+
+            <p class="tc-copy" id="questionIntro"></p>
+
+            <div class="tc-actions">
+              <a class="tc-btn-light submit-link" href="/submit-your-truth/">
+                Submit an Answer
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tc-section tc-feed">
+        <div class="tc-inner">
+          <div class="tc-section-head">
+            <div>
+              <div class="tc-label">Hear from the village</div>
+
+              <h2 class="tc-section-title">
+                Real responses, shared anonymously after <em>review.</em>
+              </h2>
+            </div>
+
+            <p class="tc-section-note">
+              These responses come from your approved current-question submissions.
+            </p>
+          </div>
+
+          <div id="responsesArea"></div>
+        </div>
+      </section>
+
+      <section class="tc-section tc-perspective">
+        <div class="tc-inner tc-perspective-grid">
+          <div>
+            <div class="tc-label">The regulated perspective</div>
+
+            <h2 class="tc-section-title">
+              A therapist's reflection on what the village is <em>carrying.</em>
+            </h2>
+          </div>
+
+          <div class="tc-perspective-box">
+            <h3 class="tc-small-title">Thoughts from Tiffany</h3>
+
+            <div id="therapistReflection"></div>
+            <div id="toolArea"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tc-section tc-how">
+        <div class="tc-inner">
+          <div class="tc-section-head">
+            <div>
+              <div class="tc-label">How it works</div>
+
+              <h2 class="tc-section-title">
+                Honest, anonymous, and reviewed with <em>care.</em>
+              </h2>
+            </div>
+          </div>
+
+          <div class="tc-how-grid">
+            <div class="tc-how-card">
+              <small>01</small>
+              <h3>Submit honestly.</h3>
+              <p>
+                Answer the prompt, share a truth, or ask a question through your
+                connected Airtable form.
+              </p>
+            </div>
+
+            <div class="tc-how-card">
+              <small>02</small>
+              <h3>It gets reviewed.</h3>
+              <p>
+                Submissions do not publish automatically. You approve what feels
+                safe and aligned to share.
+              </p>
+            </div>
+
+            <div class="tc-how-card">
+              <small>03</small>
+              <h3>The village reads it.</h3>
+              <p>
+                Approved reflections appear publicly so other mothers can feel less
+                alone.
+              </p>
+            </div>
+          </div>
+
+          <p class="tc-note">
+            This community space is educational and supportive, but it is not
+            therapy or crisis support.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const SUBMIT_LINK = "/submit-your-truth/";
+      const ASK_LINK = "/ask-tiffany/";
+
+      const fallbackData = {
+        currentQuestion: "What feels hardest to carry by the end of the day?",
+        questionIntro:
+          "You can answer with one sentence, one paragraph, or the thought you have been afraid to say out loud.",
+        therapistReflection:
+          "Nobody said the dishes. Nobody said the laundry. What you are carrying is not only the work - it is what the work costs when no one sees it happening. The mental load, the guilt, the loneliness, the resentment. These are not separate problems. They are often the same thing showing up in different clothes.\n\nThe resentment is not the problem. It is the signal. It shows up when a need has been unmet long enough to harden into something louder. You are not failing to cope. You may be coping with too much, in too much silence, for too long.",
+        toolTitle: "The Nightly Offload",
+        toolInstructions:
+          "Before bed, grab a piece of paper and spend five minutes writing down everything your brain is still holding. Not a to-do list. Not a perfect journal. Just a dump. Then fold it up and put it somewhere physical. You are telling your nervous system it does not have to hold it overnight.",
+        responses: [
+          {
+            id: "fallback-1",
+            text: "Missing myself. By nighttime, I realize the whole day went to everyone else and I barely existed in it.",
+            name: "Amanda",
+            featured: true,
+          },
+          {
+            id: "fallback-2",
+            text: "The constant noise and input. By the end of the day, I feel like my whole body is bracing.",
+            name: "S",
+            featured: false,
+          },
+          {
+            id: "fallback-3",
+            text: "The mental load. Having to remember everything for everyone is exhausting.",
+            name: "Carla",
+            featured: false,
+          },
+        ],
+      };
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function textToParagraphs(value) {
+        const parts = String(value || "")
+          .split(/\n{2,}/)
+          .map((part) => part.trim())
+          .filter(Boolean);
+
+        return parts.map((part) => `<p>${escapeHtml(part)}</p>`).join("");
+      }
+
+      function renderResponses(responses) {
+        const area = document.getElementById("responsesArea");
+
+        if (!responses || !responses.length) {
+          area.innerHTML =
+            '<div class="tc-empty">No approved responses are connected yet.</div>';
+          return;
+        }
+
+        const cards = responses
+          .map((item) => {
+            const nameMarkup = item.name
+              ? `<div class="tc-card-name">${escapeHtml(item.name)}</div>`
+              : "";
+
+            return `
+              <article class="tc-card">
+                <div>
+                  <div class="tc-quote-mark">"</div>
+                  <p class="tc-card-text">${escapeHtml(item.text)}</p>
+                </div>
+                ${nameMarkup}
+              </article>
+            `;
+          })
+          .join("");
+
+        area.innerHTML = `
+          <div class="tc-slider">${cards}</div>
+          <div class="tc-hint">Swipe or scroll to read more</div>
+        `;
+      }
+
+      function renderCommunity(data) {
+        const currentQuestion =
+          data.currentQuestion || fallbackData.currentQuestion;
+        const questionIntro = data.questionIntro || fallbackData.questionIntro;
+        const therapistReflection =
+          data.therapistReflection || fallbackData.therapistReflection;
+        const toolTitle = data.toolTitle || fallbackData.toolTitle;
+        const toolInstructions =
+          data.toolInstructions || fallbackData.toolInstructions;
+        const responses =
+          data.responses && data.responses.length
+            ? data.responses
+            : fallbackData.responses;
+
+        document.getElementById("currentQuestion").textContent = currentQuestion;
+        document.getElementById("questionIntro").textContent = questionIntro;
+        document.getElementById("therapistReflection").innerHTML =
+          textToParagraphs(therapistReflection);
+
+        document.getElementById("toolArea").innerHTML =
+          toolTitle || toolInstructions
+            ? `
+              <div class="tc-tool">
+                ${toolTitle ? `<h3>${escapeHtml(toolTitle)}</h3>` : ""}
+                ${toolInstructions ? textToParagraphs(toolInstructions) : ""}
+              </div>
+            `
+            : "";
+
+        renderResponses(responses);
+      }
+
+      async function loadCommunityData() {
+        try {
+          const response = await fetch("/.netlify/functions/community");
+          if (!response.ok) throw new Error("Community function unavailable.");
+          const data = await response.json();
+          renderCommunity(data);
+        } catch (error) {
+          renderCommunity(fallbackData);
+        }
+      }
+
+      document.querySelectorAll(".submit-link").forEach((link) => {
+        link.href = SUBMIT_LINK;
+      });
+
+      document.querySelectorAll(".ask-link").forEach((link) => {
+        link.href = ASK_LINK;
+      });
+
+      loadCommunityData();
+    </script>
+  </body>
+</html>
