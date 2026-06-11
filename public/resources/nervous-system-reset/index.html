@@ -1,0 +1,1328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nervous System Reset Worksheet | The Embodied Self</title>
+    <meta
+      name="description"
+      content="A gentle, editable nervous system reset worksheet from The Embodied Self."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #faf6f0;
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      .tes-worksheet {
+        width: 100%;
+        background: #faf6f0;
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      .tes-wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 54px 22px;
+      }
+
+      .tes-hero {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 52px;
+        margin-bottom: 0;
+      }
+
+      .tes-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #c4795a;
+        font-weight: 400;
+        margin-bottom: 22px;
+      }
+
+      .tes-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: #c4795a;
+      }
+
+      .tes-hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(44px, 6vw, 78px);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+        font-weight: 300;
+        margin: 0 0 20px;
+      }
+
+      .tes-hero h1 em,
+      .tes-title em {
+        color: #c4795a;
+        font-style: italic;
+      }
+
+      .tes-hero p {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.82;
+        max-width: 680px;
+        margin: 0;
+      }
+
+      .tes-action-bar {
+        background: #e8d9c8;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+        padding: 18px 24px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .tes-action-bar p {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .tes-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .tes-button {
+        border: 1px solid #1c1712;
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 12px 18px;
+        font-family: "Jost", sans-serif;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      .tes-button.secondary {
+        background: #faf6f0;
+        color: #1c1712;
+        border-color: rgba(28, 23, 18, 0.18);
+      }
+
+      .tes-content {
+        background: rgba(250, 246, 240, 0.92);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+        padding: 48px;
+      }
+
+      .tes-intro {
+        background: #f7f0e6;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 30px;
+        margin-bottom: 38px;
+      }
+
+      .tes-intro h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 1.05;
+        margin: 0 0 14px;
+      }
+
+      .tes-intro p {
+        color: #3a2e28;
+        font-size: 15px;
+        line-height: 1.8;
+        margin: 0 0 14px;
+      }
+
+      .tes-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-section {
+        margin-bottom: 42px;
+      }
+
+      .tes-head {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        align-items: start;
+        margin-bottom: 20px;
+      }
+
+      .tes-num {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(196, 121, 90, 0.42);
+        color: #c4795a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-style: italic;
+      }
+
+      .tes-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(31px, 4vw, 44px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        font-weight: 300;
+        margin: 0 0 8px;
+      }
+
+      .tes-desc {
+        color: #3a2e28;
+        font-size: 14.5px;
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      .tes-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tes-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tes-field label {
+        color: #8f6d5a;
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+      .tes-field input,
+      .tes-field textarea {
+        width: 100%;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        background: rgba(250, 246, 240, 0.86);
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.6;
+        padding: 14px 15px;
+        outline: none;
+        border-radius: 0;
+      }
+
+      .tes-field textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .tes-field textarea.small {
+        min-height: 86px;
+      }
+
+      .tes-field textarea.large {
+        min-height: 165px;
+      }
+
+      .tes-checks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .tes-check {
+        position: relative;
+      }
+
+      .tes-check input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-check span {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        min-height: 56px;
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        background: rgba(250, 246, 240, 0.78);
+        padding: 14px;
+        color: #3a2e28;
+        font-size: 14px;
+        line-height: 1.45;
+        cursor: pointer;
+      }
+
+      .tes-check span::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid rgba(28, 23, 18, 0.28);
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      .tes-check input:checked + span {
+        background: #e8d9c8;
+        border-color: rgba(196, 121, 90, 0.45);
+      }
+
+      .tes-check input:checked + span::before {
+        background: #c4795a;
+        border-color: #c4795a;
+        box-shadow: inset 0 0 0 3px #e8d9c8;
+      }
+
+      .tes-scale {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 7px;
+      }
+
+      .tes-scale label {
+        cursor: pointer;
+      }
+
+      .tes-scale input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-scale span {
+        min-height: 44px;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        background: rgba(250, 246, 240, 0.78);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .tes-scale input:checked + span {
+        background: #1c1712;
+        color: #faf6f0;
+        border-color: #1c1712;
+      }
+
+      .tes-practices {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .tes-practice {
+        background: #f7f0e6;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 20px;
+      }
+
+      .tes-practice h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        font-weight: 300;
+        margin: 0 0 10px;
+      }
+
+      .tes-practice p {
+        color: #3a2e28;
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .tes-closing {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 36px;
+      }
+
+      .tes-closing h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 4.4vw, 56px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-weight: 300;
+        margin: 0 0 16px;
+      }
+
+      .tes-closing h2 em {
+        color: #c4795a;
+        font-style: italic;
+      }
+
+      .tes-closing p {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 15px;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      @media (max-width: 760px) {
+        .tes-wrap {
+          padding: 0;
+        }
+
+        .tes-hero,
+        .tes-content {
+          padding: 34px 22px;
+        }
+
+        .tes-action-bar {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .tes-buttons {
+          flex-direction: column;
+        }
+
+        .tes-button {
+          width: 100%;
+        }
+
+        .two,
+        .tes-checks,
+        .tes-practices {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-head {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-scale {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tes-worksheet">
+      <div class="tes-wrap">
+        <section class="tes-hero">
+          <div class="tes-label">The Embodied Self</div>
+
+          <h1>Nervous System <em>Reset</em></h1>
+
+          <p>
+            A gentle worksheet for noticing what your body is carrying, naming
+            what state you may be in, and choosing one supportive next step back
+            toward steadiness.
+          </p>
+        </section>
+
+        <section class="tes-action-bar">
+          <p>Type directly into the worksheet. Your answers autosave in this browser.</p>
+
+          <div class="tes-buttons">
+            <button class="tes-button" type="button" id="downloadPdf">
+              Download PDF
+            </button>
+
+            <button class="tes-button secondary" type="button" id="clearWorksheet">
+              Clear Answers
+            </button>
+          </div>
+        </section>
+
+        <main class="tes-content">
+          <section class="tes-intro">
+            <h2>Before you begin</h2>
+            <p>
+              This worksheet is not about forcing yourself to calm down. It is
+              about listening to your body with more compassion and giving
+              yourself one small place to begin.
+            </p>
+            <p>
+              Move slowly. Skip anything that does not feel helpful. You do not
+              have to answer perfectly. You are simply gathering information
+              from your body, your emotions, and your nervous system.
+            </p>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">1</div>
+              <div>
+                <h2 class="tes-title">Arrive here first</h2>
+                <p class="tes-desc">
+                  Begin by noticing where you are right now. No judgment. Just
+                  information.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="date">Date</label>
+                <input id="date" name="date" type="date" data-field="date" />
+              </div>
+
+              <div class="tes-field">
+                <label for="moment">What moment brought you to this worksheet?</label>
+                <input
+                  id="moment"
+                  name="moment"
+                  type="text"
+                  data-field="moment"
+                  placeholder="Example: I feel overwhelmed, shut down, anxious..."
+                />
+              </div>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="bodyNow">What do you notice in your body right now?</label>
+              <textarea
+                id="bodyNow"
+                name="bodyNow"
+                data-field="bodyNow"
+                placeholder="Example: tight chest, heavy shoulders, stomach dropping, buzzing..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">2</div>
+              <div>
+                <h2 class="tes-title">Name your nervous system state</h2>
+                <p class="tes-desc">
+                  Choose anything that feels true. You may notice more than one
+                  state at the same time.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="stateOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="stateOther">Anything else you notice?</label>
+              <textarea
+                class="small"
+                id="stateOther"
+                name="stateOther"
+                data-field="stateOther"
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">3</div>
+              <div>
+                <h2 class="tes-title">Rate the intensity</h2>
+                <p class="tes-desc">
+                  On a scale from 1 to 10, how intense does this feel right now?
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-scale" id="intensityOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="intensityNotes">What makes it feel like that number?</label>
+              <textarea
+                id="intensityNotes"
+                name="intensityNotes"
+                data-field="intensityNotes"
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">4</div>
+              <div>
+                <h2 class="tes-title">Listen for the need underneath</h2>
+                <p class="tes-desc">
+                  Nervous system activation often points to an unmet need.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="needOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="needWords">If this feeling had words, what might it be asking for?</label>
+              <textarea
+                id="needWords"
+                name="needWords"
+                data-field="needWords"
+                placeholder="Example: I need a pause. I need reassurance. I need to stop carrying this alone."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">5</div>
+              <div>
+                <h2 class="tes-title">Choose one reset practice</h2>
+                <p class="tes-desc">
+                  Do not try to do all of them. Choose one small practice that
+                  feels possible.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-practices">
+              <div class="tes-practice">
+                <h3>Orient</h3>
+                <p>
+                  Slowly look around the room. Name 5 things you see, 4 things
+                  you feel, 3 things you hear, 2 things you smell, and 1 thing
+                  you taste.
+                </p>
+              </div>
+
+              <div class="tes-practice">
+                <h3>Exhale</h3>
+                <p>
+                  Place one hand on your chest or belly. Breathe in gently. Let
+                  your exhale be longer than your inhale. Repeat for 5 slow
+                  breaths.
+                </p>
+              </div>
+
+              <div class="tes-practice">
+                <h3>Press</h3>
+                <p>
+                  Press your feet into the floor or your hands into each other.
+                  Notice contact, pressure, strength, and support.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="chosenPractice">The reset practice I am choosing is...</label>
+              <textarea
+                class="small"
+                id="chosenPractice"
+                name="chosenPractice"
+                data-field="chosenPractice"
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">6</div>
+              <div>
+                <h2 class="tes-title">After the reset</h2>
+                <p class="tes-desc">
+                  Check back in with your body. Something may have shifted, even
+                  if it is small.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="afterBody">What do I notice in my body now?</label>
+                <textarea id="afterBody" name="afterBody" data-field="afterBody"></textarea>
+              </div>
+
+              <div class="tes-field">
+                <label for="afterEmotion">What emotion feels most present now?</label>
+                <textarea
+                  id="afterEmotion"
+                  name="afterEmotion"
+                  data-field="afterEmotion"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="afterNeed">What is one gentle next step I can take?</label>
+              <textarea
+                id="afterNeed"
+                name="afterNeed"
+                data-field="afterNeed"
+                placeholder="Example: drink water, step outside, text someone safe, pause before responding..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">7</div>
+              <div>
+                <h2 class="tes-title">A message to myself</h2>
+                <p class="tes-desc">
+                  Write one sentence you may need to hear right now.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="selfMessage">Right now, I want to remind myself...</label>
+              <textarea
+                class="large"
+                id="selfMessage"
+                name="selfMessage"
+                data-field="selfMessage"
+                placeholder="Example: I am allowed to slow down. I do not have to figure everything out right now."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-closing">
+            <h2>You do not have to force calm. <em>You can practice safety.</em></h2>
+
+            <p>
+              A nervous system reset is not about becoming perfectly regulated.
+              It is about creating enough space to hear yourself, care for
+              yourself, and choose your next step with a little more steadiness.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "tes-nervous-system-reset";
+
+      const defaultData = {
+        date: "",
+        moment: "",
+        bodyNow: "",
+        states: [],
+        stateOther: "",
+        intensity: "",
+        intensityNotes: "",
+        needs: [],
+        needWords: "",
+        chosenPractice: "",
+        afterBody: "",
+        afterEmotion: "",
+        afterNeed: "",
+        selfMessage: "",
+      };
+
+      const stateOptions = [
+        "Anxious, activated, alert, restless, or on edge",
+        "Overwhelmed, flooded, emotional, or like everything is too much",
+        "Shut down, numb, disconnected, frozen, or hard to access",
+        "Irritated, defensive, reactive, snappy, or ready to push away",
+        "Tired, depleted, heavy, foggy, or emotionally drained",
+        "Settled, present, grounded, connected, or more steady than before",
+      ];
+
+      const needOptions = [
+        "Rest",
+        "Space",
+        "Support",
+        "Safety",
+        "Connection",
+        "Boundaries",
+        "Clarity",
+        "Comfort",
+      ];
+
+      let data = { ...defaultData };
+
+      function loadSavedData() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+          if (saved) data = { ...defaultData, ...saved };
+        } catch (error) {
+          data = { ...defaultData };
+        }
+      }
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function updateField(field, value) {
+        data[field] = value;
+        saveData();
+      }
+
+      function toggleArray(field, value) {
+        const current = data[field] || [];
+        const exists = current.includes(value);
+        data[field] = exists
+          ? current.filter((item) => item !== value)
+          : [...current, value];
+        saveData();
+      }
+
+      function createCheckboxOptions(containerId, field, options) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+
+        options.forEach((option) => {
+          const label = document.createElement("label");
+          label.className = "tes-check";
+
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.checked = (data[field] || []).includes(option);
+          input.addEventListener("change", () => {
+            toggleArray(field, option);
+          });
+
+          const span = document.createElement("span");
+          span.textContent = option;
+
+          label.appendChild(input);
+          label.appendChild(span);
+          container.appendChild(label);
+        });
+      }
+
+      function createIntensityOptions() {
+        const container = document.getElementById("intensityOptions");
+        container.innerHTML = "";
+
+        for (let num = 1; num <= 10; num += 1) {
+          const label = document.createElement("label");
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = "intensity";
+          input.value = String(num);
+          input.checked = data.intensity === String(num);
+          input.addEventListener("change", () => updateField("intensity", String(num)));
+
+          const span = document.createElement("span");
+          span.textContent = String(num);
+
+          label.appendChild(input);
+          label.appendChild(span);
+          container.appendChild(label);
+        }
+      }
+
+      function hydrateFields() {
+        document.querySelectorAll("[data-field]").forEach((field) => {
+          const key = field.getAttribute("data-field");
+          field.value = data[key] || "";
+          field.addEventListener("input", (event) => {
+            updateField(key, event.target.value);
+          });
+        });
+      }
+
+      function clearWorksheet() {
+        const confirmed = window.confirm("Clear all saved answers on this worksheet?");
+        if (!confirmed) return;
+
+        localStorage.removeItem(STORAGE_KEY);
+        data = { ...defaultData };
+        renderWorksheet();
+      }
+
+      function loadHtml2Pdf() {
+        return new Promise((resolve, reject) => {
+          if (window.html2pdf) {
+            resolve(window.html2pdf);
+            return;
+          }
+
+          const script = document.createElement("script");
+          script.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+          script.onload = () => resolve(window.html2pdf);
+          script.onerror = () => reject(new Error("Could not load PDF generator."));
+          document.body.appendChild(script);
+        });
+      }
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function answer(value) {
+        const cleanValue = String(value || "").trim();
+
+        return cleanValue
+          ? escapeHtml(cleanValue).replace(/\n/g, "<br />")
+          : '<span class="blank-line"></span>';
+      }
+
+      function listItems(items) {
+        if (!items || !items.length) {
+          return '<li><span class="blank-line"></span></li>';
+        }
+
+        return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      }
+
+      async function downloadPdf() {
+        try {
+          const html2pdf = await loadHtml2Pdf();
+
+          const overlay = document.createElement("div");
+          overlay.style.position = "fixed";
+          overlay.style.inset = "0";
+          overlay.style.background = "#ffffff";
+          overlay.style.zIndex = "999999";
+          overlay.style.overflow = "auto";
+          overlay.style.padding = "30px 0";
+
+          const pdfElement = document.createElement("div");
+          pdfElement.className = "tes-pdf-only";
+
+          pdfElement.innerHTML = `
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+              .tes-pdf-only {
+                width: 8.5in;
+                background: #ffffff;
+                color: #1c1712;
+                font-family: 'Jost', Arial, sans-serif;
+                font-weight: 300;
+                line-height: 1.65;
+                padding: 0.45in;
+                margin: 0 auto;
+              }
+
+              .pdf-hero {
+                background: #1c1712;
+                color: #faf6f0;
+                padding: 38px 42px;
+                margin-bottom: 34px;
+              }
+
+              .pdf-label {
+                font-size: 10px;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: #c4795a;
+                margin-bottom: 18px;
+              }
+
+              .pdf-hero h1 {
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 54px;
+                line-height: 0.95;
+                letter-spacing: -0.03em;
+                font-weight: 300;
+                margin: 0 0 16px;
+                color: #faf6f0;
+              }
+
+              .pdf-hero em,
+              .pdf-closing em {
+                color: #c4795a;
+                font-style: italic;
+              }
+
+              .pdf-hero p {
+                color: rgba(250, 246, 240, 0.74);
+                font-size: 14px;
+                line-height: 1.7;
+                margin: 0;
+              }
+
+              .pdf-section {
+                margin-bottom: 30px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+              }
+
+              .pdf-head {
+                display: grid;
+                grid-template-columns: 42px 1fr;
+                gap: 16px;
+                align-items: start;
+                margin-bottom: 16px;
+              }
+
+              .pdf-num {
+                width: 42px;
+                height: 42px;
+                border: 1px solid rgba(196, 121, 90, 0.45);
+                color: #c4795a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 22px;
+                font-style: italic;
+              }
+
+              .pdf-section h2 {
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 33px;
+                line-height: 1.05;
+                font-weight: 300;
+                letter-spacing: -0.02em;
+                margin: 0 0 6px;
+                color: #1c1712;
+              }
+
+              .pdf-desc {
+                color: #3a2e28;
+                font-size: 13px;
+                line-height: 1.65;
+                margin: 0;
+              }
+
+              .pdf-two {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+              }
+
+              .pdf-mini-label {
+                color: #8f6d5a;
+                font-size: 9.5px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                margin: 14px 0 6px;
+              }
+
+              .pdf-answer {
+                border: 1px solid rgba(28, 23, 18, 0.14);
+                background: #fffaf5;
+                padding: 14px;
+                min-height: 52px;
+                color: #3a2e28;
+                font-size: 13px;
+                line-height: 1.65;
+                white-space: pre-wrap;
+              }
+
+              .pdf-answer.large {
+                min-height: 105px;
+              }
+
+              .blank-line {
+                display: block;
+                width: 75%;
+                height: 1px;
+                border-bottom: 1px solid rgba(28, 23, 18, 0.42);
+                margin-top: 12px;
+              }
+
+              .pdf-section ul {
+                margin: 10px 0 0;
+                padding-left: 22px;
+                color: #3a2e28;
+                font-size: 13px;
+                line-height: 1.65;
+              }
+
+              .pdf-section li {
+                margin-bottom: 7px;
+              }
+
+              .pdf-practice-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+                margin-top: 14px;
+              }
+
+              .pdf-practice {
+                background: #f7f0e6;
+                border: 1px solid rgba(28, 23, 18, 0.12);
+                padding: 16px;
+              }
+
+              .pdf-practice h3 {
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 25px;
+                font-weight: 300;
+                margin: 0 0 7px;
+                color: #1c1712;
+              }
+
+              .pdf-practice p {
+                color: #3a2e28;
+                font-size: 12px;
+                line-height: 1.6;
+                margin: 0;
+              }
+
+              .pdf-closing {
+                background: #1c1712;
+                color: #faf6f0;
+                padding: 28px;
+                margin-top: 34px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+              }
+
+              .pdf-closing h2 {
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 36px;
+                line-height: 1;
+                letter-spacing: -0.025em;
+                font-weight: 300;
+                margin: 0 0 12px;
+                color: #faf6f0;
+              }
+
+              .pdf-closing p {
+                color: rgba(250, 246, 240, 0.74);
+                margin: 0;
+                font-size: 13px;
+                line-height: 1.7;
+              }
+
+              .pdf-footer {
+                border-top: 1px solid rgba(28, 23, 18, 0.12);
+                margin-top: 26px;
+                padding-top: 16px;
+                color: #8f6d5a;
+                font-size: 10.5px;
+                line-height: 1.5;
+              }
+            </style>
+
+            <section class="pdf-hero">
+              <div class="pdf-label">The Embodied Self</div>
+              <h1>Nervous System <em>Reset</em></h1>
+              <p>
+                A gentle worksheet for noticing what your body is carrying, naming what state you may be in, and choosing one supportive next step back toward steadiness.
+              </p>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">1</div>
+                <div>
+                  <h2>Arrive here first</h2>
+                  <p class="pdf-desc">Begin by noticing where you are right now. No judgment. Just information.</p>
+                </div>
+              </div>
+
+              <div class="pdf-two">
+                <div>
+                  <div class="pdf-mini-label">Date</div>
+                  <div class="pdf-answer">${answer(data.date)}</div>
+                </div>
+
+                <div>
+                  <div class="pdf-mini-label">What moment brought you to this worksheet?</div>
+                  <div class="pdf-answer">${answer(data.moment)}</div>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">What do you notice in your body right now?</div>
+              <div class="pdf-answer large">${answer(data.bodyNow)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">2</div>
+                <div>
+                  <h2>Name your nervous system state</h2>
+                  <p class="pdf-desc">Choose anything that feels true. You may notice more than one state at the same time.</p>
+                </div>
+              </div>
+
+              <ul>${listItems(data.states)}</ul>
+
+              <div class="pdf-mini-label">Anything else you notice?</div>
+              <div class="pdf-answer">${answer(data.stateOther)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">3</div>
+                <div>
+                  <h2>Rate the intensity</h2>
+                  <p class="pdf-desc">On a scale from 1 to 10, how intense does this feel right now?</p>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">Intensity</div>
+              <div class="pdf-answer">${answer(data.intensity)}</div>
+
+              <div class="pdf-mini-label">What makes it feel like that number?</div>
+              <div class="pdf-answer">${answer(data.intensityNotes)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">4</div>
+                <div>
+                  <h2>Listen for the need underneath</h2>
+                  <p class="pdf-desc">Nervous system activation often points to an unmet need.</p>
+                </div>
+              </div>
+
+              <ul>${listItems(data.needs)}</ul>
+
+              <div class="pdf-mini-label">If this feeling had words, what might it be asking for?</div>
+              <div class="pdf-answer large">${answer(data.needWords)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">5</div>
+                <div>
+                  <h2>Choose one reset practice</h2>
+                  <p class="pdf-desc">Do not try to do all of them. Choose one small practice that feels possible.</p>
+                </div>
+              </div>
+
+              <div class="pdf-practice-grid">
+                <div class="pdf-practice">
+                  <h3>Orient</h3>
+                  <p>Slowly look around the room. Name 5 things you see, 4 things you feel, 3 things you hear, 2 things you smell, and 1 thing you taste.</p>
+                </div>
+
+                <div class="pdf-practice">
+                  <h3>Exhale</h3>
+                  <p>Place one hand on your chest or belly. Breathe in gently. Let your exhale be longer than your inhale. Repeat for 5 slow breaths.</p>
+                </div>
+
+                <div class="pdf-practice">
+                  <h3>Press</h3>
+                  <p>Press your feet into the floor or your hands into each other. Notice contact, pressure, strength, and support.</p>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">The reset practice I am choosing is...</div>
+              <div class="pdf-answer">${answer(data.chosenPractice)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">6</div>
+                <div>
+                  <h2>After the reset</h2>
+                  <p class="pdf-desc">Check back in with your body. Something may have shifted, even if it is small.</p>
+                </div>
+              </div>
+
+              <div class="pdf-two">
+                <div>
+                  <div class="pdf-mini-label">What do I notice in my body now?</div>
+                  <div class="pdf-answer">${answer(data.afterBody)}</div>
+                </div>
+
+                <div>
+                  <div class="pdf-mini-label">What emotion feels most present now?</div>
+                  <div class="pdf-answer">${answer(data.afterEmotion)}</div>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">What is one gentle next step I can take?</div>
+              <div class="pdf-answer">${answer(data.afterNeed)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">7</div>
+                <div>
+                  <h2>A message to myself</h2>
+                  <p class="pdf-desc">Write one sentence you may need to hear right now.</p>
+                </div>
+              </div>
+
+              <div class="pdf-answer large">${answer(data.selfMessage)}</div>
+            </section>
+
+            <section class="pdf-closing">
+              <h2>You do not have to force calm. <em>You can practice safety.</em></h2>
+              <p>
+                A nervous system reset is not about becoming perfectly regulated. It is about creating enough space to hear yourself, care for yourself, and choose your next step with a little more steadiness.
+              </p>
+            </section>
+
+            <footer class="pdf-footer">
+              The Embodied Self · This worksheet is for reflection and support. It is not a replacement for therapy, crisis care, or medical support.
+            </footer>
+          `;
+
+          overlay.appendChild(pdfElement);
+          document.body.appendChild(overlay);
+
+          if (document.fonts && document.fonts.ready) {
+            await document.fonts.ready;
+          }
+
+          await new Promise((resolve) => setTimeout(resolve, 600));
+
+          const options = {
+            margin: 0,
+            filename: "nervous-system-reset-worksheet.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: {
+              scale: 2,
+              useCORS: true,
+              backgroundColor: "#ffffff",
+              scrollX: 0,
+              scrollY: 0,
+            },
+            jsPDF: {
+              unit: "in",
+              format: "letter",
+              orientation: "portrait",
+            },
+            pagebreak: {
+              mode: ["css", "legacy"],
+            },
+          };
+
+          await html2pdf().set(options).from(pdfElement).save();
+
+          overlay.remove();
+        } catch (error) {
+          alert("The PDF download did not load. Please try again.");
+          console.error(error);
+
+          const existingOverlay = document.querySelector(".tes-pdf-only")?.parentElement;
+          if (existingOverlay) existingOverlay.remove();
+        }
+      }
+
+      function renderWorksheet() {
+        hydrateFields();
+        createCheckboxOptions("stateOptions", "states", stateOptions);
+        createCheckboxOptions("needOptions", "needs", needOptions);
+        createIntensityOptions();
+      }
+
+      loadSavedData();
+      renderWorksheet();
+
+      document.getElementById("downloadPdf").addEventListener("click", downloadPdf);
+      document.getElementById("clearWorksheet").addEventListener("click", clearWorksheet);
+    </script>
+  </body>
+</html>
