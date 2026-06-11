@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self-Love Check-In Worksheet | The Embodied Self</title>
+    <meta
+      name="description"
+      content="A gentle, editable self-love check-in worksheet from The Embodied Self."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #faf6f0;
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      .tes-worksheet {
+        width: 100%;
+        background: #faf6f0;
+        color: #1c1712;
+      }
+
+      .tes-wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 54px 22px;
+      }
+
+      .tes-hero {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 52px;
+        margin-bottom: 0;
+      }
+
+      .tes-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #c4795a;
+        font-weight: 400;
+        margin-bottom: 22px;
+      }
+
+      .tes-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: #c4795a;
+      }
+
+      .tes-hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(44px, 6vw, 78px);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+        font-weight: 300;
+        margin: 0 0 20px;
+      }
+
+      .tes-hero h1 em,
+      .tes-title em {
+        color: #c4795a;
+        font-style: italic;
+      }
+
+      .tes-hero p {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.82;
+        max-width: 680px;
+        margin: 0;
+      }
+
+      .tes-action-bar {
+        background: #e8d9c8;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+        padding: 18px 24px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .tes-action-bar p {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .tes-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .tes-button {
+        border: 1px solid #1c1712;
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 12px 18px;
+        font-family: "Jost", sans-serif;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      .tes-button.secondary {
+        background: #faf6f0;
+        color: #1c1712;
+        border-color: rgba(28, 23, 18, 0.18);
+      }
+
+      .tes-content {
+        background: rgba(250, 246, 240, 0.92);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+        padding: 48px;
+      }
+
+      .tes-intro {
+        background: #f7f0e6;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 30px;
+        margin-bottom: 38px;
+      }
+
+      .tes-intro h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 1.05;
+        margin: 0 0 14px;
+      }
+
+      .tes-intro p {
+        color: #3a2e28;
+        font-size: 15px;
+        line-height: 1.8;
+        margin: 0 0 14px;
+      }
+
+      .tes-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-section {
+        margin-bottom: 42px;
+      }
+
+      .tes-head {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        align-items: start;
+        margin-bottom: 20px;
+      }
+
+      .tes-num {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(196, 121, 90, 0.42);
+        color: #c4795a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-style: italic;
+      }
+
+      .tes-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(31px, 4vw, 44px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        font-weight: 300;
+        margin: 0 0 8px;
+      }
+
+      .tes-desc {
+        color: #3a2e28;
+        font-size: 14.5px;
+        line-height: 1.75;
+        margin: 0;
+      }
+
+      .tes-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tes-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tes-field label {
+        color: #8f6d5a;
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+      .tes-field input,
+      .tes-field textarea {
+        width: 100%;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        background: rgba(250, 246, 240, 0.86);
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.6;
+        padding: 14px 15px;
+        outline: none;
+        border-radius: 0;
+      }
+
+      .tes-field textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .tes-field textarea.small {
+        min-height: 86px;
+      }
+
+      .tes-field textarea.large {
+        min-height: 165px;
+      }
+
+      .tes-checks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .tes-check {
+        position: relative;
+      }
+
+      .tes-check input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-check span {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        min-height: 56px;
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        background: rgba(250, 246, 240, 0.78);
+        padding: 14px;
+        color: #3a2e28;
+        font-size: 14px;
+        line-height: 1.45;
+        cursor: pointer;
+      }
+
+      .tes-check span::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid rgba(28, 23, 18, 0.28);
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      .tes-check input:checked + span {
+        background: #e8d9c8;
+        border-color: rgba(196, 121, 90, 0.45);
+      }
+
+      .tes-check input:checked + span::before {
+        background: #c4795a;
+        border-color: #c4795a;
+        box-shadow: inset 0 0 0 3px #e8d9c8;
+      }
+
+      .tes-scale {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 7px;
+      }
+
+      .tes-scale label {
+        cursor: pointer;
+      }
+
+      .tes-scale input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-scale span {
+        min-height: 44px;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        background: rgba(250, 246, 240, 0.78);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .tes-scale input:checked + span {
+        background: #1c1712;
+        color: #faf6f0;
+        border-color: #1c1712;
+      }
+
+      .tes-closing {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 36px;
+      }
+
+      .tes-closing h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 4.4vw, 56px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-weight: 300;
+        margin: 0 0 16px;
+      }
+
+      .tes-closing h2 em {
+        color: #c4795a;
+        font-style: italic;
+      }
+
+      .tes-closing p {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 15px;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      @media (max-width: 760px) {
+        .tes-wrap {
+          padding: 0;
+        }
+
+        .tes-hero,
+        .tes-content {
+          padding: 34px 22px;
+        }
+
+        .tes-action-bar {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .tes-buttons {
+          flex-direction: column;
+        }
+
+        .tes-button {
+          width: 100%;
+        }
+
+        .two,
+        .tes-checks {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-head {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-scale {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tes-worksheet">
+      <div class="tes-wrap">
+        <section class="tes-hero">
+          <div class="tes-label">The Embodied Self</div>
+
+          <h1>Self-Love <em>Check-In</em></h1>
+
+          <p>
+            A gentle reflection worksheet for reconnecting with your needs,
+            softening your inner voice, and choosing one small act of care.
+          </p>
+        </section>
+
+        <section class="tes-action-bar">
+          <p>Type directly into the worksheet. Your answers autosave in this browser.</p>
+
+          <div class="tes-buttons">
+            <button class="tes-button" type="button" id="downloadPdf">
+              Download PDF
+            </button>
+
+            <button class="tes-button secondary" type="button" id="clearWorksheet">
+              Clear Answers
+            </button>
+          </div>
+        </section>
+
+        <main class="tes-content">
+          <section class="tes-intro">
+            <h2>Before you begin</h2>
+            <p>
+              This worksheet is not about becoming more positive or forcing
+              yourself to feel confident. It is about checking in with yourself
+              honestly and responding with more care.
+            </p>
+            <p>
+              Let your answers be imperfect. Let them change. Let this be a
+              conversation with yourself, not another assignment to get right.
+            </p>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">1</div>
+              <div>
+                <h2 class="tes-title">Arrive with yourself</h2>
+                <p class="tes-desc">Begin by noticing how you are meeting yourself today.</p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="date">Date</label>
+                <input id="date" type="date" data-field="date" />
+              </div>
+
+              <div class="tes-field">
+                <label for="currentFeeling">How am I feeling right now?</label>
+                <input
+                  id="currentFeeling"
+                  type="text"
+                  data-field="currentFeeling"
+                  placeholder="Example: tired, disconnected, hopeful, tender..."
+                />
+              </div>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="bodyNotice">What do I notice in my body, energy, or emotions?</label>
+              <textarea
+                id="bodyNotice"
+                data-field="bodyNotice"
+                placeholder="Example: I feel heavy, tense, emotional, numb, restless, open..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">2</div>
+              <div>
+                <h2 class="tes-title">Check your connection to yourself</h2>
+                <p class="tes-desc">
+                  On a scale from 1 to 10, how connected do you feel to yourself today?
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-scale" id="connectionOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="innerVoice">What has been pulling me away from myself?</label>
+              <textarea
+                id="innerVoice"
+                data-field="innerVoice"
+                placeholder="Example: people-pleasing, overthinking, caretaking, comparison, pressure, guilt..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">3</div>
+              <div>
+                <h2 class="tes-title">Notice your inner voice</h2>
+                <p class="tes-desc">Self-love begins with noticing how you speak to yourself.</p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="harshThought">A harsh or heavy thought I have been carrying is...</label>
+              <textarea
+                class="large"
+                id="harshThought"
+                data-field="harshThought"
+                placeholder="Example: I should be doing more. I am behind. I am too much. I am not enough."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">4</div>
+              <div>
+                <h2 class="tes-title">What part of me needs care?</h2>
+                <p class="tes-desc">Choose the parts of you that may need more tenderness today.</p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="partOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="partOther">Anything else?</label>
+              <textarea class="small" id="partOther" data-field="partOther"></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">5</div>
+              <div>
+                <h2 class="tes-title">Listen for the need underneath</h2>
+                <p class="tes-desc">
+                  Self-love is often less about doing more and more about honoring what is true.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="needIgnoring">What need have I been ignoring?</label>
+              <textarea
+                id="needIgnoring"
+                data-field="needIgnoring"
+                placeholder="Example: rest, reassurance, space, comfort, support, honesty..."
+              ></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="boundaryNeeded">What boundary, pause, or support might help me honor that need?</label>
+              <textarea id="boundaryNeeded" data-field="boundaryNeeded"></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="supportNeeded">What kind of support do I need right now?</label>
+              <textarea class="small" id="supportNeeded" data-field="supportNeeded"></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">6</div>
+              <div>
+                <h2 class="tes-title">Speak to yourself with compassion</h2>
+                <p class="tes-desc">
+                  Try responding to yourself the way you might respond to someone you deeply love.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="loveStatement">If someone I loved felt this way, I would tell them...</label>
+              <textarea id="loveStatement" data-field="loveStatement"></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="reframe">A kinder truth I can practice believing is...</label>
+              <textarea
+                id="reframe"
+                data-field="reframe"
+                placeholder="Example: I am allowed to be human. I do not have to earn care. I can move slowly."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">7</div>
+              <div>
+                <h2 class="tes-title">Choose one small act of self-love</h2>
+                <p class="tes-desc">Choose something realistic and kind, not something else to perfect.</p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="practiceOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="chosenPractice">The act of self-love I am choosing today is...</label>
+              <textarea id="chosenPractice" data-field="chosenPractice"></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">8</div>
+              <div>
+                <h2 class="tes-title">Leave yourself with a reminder</h2>
+                <p class="tes-desc">Write one promise or reminder you want to carry with you.</p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="promise">One promise I can make to myself today is...</label>
+              <textarea id="promise" data-field="promise"></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="reminder">One thing I want to remember is...</label>
+              <textarea class="large" id="reminder" data-field="reminder"></textarea>
+            </div>
+          </section>
+
+          <section class="tes-closing">
+            <h2>Self-love is not perfection. <em>It is relationship.</em></h2>
+
+            <p>
+              You do not have to become a different person to be worthy of care.
+              You can begin by listening to yourself, believing yourself, and
+              choosing one small act of kindness today.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "tes-self-love-check-in";
+
+      const defaultData = {
+        date: "",
+        currentFeeling: "",
+        bodyNotice: "",
+        selfConnection: "",
+        innerVoice: "",
+        harshThought: "",
+        parts: [],
+        partOther: "",
+        needIgnoring: "",
+        boundaryNeeded: "",
+        supportNeeded: "",
+        loveStatement: "",
+        reframe: "",
+        practices: [],
+        chosenPractice: "",
+        promise: "",
+        reminder: "",
+      };
+
+      const partOptions = [
+        "The part of me that feels tired",
+        "The part of me that feels not enough",
+        "The part of me that keeps performing okay",
+        "The part of me that wants to be seen",
+        "The part of me that needs rest",
+        "The part of me that feels protective or guarded",
+        "The part of me that misses joy",
+        "The part of me that wants softness",
+      ];
+
+      const practiceOptions = [
+        "Rest without earning it",
+        "Eat or drink something nourishing",
+        "Move gently or stretch",
+        "Ask for support",
+        "Say no or pause before saying yes",
+        "Write, cry, or express what I feel",
+        "Do something beautiful or playful",
+        "Speak to myself with more compassion",
+      ];
+
+      let data = { ...defaultData };
+
+      function loadSavedData() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+          if (saved) data = { ...defaultData, ...saved };
+        } catch (error) {
+          data = { ...defaultData };
+        }
+      }
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function updateField(field, value) {
+        data[field] = value;
+        saveData();
+      }
+
+      function toggleArray(field, value) {
+        const current = data[field] || [];
+        const exists = current.includes(value);
+        data[field] = exists
+          ? current.filter((item) => item !== value)
+          : [...current, value];
+        saveData();
+      }
+
+      function createCheckboxOptions(containerId, field, options) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = "";
+
+        options.forEach((option) => {
+          const label = document.createElement("label");
+          label.className = "tes-check";
+
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.checked = (data[field] || []).includes(option);
+          input.addEventListener("change", () => toggleArray(field, option));
+
+          const span = document.createElement("span");
+          span.textContent = option;
+
+          label.appendChild(input);
+          label.appendChild(span);
+          container.appendChild(label);
+        });
+      }
+
+      function createConnectionOptions() {
+        const container = document.getElementById("connectionOptions");
+        container.innerHTML = "";
+
+        for (let num = 1; num <= 10; num += 1) {
+          const label = document.createElement("label");
+          const input = document.createElement("input");
+          input.type = "radio";
+          input.name = "selfConnection";
+          input.value = String(num);
+          input.checked = data.selfConnection === String(num);
+          input.addEventListener("change", () => updateField("selfConnection", String(num)));
+
+          const span = document.createElement("span");
+          span.textContent = String(num);
+
+          label.appendChild(input);
+          label.appendChild(span);
+          container.appendChild(label);
+        }
+      }
+
+      function hydrateFields() {
+        document.querySelectorAll("[data-field]").forEach((field) => {
+          const key = field.getAttribute("data-field");
+          field.value = data[key] || "";
+          field.addEventListener("input", (event) => {
+            updateField(key, event.target.value);
+          });
+        });
+      }
+
+      function clearWorksheet() {
+        const confirmed = window.confirm("Clear all saved answers on this worksheet?");
+        if (!confirmed) return;
+
+        localStorage.removeItem(STORAGE_KEY);
+        data = { ...defaultData };
+        renderWorksheet();
+      }
+
+      function loadHtml2Pdf() {
+        return new Promise((resolve, reject) => {
+          if (window.html2pdf) {
+            resolve(window.html2pdf);
+            return;
+          }
+
+          const script = document.createElement("script");
+          script.src =
+            "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+          script.onload = () => resolve(window.html2pdf);
+          script.onerror = () => reject(new Error("Could not load PDF generator."));
+          document.body.appendChild(script);
+        });
+      }
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function answer(value) {
+        const cleanValue = String(value || "").trim();
+        return cleanValue
+          ? escapeHtml(cleanValue).replace(/\n/g, "<br />")
+          : '<span class="blank-line"></span>';
+      }
+
+      function listItems(items) {
+        if (!items || !items.length) {
+          return '<li><span class="blank-line"></span></li>';
+        }
+
+        return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      }
+
+      async function downloadPdf() {
+        try {
+          const html2pdf = await loadHtml2Pdf();
+
+          const overlay = document.createElement("div");
+          overlay.style.position = "fixed";
+          overlay.style.inset = "0";
+          overlay.style.background = "#ffffff";
+          overlay.style.zIndex = "999999";
+          overlay.style.overflow = "auto";
+          overlay.style.padding = "30px 0";
+
+          const pdfElement = document.createElement("div");
+          pdfElement.className = "tes-pdf-only";
+
+          pdfElement.innerHTML = `
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+              .tes-pdf-only {
+                width: 8.5in;
+                background: #ffffff;
+                color: #1c1712;
+                font-family: 'Jost', Arial, sans-serif;
+                font-weight: 300;
+                line-height: 1.65;
+                padding: 0.45in;
+                margin: 0 auto;
+              }
+
+              .pdf-hero {
+                background: #1c1712;
+                color: #faf6f0;
+                padding: 38px 42px;
+                margin-bottom: 34px;
+              }
+
+              .pdf-label {
+                font-size: 10px;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: #c4795a;
+                margin-bottom: 18px;
+              }
+
+              .pdf-hero h1 {
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 54px;
+                line-height: 0.95;
+                letter-spacing: -0.03em;
+                font-weight: 300;
+                margin: 0 0 16px;
+                color: #faf6f0;
+              }
+
+              .pdf-hero em,
+              .pdf-closing em {
+                color: #c4795a;
+                font-style: italic;
+              }
+
+              .pdf-hero p {
+                color: rgba(250, 246, 240, 0.74);
+                font-size: 14px;
+                line-height: 1.7;
+                margin: 0;
+              }
+
+              .pdf-section {
+                margin-bottom: 30px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+              }
+
+              .pdf-head {
+                display: grid;
+                grid-template-columns: 42px 1fr;
+                gap: 16px;
+                align-items: start;
+                margin-bottom: 16px;
+              }
+
+              .pdf-num {
+                width: 42px;
+                height: 42px;
+                border: 1px solid rgba(196, 121, 90, 0.45);
+                color: #c4795a;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 22px;
+                font-style: italic;
+              }
+
+              .pdf-section h2 {
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 33px;
+                line-height: 1.05;
+                font-weight: 300;
+                letter-spacing: -0.02em;
+                margin: 0 0 6px;
+                color: #1c1712;
+              }
+
+              .pdf-desc {
+                color: #3a2e28;
+                font-size: 13px;
+                line-height: 1.65;
+                margin: 0;
+              }
+
+              .pdf-two {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+              }
+
+              .pdf-mini-label {
+                color: #8f6d5a;
+                font-size: 9.5px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                margin: 14px 0 6px;
+              }
+
+              .pdf-answer {
+                border: 1px solid rgba(28, 23, 18, 0.14);
+                background: #fffaf5;
+                padding: 14px;
+                min-height: 52px;
+                color: #3a2e28;
+                font-size: 13px;
+                line-height: 1.65;
+                white-space: pre-wrap;
+              }
+
+              .pdf-answer.large {
+                min-height: 105px;
+              }
+
+              .blank-line {
+                display: block;
+                width: 75%;
+                height: 1px;
+                border-bottom: 1px solid rgba(28, 23, 18, 0.42);
+                margin-top: 12px;
+              }
+
+              .pdf-section ul {
+                margin: 10px 0 0;
+                padding-left: 22px;
+                color: #3a2e28;
+                font-size: 13px;
+                line-height: 1.65;
+              }
+
+              .pdf-section li {
+                margin-bottom: 7px;
+              }
+
+              .pdf-closing {
+                background: #1c1712;
+                color: #faf6f0;
+                padding: 28px;
+                margin-top: 34px;
+                break-inside: avoid;
+                page-break-inside: avoid;
+              }
+
+              .pdf-closing h2 {
+                font-family: 'Cormorant Garamond', Georgia, serif;
+                font-size: 36px;
+                line-height: 1;
+                letter-spacing: -0.025em;
+                font-weight: 300;
+                margin: 0 0 12px;
+                color: #faf6f0;
+              }
+
+              .pdf-closing p {
+                color: rgba(250, 246, 240, 0.74);
+                margin: 0;
+                font-size: 13px;
+                line-height: 1.7;
+              }
+
+              .pdf-footer {
+                border-top: 1px solid rgba(28, 23, 18, 0.12);
+                margin-top: 26px;
+                padding-top: 16px;
+                color: #8f6d5a;
+                font-size: 10.5px;
+                line-height: 1.5;
+              }
+            </style>
+
+            <section class="pdf-hero">
+              <div class="pdf-label">The Embodied Self</div>
+              <h1>Self-Love <em>Check-In</em></h1>
+              <p>
+                A gentle reflection worksheet for reconnecting with your needs, softening your inner voice, and choosing one small act of care.
+              </p>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">1</div>
+                <div>
+                  <h2>Arrive with yourself</h2>
+                  <p class="pdf-desc">Begin by noticing how you are meeting yourself today.</p>
+                </div>
+              </div>
+
+              <div class="pdf-two">
+                <div>
+                  <div class="pdf-mini-label">Date</div>
+                  <div class="pdf-answer">${answer(data.date)}</div>
+                </div>
+
+                <div>
+                  <div class="pdf-mini-label">How am I feeling right now?</div>
+                  <div class="pdf-answer">${answer(data.currentFeeling)}</div>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">What do I notice in my body, energy, or emotions?</div>
+              <div class="pdf-answer large">${answer(data.bodyNotice)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">2</div>
+                <div>
+                  <h2>Check your connection to yourself</h2>
+                  <p class="pdf-desc">On a scale from 1 to 10, how connected do you feel to yourself today?</p>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">Connection rating</div>
+              <div class="pdf-answer">${answer(data.selfConnection)}</div>
+
+              <div class="pdf-mini-label">What has been pulling me away from myself?</div>
+              <div class="pdf-answer large">${answer(data.innerVoice)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">3</div>
+                <div>
+                  <h2>Notice your inner voice</h2>
+                  <p class="pdf-desc">Self-love begins with noticing how you speak to yourself.</p>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">A harsh or heavy thought I have been carrying is...</div>
+              <div class="pdf-answer large">${answer(data.harshThought)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">4</div>
+                <div>
+                  <h2>What part of me needs care?</h2>
+                  <p class="pdf-desc">Choose the parts of you that may need more tenderness today.</p>
+                </div>
+              </div>
+
+              <ul>${listItems(data.parts)}</ul>
+
+              <div class="pdf-mini-label">Anything else?</div>
+              <div class="pdf-answer">${answer(data.partOther)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">5</div>
+                <div>
+                  <h2>Listen for the need underneath</h2>
+                  <p class="pdf-desc">Self-love is often less about doing more and more about honoring what is true.</p>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">What need have I been ignoring?</div>
+              <div class="pdf-answer large">${answer(data.needIgnoring)}</div>
+
+              <div class="pdf-mini-label">What boundary, pause, or support might help me honor that need?</div>
+              <div class="pdf-answer large">${answer(data.boundaryNeeded)}</div>
+
+              <div class="pdf-mini-label">What kind of support do I need right now?</div>
+              <div class="pdf-answer">${answer(data.supportNeeded)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">6</div>
+                <div>
+                  <h2>Speak to yourself with compassion</h2>
+                  <p class="pdf-desc">Try responding to yourself the way you might respond to someone you deeply love.</p>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">If someone I loved felt this way, I would tell them...</div>
+              <div class="pdf-answer large">${answer(data.loveStatement)}</div>
+
+              <div class="pdf-mini-label">A kinder truth I can practice believing is...</div>
+              <div class="pdf-answer large">${answer(data.reframe)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">7</div>
+                <div>
+                  <h2>Choose one small act of self-love</h2>
+                  <p class="pdf-desc">Choose something realistic and kind, not something else to perfect.</p>
+                </div>
+              </div>
+
+              <ul>${listItems(data.practices)}</ul>
+
+              <div class="pdf-mini-label">The act of self-love I am choosing today is...</div>
+              <div class="pdf-answer large">${answer(data.chosenPractice)}</div>
+            </section>
+
+            <section class="pdf-section">
+              <div class="pdf-head">
+                <div class="pdf-num">8</div>
+                <div>
+                  <h2>Leave yourself with a reminder</h2>
+                  <p class="pdf-desc">Write one promise or reminder you want to carry with you.</p>
+                </div>
+              </div>
+
+              <div class="pdf-mini-label">One promise I can make to myself today is...</div>
+              <div class="pdf-answer large">${answer(data.promise)}</div>
+
+              <div class="pdf-mini-label">One thing I want to remember is...</div>
+              <div class="pdf-answer large">${answer(data.reminder)}</div>
+            </section>
+
+            <section class="pdf-closing">
+              <h2>Self-love is not perfection. <em>It is relationship.</em></h2>
+              <p>
+                You do not have to become a different person to be worthy of care. You can begin by listening to yourself, believing yourself, and choosing one small act of kindness today.
+              </p>
+            </section>
+
+            <footer class="pdf-footer">
+              The Embodied Self · This worksheet is for reflection and support. It is not a replacement for therapy, crisis care, or medical support.
+            </footer>
+          `;
+
+          overlay.appendChild(pdfElement);
+          document.body.appendChild(overlay);
+
+          if (document.fonts && document.fonts.ready) {
+            await document.fonts.ready;
+          }
+
+          await new Promise((resolve) => setTimeout(resolve, 600));
+
+          const options = {
+            margin: 0,
+            filename: "self-love-check-in-worksheet.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: {
+              scale: 2,
+              useCORS: true,
+              backgroundColor: "#ffffff",
+              scrollX: 0,
+              scrollY: 0,
+            },
+            jsPDF: {
+              unit: "in",
+              format: "letter",
+              orientation: "portrait",
+            },
+            pagebreak: {
+              mode: ["css", "legacy"],
+            },
+          };
+
+          await html2pdf().set(options).from(pdfElement).save();
+
+          overlay.remove();
+        } catch (error) {
+          alert("The PDF download did not load. Please try again.");
+          console.error(error);
+
+          const existingOverlay = document.querySelector(".tes-pdf-only")?.parentElement;
+          if (existingOverlay) existingOverlay.remove();
+        }
+      }
+
+      function renderWorksheet() {
+        hydrateFields();
+        createCheckboxOptions("partOptions", "parts", partOptions);
+        createCheckboxOptions("practiceOptions", "practices", practiceOptions);
+        createConnectionOptions();
+      }
+
+      loadSavedData();
+      renderWorksheet();
+
+      document.getElementById("downloadPdf").addEventListener("click", downloadPdf);
+      document.getElementById("clearWorksheet").addEventListener("click", clearWorksheet);
+    </script>
+  </body>
+</html>
