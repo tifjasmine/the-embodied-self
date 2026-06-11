@@ -342,6 +342,7 @@ function Contact() {
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
+          action="/thank-you/"
         >
           <input type="hidden" name="form-name" value="contact" />
           <p className="hiddenField">
@@ -371,10 +372,6 @@ function Contact() {
           <button className="button dark" type="submit">
             Send Message
           </button>
-
-          <p className="formNote">
-            Your message will be sent through Netlify Forms.
-          </p>
         </form>
       </div>
     </section>
