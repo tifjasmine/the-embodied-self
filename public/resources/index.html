@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources | The Embodied Self</title>
+    <meta
+      name="description"
+      content="Worksheets, reflections, and articles from The Embodied Self for self-love, nervous system support, burnout, boundaries, and somatic healing."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --clay-soft: #b89a87;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+        --muted: #8f6d5a;
+        --line: rgba(28, 23, 18, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .tes-resources {
+        width: 100%;
+        overflow: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+      }
+
+      .tr-page {
+        width: 100%;
+      }
+
+      .tr-section {
+        padding: 92px 6vw;
+      }
+
+      .tr-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .tr-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--clay);
+        margin-bottom: 24px;
+        font-weight: 400;
+      }
+
+      .tr-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--clay);
+        flex-shrink: 0;
+      }
+
+      .tr-label-light {
+        color: var(--clay-soft);
+      }
+
+      .tr-label-light::after {
+        background: var(--clay-soft);
+      }
+
+      .tr-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(50px, 6.4vw, 92px);
+        font-weight: 300;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: var(--charcoal);
+        max-width: 930px;
+      }
+
+      .tr-title em,
+      .tr-section-title em,
+      .tr-cta-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tr-copy {
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.85;
+        font-weight: 300;
+      }
+
+      .tr-btn-dark,
+      .tr-btn-light,
+      .tr-card-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 26px;
+        font-family: "Jost", sans-serif;
+        font-size: 10.5px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 400;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .tr-btn-dark {
+        background: var(--charcoal);
+        color: var(--cream) !important;
+        border: 1px solid var(--charcoal);
+      }
+
+      .tr-btn-dark:hover {
+        background: var(--brown);
+        border-color: var(--brown);
+        transform: translateY(-1px);
+      }
+
+      .tr-btn-light,
+      .tr-card-link {
+        background: var(--cream);
+        color: var(--charcoal) !important;
+        border: 1px solid rgba(28, 23, 18, 0.18);
+      }
+
+      .tr-btn-light:hover,
+      .tr-card-link:hover {
+        background: var(--charcoal);
+        color: var(--cream) !important;
+        border-color: var(--charcoal);
+        transform: translateY(-1px);
+      }
+
+      .tr-card-link.is-disabled {
+        opacity: 0.58;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      .tr-hero {
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.11), transparent 38%),
+          radial-gradient(ellipse at 88% 12%, rgba(122, 139, 110, 0.09), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+        padding: 98px 6vw 74px;
+      }
+
+      .tr-hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 0.68fr;
+        gap: 70px;
+        align-items: end;
+      }
+
+      .tr-hero-text {
+        max-width: 700px;
+        margin-top: 28px;
+      }
+
+      .tr-hero-actions {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 36px;
+      }
+
+      .tr-hero-card {
+        background: rgba(250, 246, 240, 0.76);
+        border: 1px solid var(--line);
+        padding: 36px 34px;
+        box-shadow: 0 18px 52px rgba(28, 23, 18, 0.06);
+      }
+
+      .tr-hero-card h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 3vw, 44px);
+        font-weight: 300;
+        line-height: 1.04;
+        letter-spacing: -0.025em;
+        margin-bottom: 16px;
+      }
+
+      .tr-hero-card p {
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--brown);
+      }
+
+      .tr-tabs {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .tr-tab {
+        display: inline-flex;
+        padding: 9px 14px;
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        background: rgba(250, 246, 240, 0.58);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 400;
+      }
+
+      .tr-featured {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .tr-featured-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 72px;
+        align-items: center;
+      }
+
+      .tr-featured-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(38px, 5vw, 72px);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        font-weight: 300;
+        color: var(--cream);
+      }
+
+      .tr-featured-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tr-featured-panel {
+        background: rgba(250, 246, 240, 0.06);
+        border: 1px solid rgba(250, 246, 240, 0.12);
+        padding: 36px 34px;
+      }
+
+      .tr-featured-panel p {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 15.5px;
+        line-height: 1.85;
+        margin-bottom: 28px;
+      }
+
+      .tr-featured-panel .tr-btn-light {
+        background: var(--cream);
+        color: var(--charcoal) !important;
+        border-color: var(--cream);
+      }
+
+      .tr-featured-panel .tr-btn-light:hover {
+        background: var(--tan);
+        border-color: var(--tan);
+      }
+
+      .tr-resources {
+        background: var(--cream-deep);
+      }
+
+      .tr-section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 28px;
+        flex-wrap: wrap;
+        margin-bottom: 46px;
+      }
+
+      .tr-section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(38px, 4.8vw, 68px);
+        font-weight: 300;
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        color: var(--charcoal);
+        max-width: 760px;
+      }
+
+      .tr-section-note {
+        max-width: 420px;
+        color: var(--brown);
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .tr-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .tr-card {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        padding: 34px 30px;
+        min-height: 360px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 16px 42px rgba(28, 23, 18, 0.04);
+      }
+
+      .tr-card::before {
+        content: "";
+        position: absolute;
+        right: -50px;
+        top: -50px;
+        width: 150px;
+        height: 150px;
+        border-radius: 999px;
+        background: rgba(196, 121, 90, 0.07);
+      }
+
+      .tr-card-top {
+        position: relative;
+        z-index: 1;
+      }
+
+      .tr-card-meta {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+
+      .tr-chip {
+        display: inline-flex;
+        padding: 7px 10px;
+        background: var(--cream-deep);
+        border: 1px solid rgba(28, 23, 18, 0.08);
+        color: var(--muted);
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+
+      .tr-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(30px, 2.8vw, 42px);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        color: var(--charcoal);
+        font-weight: 300;
+        margin-bottom: 16px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .tr-card p {
+        color: var(--brown);
+        font-size: 14.5px;
+        line-height: 1.76;
+        position: relative;
+        z-index: 1;
+      }
+
+      .tr-card-bottom {
+        margin-top: auto;
+        padding-top: 28px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .tr-articles {
+        background: var(--cream);
+      }
+
+      .tr-article-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .tr-article {
+        display: grid;
+        grid-template-columns: 190px 1fr auto;
+        gap: 28px;
+        align-items: center;
+        background: var(--cream-deep);
+        border: 1px solid var(--line);
+        padding: 28px 30px;
+      }
+
+      .tr-article-category {
+        color: var(--clay);
+        font-size: 10px;
+        letter-spacing: 0.17em;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+
+      .tr-article h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(28px, 2.8vw, 42px);
+        line-height: 1.04;
+        letter-spacing: -0.025em;
+        font-weight: 300;
+        color: var(--charcoal);
+        margin-bottom: 8px;
+      }
+
+      .tr-article p {
+        color: var(--brown);
+        font-size: 14.5px;
+        line-height: 1.72;
+      }
+
+      .tr-note {
+        background: var(--tan);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tr-note::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 92% 14%, rgba(196, 121, 90, 0.15), transparent 45%),
+          radial-gradient(ellipse at 8% 86%, rgba(122, 139, 110, 0.12), transparent 50%);
+        pointer-events: none;
+      }
+
+      .tr-note-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .tr-note-box {
+        background: rgba(250, 246, 240, 0.7);
+        border: 1px solid var(--line);
+        padding: 34px 32px;
+        backdrop-filter: blur(8px);
+      }
+
+      .tr-note-box p {
+        color: var(--brown);
+        font-size: 15.5px;
+        line-height: 1.82;
+      }
+
+      .tr-cta {
+        background: var(--charcoal);
+        color: var(--cream);
+        text-align: center;
+        padding: 96px 6vw;
+      }
+
+      .tr-cta-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .tr-cta-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(40px, 5.2vw, 76px);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        font-weight: 300;
+        color: var(--cream);
+        margin-bottom: 24px;
+      }
+
+      .tr-cta-text {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.85;
+        margin: 0 auto 38px;
+        max-width: 650px;
+      }
+
+      .tr-cta-actions {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .tr-cta .tr-btn-light {
+        background: var(--cream);
+        color: var(--charcoal) !important;
+        border-color: var(--cream);
+      }
+
+      .tr-cta .tr-btn-light:hover {
+        background: var(--tan);
+        border-color: var(--tan);
+      }
+
+      @media (max-width: 1050px) {
+        .tr-hero-inner,
+        .tr-featured-grid,
+        .tr-note-inner {
+          grid-template-columns: 1fr;
+          gap: 42px;
+        }
+
+        .tr-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tr-article {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .tr-hero {
+          padding: 70px 22px 56px;
+        }
+
+        .tr-section,
+        .tr-cta {
+          padding: 64px 22px;
+        }
+
+        .tr-label {
+          font-size: 10px;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
+
+        .tr-label::after {
+          width: 22px;
+        }
+
+        .tr-title {
+          font-size: clamp(50px, 15vw, 72px);
+        }
+
+        .tr-copy,
+        .tr-hero-text,
+        .tr-section-note,
+        .tr-cta-text {
+          font-size: 15.5px;
+          line-height: 1.75;
+        }
+
+        .tr-hero-actions,
+        .tr-cta-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .tr-btn-dark,
+        .tr-btn-light,
+        .tr-card-link {
+          width: 100%;
+          padding: 15px 20px;
+        }
+
+        .tr-hero-card,
+        .tr-featured-panel,
+        .tr-card,
+        .tr-article,
+        .tr-note-box {
+          padding: 30px 24px;
+        }
+
+        .tr-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tr-card {
+          min-height: auto;
+        }
+
+        .tr-section-head {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tes-resources">
+      <main class="tr-page">
+        <section class="tr-hero">
+          <div class="tr-hero-inner">
+            <div>
+              <div class="tr-label">Resources</div>
+
+              <h1 class="tr-title">
+                Support for the moments <em>in between.</em>
+              </h1>
+
+              <p class="tr-copy tr-hero-text">
+                A growing library of worksheets, reflections, and articles to
+                help you reconnect with yourself outside of session — gently,
+                honestly, and at your own pace.
+              </p>
+
+              <div class="tr-hero-actions">
+                <a class="tr-btn-dark" href="#worksheets">Browse Worksheets</a>
+                <a class="tr-btn-light" href="#articles">Read Articles</a>
+              </div>
+            </div>
+
+            <div class="tr-hero-card">
+              <h2>Come back to yourself, one small practice at a time.</h2>
+
+              <p>
+                These resources are not meant to replace therapy. They are here
+                to offer reflection, grounding, and support as you practice
+                listening to yourself in everyday life.
+              </p>
+
+              <div class="tr-tabs">
+                <span class="tr-tab">Self-love</span>
+                <span class="tr-tab">Burnout</span>
+                <span class="tr-tab">Boundaries</span>
+                <span class="tr-tab">Somatic healing</span>
+                <span class="tr-tab">Nervous system</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tr-section tr-featured">
+          <div class="tr-inner tr-featured-grid">
+            <div>
+              <div class="tr-label tr-label-light">Start here</div>
+
+              <h2 class="tr-featured-title">
+                Not sure what you need? Begin with what feels
+                <em>present.</em>
+              </h2>
+            </div>
+
+            <div class="tr-featured-panel">
+              <p>
+                Choose the resource that matches what you are noticing right
+                now: overwhelm, shutdown, self-criticism, people-pleasing,
+                resentment, disconnection, or simply the desire to feel more
+                grounded in your own body.
+              </p>
+
+              <a class="tr-btn-light" href="#worksheets">Explore Resources</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="tr-section tr-resources" id="worksheets">
+          <div class="tr-inner">
+            <div class="tr-section-head">
+              <div>
+                <div class="tr-label">PDF worksheets</div>
+
+                <h2 class="tr-section-title">
+                  Reflection tools for self-love, regulation, and coming back to
+                  your <em>body.</em>
+                </h2>
+              </div>
+
+              <p class="tr-section-note">
+                More downloadable worksheets can be added here as they are
+                created.
+              </p>
+            </div>
+
+            <div class="tr-grid">
+              <article class="tr-card">
+                <div class="tr-card-top">
+                  <div class="tr-card-meta">
+                    <span class="tr-chip">PDF Worksheet</span>
+                    <span class="tr-chip">Regulation</span>
+                  </div>
+                  <h3>Nervous System Reset</h3>
+                  <p>
+                    A simple grounding worksheet to help you notice what state
+                    your nervous system is in and choose one next supportive
+                    step.
+                  </p>
+                </div>
+                <div class="tr-card-bottom">
+                  <a class="tr-card-link" href="/resources/nervous-system-reset/">
+                    Open Worksheet
+                  </a>
+                </div>
+              </article>
+
+              <article class="tr-card">
+                <div class="tr-card-top">
+                  <div class="tr-card-meta">
+                    <span class="tr-chip">PDF Worksheet</span>
+                    <span class="tr-chip">Self-love</span>
+                  </div>
+                  <h3>Self-Love Check-In</h3>
+                  <p>
+                    A reflection guide for reconnecting with your needs, your
+                    inner voice, and the parts of you that may need more
+                    compassion.
+                  </p>
+                </div>
+                <div class="tr-card-bottom">
+                  <a class="tr-card-link" href="/resources/self-love-check-in/">
+                    Open Worksheet
+                  </a>
+                </div>
+              </article>
+
+              <article class="tr-card">
+                <div class="tr-card-top">
+                  <div class="tr-card-meta">
+                    <span class="tr-chip">PDF Worksheet</span>
+                    <span class="tr-chip">Mindset</span>
+                  </div>
+                  <h3>Inner Critic Reflection</h3>
+                  <p>
+                    A gentle worksheet for noticing harsh inner thoughts and
+                    beginning to respond with more honesty and care.
+                  </p>
+                </div>
+                <div class="tr-card-bottom">
+                  <a class="tr-card-link" href="/resources/inner-critic-reflection/">
+                    Open Worksheet
+                  </a>
+                </div>
+              </article>
+
+              <article class="tr-card">
+                <div class="tr-card-top">
+                  <div class="tr-card-meta">
+                    <span class="tr-chip">PDF Worksheet</span>
+                    <span class="tr-chip">Boundaries</span>
+                  </div>
+                  <h3>Boundaries &amp; Burnout</h3>
+                  <p>
+                    A worksheet to help you identify where you may be
+                    overextending, over-explaining, or carrying too much.
+                  </p>
+                </div>
+                <div class="tr-card-bottom">
+                  <span class="tr-card-link is-disabled">Coming Soon</span>
+                </div>
+              </article>
+
+              <article class="tr-card">
+                <div class="tr-card-top">
+                  <div class="tr-card-meta">
+                    <span class="tr-chip">PDF Worksheet</span>
+                    <span class="tr-chip">Somatic</span>
+                  </div>
+                  <h3>Come Back to Your Body</h3>
+                  <p>
+                    A body-based reflection for noticing sensations, emotions,
+                    tension, and what your body may be trying to communicate.
+                  </p>
+                </div>
+                <div class="tr-card-bottom">
+                  <span class="tr-card-link is-disabled">Coming Soon</span>
+                </div>
+              </article>
+
+              <article class="tr-card">
+                <div class="tr-card-top">
+                  <div class="tr-card-meta">
+                    <span class="tr-chip">PDF Worksheet</span>
+                    <span class="tr-chip">Patterns</span>
+                  </div>
+                  <h3>The Overfunctioning Audit</h3>
+                  <p>
+                    A supportive guide for noticing where you feel responsible
+                    for everyone else while quietly abandoning yourself.
+                  </p>
+                </div>
+                <div class="tr-card-bottom">
+                  <span class="tr-card-link is-disabled">Coming Soon</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="tr-section tr-articles" id="articles">
+          <div class="tr-inner">
+            <div class="tr-section-head">
+              <div>
+                <div class="tr-label">Articles</div>
+
+                <h2 class="tr-section-title">
+                  Written reflections for the healing process.
+                </h2>
+              </div>
+
+              <p class="tr-section-note">
+                Use this section for blog posts, essays, reflections, or
+                educational articles you write over time.
+              </p>
+            </div>
+
+            <div class="tr-article-list">
+              <article class="tr-article">
+                <div class="tr-article-category">Burnout</div>
+                <div>
+                  <h3>Am I Burned Out or Just Holding Too Much?</h3>
+                  <p>
+                    A reflection on emotional overload, nervous system
+                    exhaustion, and the difference between needing rest and
+                    needing deeper support.
+                  </p>
+                </div>
+                <span class="tr-card-link is-disabled">Coming Soon</span>
+              </article>
+
+              <article class="tr-article">
+                <div class="tr-article-category">Self-love</div>
+                <div>
+                  <h3>What It Means to Come Home to Yourself</h3>
+                  <p>
+                    A gentle exploration of self-trust, inner safety, and
+                    reconnecting with the parts of you that have been quiet for
+                    too long.
+                  </p>
+                </div>
+                <span class="tr-card-link is-disabled">Coming Soon</span>
+              </article>
+
+              <article class="tr-article">
+                <div class="tr-article-category">Emotional overwhelm</div>
+                <div>
+                  <h3>When You Look Fine but Feel Far From Yourself</h3>
+                  <p>
+                    For the woman who is functioning on the outside but feels
+                    disconnected, resentful, anxious, or exhausted inside.
+                  </p>
+                </div>
+                <span class="tr-card-link is-disabled">Coming Soon</span>
+              </article>
+
+              <article class="tr-article">
+                <div class="tr-article-category">Somatic healing</div>
+                <div>
+                  <h3>Your Body May Be Telling the Truth First</h3>
+                  <p>
+                    A mind-body reflection on tension, shutdown, activation, and
+                    learning to listen to what your body has been holding.
+                  </p>
+                </div>
+                <span class="tr-card-link is-disabled">Coming Soon</span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="tr-section tr-note">
+          <div class="tr-inner tr-note-inner">
+            <div>
+              <div class="tr-label">A gentle note</div>
+
+              <h2 class="tr-section-title">
+                Resources can support the work, but they do not have to become
+                another thing to perfect.
+              </h2>
+            </div>
+
+            <div class="tr-note-box">
+              <p>
+                Use what feels helpful. Leave what does not. Come back to the
+                same worksheet more than once. Let your answers change. Healing
+                is not about doing everything right — it is about building a
+                more honest, compassionate relationship with yourself over time.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="tr-cta">
+          <div class="tr-cta-inner">
+            <div class="tr-label tr-label-light">Need more support?</div>
+
+            <h2 class="tr-cta-title">
+              You do not have to figure it all out alone.
+            </h2>
+
+            <p class="tr-cta-text">
+              Worksheets and articles can be a beautiful place to begin. Therapy
+              offers a space to go deeper, feel supported, and make sense of
+              what is coming up with someone in your corner.
+            </p>
+
+            <div class="tr-cta-actions">
+              <a
+                class="tr-btn-light"
+                href="https://calendly.com/therapywithtiffany/therapy-session"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Session
+              </a>
+
+              <a class="tr-btn-light" href="mailto:theembodiedself@proton.me">
+                Email Tiffany
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
