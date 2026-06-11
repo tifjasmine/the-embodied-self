@@ -67,7 +67,7 @@ function Header({ menuOpen, setMenuOpen, closeMenu }) {
       <nav className={menuOpen ? "nav navOpen" : "nav"}>
         <a onClick={closeMenu} href="#who-this-is-for">Who This Is For</a>
         <a onClick={closeMenu} href="#method">SELF Method</a>
-        <a onClick={closeMenu} href="#services">Services</a>
+        <a onClick={closeMenu} href="/work-with-me/">Work With Me</a>
         <a onClick={closeMenu} href="#reviews">Reviews</a>
         <a onClick={closeMenu} href="#contact">Contact</a>
         <a
@@ -101,9 +101,9 @@ function Home() {
           <a className="button dark" href={BOOKING_LINK} target="_blank" rel="noreferrer">
             Book a Session
           </a>
-          <a className="textLink" href="#services">
-            Explore services <ArrowRight size={16} />
-          </a>
+          <a className="textLink" href="/work-with-me/">
+  Explore services <ArrowRight size={16} />
+</a>
         </div>
 
         <div className="stats">
@@ -271,7 +271,7 @@ function LearnMore() {
           </p>
           <div className="learnMoreActions">
             <a href="#contact">About Me</a>
-            <a href="#services">Support for Moments in Between</a>
+            <a href="/work-with-me/">Support for Moments in Between</a>
           </div>
         </div>
       </div>
