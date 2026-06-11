@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work With Me | The Embodied Self</title>
+    <meta
+      name="description"
+      content="Therapy, intensives, mindful movement, and flexibility training with The Embodied Self."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+        --line: rgba(28, 23, 18, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .tes-page {
+        width: 100%;
+      }
+
+      .tes-section {
+        padding: 92px 6vw;
+      }
+
+      .tes-inner {
+        max-width: 1260px;
+        margin: 0 auto;
+      }
+
+      .tes-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        color: var(--clay);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .tes-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--clay);
+        flex-shrink: 0;
+      }
+
+      .tes-title {
+        max-width: 950px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(48px, 6.3vw, 92px);
+        font-weight: 300;
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .tes-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tes-copy {
+        color: var(--brown);
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.85;
+      }
+
+      .tes-btn-dark,
+      .tes-btn-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        font-family: "Jost", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .tes-btn-dark {
+        background: var(--charcoal);
+        color: var(--cream) !important;
+        border: 1px solid var(--charcoal);
+      }
+
+      .tes-btn-dark:hover {
+        background: var(--brown);
+        border-color: var(--brown);
+        transform: translateY(-1px);
+      }
+
+      .tes-btn-light {
+        background: var(--cream);
+        color: var(--charcoal) !important;
+        border: 1px solid rgba(28, 23, 18, 0.18);
+      }
+
+      .tes-btn-light:hover {
+        background: var(--cream-deep);
+        transform: translateY(-1px);
+      }
+
+      .tes-hero {
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.1), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+        padding: 96px 6vw 64px;
+      }
+
+      .tes-hero-inner {
+        max-width: 1260px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 42px;
+        align-items: end;
+      }
+
+      .tes-hero-text {
+        max-width: 720px;
+        margin-top: 28px;
+      }
+
+      .tes-hero-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 14px;
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+      }
+
+      .tes-offers {
+        background: var(--cream-deep);
+        padding-top: 44px;
+      }
+
+      .tes-offers-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .tes-offer-card {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        background: var(--cream);
+        border: 1px solid var(--line);
+        box-shadow: 0 16px 42px rgba(28, 23, 18, 0.045);
+        padding: 36px 28px 30px;
+      }
+
+      .tes-offer-card::before {
+        content: attr(data-n);
+        position: absolute;
+        top: 20px;
+        right: 22px;
+        color: rgba(28, 23, 18, 0.045);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 66px;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1;
+      }
+
+      .tes-offer-kicker {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 18px;
+        color: var(--clay);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .tes-offer-title {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 16px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(31px, 2.5vw, 40px);
+        font-weight: 300;
+        line-height: 1.02;
+      }
+
+      .tes-offer-desc {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 24px;
+        color: var(--brown);
+        font-size: 14.5px;
+        line-height: 1.76;
+      }
+
+      .tes-offer-points {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .tes-offer-point {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        color: var(--brown);
+        font-size: 13.5px;
+        line-height: 1.58;
+      }
+
+      .tes-offer-point::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        margin-top: 8px;
+        border-radius: 999px;
+        background: var(--clay);
+      }
+
+      .tes-offer-bottom {
+        position: relative;
+        z-index: 1;
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid rgba(28, 23, 18, 0.08);
+      }
+
+      .tes-offer-note {
+        color: #8f6d5a;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      .tes-support-note {
+        background: var(--cream);
+      }
+
+      .tes-support-panel {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 46px;
+        align-items: center;
+        background: var(--charcoal);
+        color: var(--cream);
+        padding: 48px;
+      }
+
+      .tes-support-title {
+        color: var(--cream);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(36px, 4.4vw, 60px);
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .tes-support-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tes-support-text {
+        margin-bottom: 28px;
+        color: rgba(250, 246, 240, 0.72);
+        font-size: 15.5px;
+        line-height: 1.85;
+      }
+
+      .tes-support-actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .tes-support-panel .tes-btn-light {
+        background: var(--cream);
+        color: var(--charcoal) !important;
+        border-color: var(--cream);
+      }
+
+      .tes-support-panel .tes-btn-light:hover {
+        background: var(--tan);
+        border-color: var(--tan);
+      }
+
+      .tes-cta {
+        position: relative;
+        overflow: hidden;
+        background: var(--tan);
+        padding: 92px 6vw;
+        text-align: center;
+      }
+
+      .tes-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 0%, rgba(196, 121, 90, 0.16) 0%, transparent 55%);
+        pointer-events: none;
+      }
+
+      .tes-cta-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .tes-cta-title {
+        margin-bottom: 22px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(38px, 4.8vw, 66px);
+        font-weight: 300;
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      .tes-cta-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tes-cta-body {
+        margin-bottom: 38px;
+        color: var(--brown);
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.85;
+      }
+
+      .tes-cta-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 1180px) {
+        .tes-offers-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .tes-hero-inner,
+        .tes-support-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-hero-actions {
+          justify-content: flex-start;
+          padding-bottom: 0;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .tes-hero {
+          padding: 70px 22px 42px;
+        }
+
+        .tes-section,
+        .tes-cta {
+          padding: 62px 22px;
+        }
+
+        .tes-label {
+          margin-bottom: 20px;
+          font-size: 10px;
+          line-height: 1.6;
+        }
+
+        .tes-label::after {
+          width: 22px;
+        }
+
+        .tes-title {
+          font-size: clamp(50px, 15vw, 72px);
+        }
+
+        .tes-hero-text,
+        .tes-copy,
+        .tes-cta-body {
+          font-size: 15.5px;
+          line-height: 1.75;
+        }
+
+        .tes-hero-actions,
+        .tes-cta-actions,
+        .tes-support-actions {
+          align-items: stretch;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .tes-btn-dark,
+        .tes-btn-light {
+          width: 100%;
+          padding: 15px 20px;
+        }
+
+        .tes-offers {
+          padding-top: 28px;
+        }
+
+        .tes-offers-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .tes-offer-card {
+          padding: 34px 24px 28px;
+        }
+
+        .tes-offer-card::before {
+          right: 18px;
+          font-size: 58px;
+        }
+
+        .tes-offer-title {
+          font-size: 34px;
+        }
+
+        .tes-support-panel {
+          padding: 36px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="tes-page">
+      <section class="tes-hero">
+        <div class="tes-hero-inner">
+          <div>
+            <div class="tes-label">Therapeutic offerings</div>
+
+            <h1 class="tes-title">
+              Choose the support that meets you <em>where you are.</em>
+            </h1>
+
+            <p class="tes-copy tes-hero-text">
+              Whether you are looking for ongoing therapy, deeper focused work,
+              body-based support, or online flexibility training, this page
+              keeps it simple: four ways to work together, all rooted in
+              self-love, nervous system healing, and coming home to yourself.
+            </p>
+          </div>
+
+          <div class="tes-hero-actions">
+            <a
+              class="tes-btn-dark"
+              href="https://calendly.com/therapywithtiffany/therapy-session"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Session
+            </a>
+
+            <a class="tes-btn-light" href="mailto:theembodiedself@proton.me">
+              Ask a Question
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="tes-section tes-offers">
+        <div class="tes-inner">
+          <div class="tes-offers-grid">
+            <article class="tes-offer-card" data-n="01">
+              <div class="tes-offer-kicker">50-minute sessions</div>
+              <h2 class="tes-offer-title">Outpatient Therapy</h2>
+              <p class="tes-offer-desc">
+                Ongoing weekly therapy for anxiety, burnout, self-doubt,
+                emotional overwhelm, motherhood, identity shifts, and rebuilding
+                a steadier relationship with yourself.
+              </p>
+              <div class="tes-offer-points">
+                <div class="tes-offer-point">
+                  Best for consistent support and gradual integration.
+                </div>
+                <div class="tes-offer-point">
+                  Space to process, regulate, reflect, and practice change.
+                </div>
+                <div class="tes-offer-point">
+                  Rooted in self-love, mindfulness, CBT, ACT, and somatic
+                  awareness.
+                </div>
+              </div>
+              <div class="tes-offer-bottom">
+                <div class="tes-offer-note">Virtual · PA &amp; NJ</div>
+              </div>
+            </article>
+
+            <article class="tes-offer-card" data-n="02">
+              <div class="tes-offer-kicker">3-hour immersives</div>
+              <h2 class="tes-offer-title">Therapy Intensives</h2>
+              <p class="tes-offer-desc">
+                Extended sessions for focused time with a specific pattern,
+                transition, emotional block, or area of self-relationship work.
+              </p>
+              <div class="tes-offer-points">
+                <div class="tes-offer-point">
+                  Best for deeper work without feeling rushed.
+                </div>
+                <div class="tes-offer-point">
+                  Helpful for burnout, clarity, big emotions, or feeling stuck.
+                </div>
+                <div class="tes-offer-point">
+                  Includes space for insight, processing, and integration.
+                </div>
+              </div>
+              <div class="tes-offer-bottom">
+                <div class="tes-offer-note">Virtual · PA &amp; NJ</div>
+              </div>
+            </article>
+
+            <article class="tes-offer-card" data-n="03">
+              <div class="tes-offer-kicker">Mind-body support</div>
+              <h2 class="tes-offer-title">Mindful Movement</h2>
+              <p class="tes-offer-desc">
+                Personalized somatic and movement-based support for
+                reconnecting with your body, grounding your nervous system, and
+                feeling safer inside yourself.
+              </p>
+              <div class="tes-offer-points">
+                <div class="tes-offer-point">
+                  Best for people who process through the body.
+                </div>
+                <div class="tes-offer-point">
+                  Gentle, intuitive, emotionally informed support.
+                </div>
+                <div class="tes-offer-point">
+                  No performance, flexibility, or movement background needed.
+                </div>
+              </div>
+              <div class="tes-offer-bottom">
+                <div class="tes-offer-note">No location restrictions</div>
+              </div>
+            </article>
+
+            <article class="tes-offer-card" data-n="04">
+              <div class="tes-offer-kicker">Online flexibility training</div>
+              <h2 class="tes-offer-title">Flexibility Training</h2>
+              <p class="tes-offer-desc">
+                Online flexibility and mobility support for people who want to
+                feel stronger, more open, more connected to their body, and more
+                confident in their movement practice.
+              </p>
+              <div class="tes-offer-points">
+                <div class="tes-offer-point">
+                  Best for building flexibility in a safe, supported way.
+                </div>
+                <div class="tes-offer-point">
+                  Personalized support for your body, goals, and starting point.
+                </div>
+                <div class="tes-offer-point">
+                  Helpful for dancers, movers, beginners, and anyone wanting
+                  more body confidence.
+                </div>
+              </div>
+              <div class="tes-offer-bottom">
+                <div class="tes-offer-note">Online · No location restrictions</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="tes-section tes-support-note">
+        <div class="tes-inner">
+          <div class="tes-support-panel">
+            <div>
+              <h2 class="tes-support-title">
+                Not sure which option fits? <em>Start with therapy.</em>
+              </h2>
+            </div>
+
+            <div>
+              <p class="tes-support-text">
+                You do not have to know exactly what you need before reaching
+                out. Many people begin with a feeling: overwhelmed,
+                disconnected, anxious, stuck, exhausted, or ready for something
+                to change. We can start there and decide together what support
+                makes the most sense.
+              </p>
+
+              <div class="tes-support-actions">
+                <a
+                  class="tes-btn-light"
+                  href="https://calendly.com/therapywithtiffany/therapy-session"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a Session
+                </a>
+
+                <a class="tes-btn-light" href="mailto:theembodiedself@proton.me">
+                  Email Tiffany
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tes-cta">
+        <div class="tes-cta-inner">
+          <div class="tes-label">Begin here</div>
+
+          <h2 class="tes-cta-title">
+            You do not have to wait until you fall apart to ask for
+            <em>support.</em>
+          </h2>
+
+          <p class="tes-cta-body">
+            Therapy can be the place where you stop performing okay and begin
+            telling the truth — gently, safely, and with someone in your
+            corner.
+          </p>
+
+          <div class="tes-cta-actions">
+            <a
+              class="tes-btn-dark"
+              href="https://calendly.com/therapywithtiffany/therapy-session"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Session
+            </a>
+
+            <a class="tes-btn-light" href="mailto:theembodiedself@proton.me">
+              Email Tiffany Directly
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
