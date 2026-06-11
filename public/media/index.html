@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media | The Embodied Self</title>
+    <meta
+      name="description"
+      content="Movement videos and photos from Tiffany Wright and The Embodied Self."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .media-hero {
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.11), transparent 38%),
+          radial-gradient(ellipse at 88% 12%, rgba(122, 139, 110, 0.09), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+      }
+
+      .media-wrap {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 82px 6vw 70px;
+      }
+
+      .media-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 30px;
+        color: var(--clay);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .media-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--clay);
+        flex-shrink: 0;
+      }
+
+      .media-title {
+        max-width: 1040px;
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(50px, 9.4vw, 100px);
+        font-weight: 300;
+        letter-spacing: -0.055em;
+        line-height: 0.9;
+      }
+
+      .media-title em,
+      .section-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .media-section {
+        padding: 70px 6vw;
+      }
+
+      .media-section.dark {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .media-section.light {
+        background: var(--cream-deep);
+      }
+
+      .section-inner {
+        max-width: 1240px;
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+      }
+
+      .section-title {
+        max-width: 760px;
+        color: inherit;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(38px, 4.8vw, 68px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+
+      .section-note {
+        max-width: 430px;
+        color: rgba(250, 246, 240, 0.68);
+        font-size: 14.5px;
+        line-height: 1.75;
+      }
+
+      .light .section-note {
+        color: var(--brown);
+      }
+
+      .slider {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 18px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: inline mandatory;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
+        padding: 4px 4px 24px;
+      }
+
+      .slider::-webkit-scrollbar {
+        height: 8px;
+      }
+
+      .slider::-webkit-scrollbar-track {
+        background: rgba(28, 23, 18, 0.08);
+      }
+
+      .slider::-webkit-scrollbar-thumb {
+        background: rgba(28, 23, 18, 0.28);
+      }
+
+      .dark .slider::-webkit-scrollbar-track {
+        background: rgba(250, 246, 240, 0.08);
+      }
+
+      .dark .slider::-webkit-scrollbar-thumb {
+        background: rgba(250, 246, 240, 0.28);
+      }
+
+      .video-slider {
+        grid-auto-columns: minmax(420px, 48%);
+      }
+
+      .photo-slider {
+        grid-auto-columns: minmax(280px, 28%);
+      }
+
+      .video-card,
+      .photo-card {
+        scroll-snap-align: start;
+      }
+
+      .video-card {
+        background: rgba(250, 246, 240, 0.06);
+        border: 1px solid rgba(250, 246, 240, 0.12);
+        padding: 12px;
+      }
+
+      .video-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse at 20% 20%, rgba(196, 121, 90, 0.18), transparent 42%),
+          linear-gradient(135deg, rgba(250, 246, 240, 0.12), rgba(232, 217, 200, 0.04));
+      }
+
+      .video-frame iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 230px;
+        padding: 28px;
+        color: rgba(250, 246, 240, 0.62);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        line-height: 1.7;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .video-title {
+        margin-top: 14px;
+        padding: 0 4px 4px;
+        color: rgba(250, 246, 240, 0.72);
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .photo-card {
+        background: var(--cream);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 12px;
+        box-shadow: 0 16px 42px rgba(28, 23, 18, 0.04);
+      }
+
+      .photo-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 390px;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse at 20% 20%, rgba(196, 121, 90, 0.12), transparent 42%),
+          linear-gradient(135deg, var(--tan), var(--cream));
+        text-align: center;
+      }
+
+      .photo-box img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%) contrast(1.03) brightness(1.04);
+        transition: transform 0.25s ease;
+      }
+
+      .photo-card:hover img {
+        transform: scale(1.035);
+      }
+
+      .photo-placeholder {
+        padding: 24px;
+        color: #8f6d5a;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        line-height: 1.7;
+        text-transform: uppercase;
+      }
+
+      .photo-title {
+        margin-top: 12px;
+        padding: 0 2px 2px;
+        color: #8f6d5a;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .slider-hint {
+        margin-top: 8px;
+        color: rgba(250, 246, 240, 0.48);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .light .slider-hint {
+        color: #8f6d5a;
+      }
+
+      @media (max-width: 900px) {
+        .video-slider {
+          grid-auto-columns: minmax(330px, 78%);
+        }
+
+        .photo-slider {
+          grid-auto-columns: minmax(250px, 48%);
+        }
+
+        .photo-box {
+          height: 360px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .media-wrap {
+          padding: 64px 22px 56px;
+        }
+
+        .media-section {
+          padding: 58px 22px;
+        }
+
+        .media-label {
+          margin-bottom: 24px;
+          font-size: 10px;
+          line-height: 1.6;
+        }
+
+        .media-label::after {
+          width: 22px;
+        }
+
+        .media-title {
+          font-size: clamp(58px, 18vw, 82px);
+          letter-spacing: -0.045em;
+          line-height: 0.9;
+        }
+
+        .section-head {
+          align-items: flex-start;
+          flex-direction: column;
+          margin-bottom: 26px;
+        }
+
+        .section-title {
+          font-size: clamp(38px, 11vw, 54px);
+        }
+
+        .section-note {
+          font-size: 14.5px;
+          line-height: 1.7;
+        }
+
+        .video-slider {
+          grid-auto-columns: 88%;
+          gap: 14px;
+        }
+
+        .photo-slider {
+          grid-auto-columns: 78%;
+          gap: 14px;
+        }
+
+        .photo-box {
+          height: 360px;
+        }
+
+        .video-card,
+        .photo-card {
+          padding: 10px;
+        }
+
+        .placeholder {
+          padding: 22px;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="media-hero">
+        <div class="media-wrap">
+          <div class="media-label">Media</div>
+
+          <h1 class="media-title">
+            Movement, moments, and the human side of the <em>work.</em>
+          </h1>
+        </div>
+      </section>
+
+      <section class="media-section dark" id="videos">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="media-label">Videos</div>
+              <h2 class="section-title">Videos</h2>
+            </div>
+
+            <p class="section-note">Swipe or scroll to view the full video library.</p>
+          </div>
+
+          <div class="slider video-slider" id="videoSlider"></div>
+
+          <div class="slider-hint"></div>
+        </div>
+      </section>
+
+      <section class="media-section light" id="photos">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="media-label">Photos</div>
+              <h2 class="section-title">Photos</h2>
+            </div>
+
+            <p class="section-note">Swipe or scroll to view the full photo library.</p>
+          </div>
+
+          <div class="slider photo-slider" id="photoSlider"></div>
+
+          <div class="slider-hint"></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const videos = [
+        { title: "", url: "https://youtube.com/shorts/_slem1Yb3wE" },
+        { title: "", url: "https://www.youtube.com/watch?v=ToMni6si7eE" },
+        { title: "", url: "https://www.youtube.com/watch?v=zijiypObwrY" },
+        { title: "", url: "https://www.youtube.com/watch?v=68LO9GnBU24" },
+        { title: "", url: "https://youtube.com/shorts/nO6AMl2GQ4o?feature=share" },
+        { title: "", url: "https://youtube.com/shorts/Qqrmu5DYQnc" },
+        { title: "", url: "https://www.youtube.com/watch?v=hRdVzZnkbYA" },
+        { title: "", url: "https://www.youtube.com/watch?v=1LL3Qv5ThP4" },
+        { title: "", url: "https://www.youtube.com/watch?v=fRglrOVaZWA" },
+        { title: "", url: "https://www.youtube.com/watch?v=2fICjPRH2q8" },
+        { title: "", url: "https://www.youtube.com/watch?v=omNd_SpVh2o" },
+      ];
+
+      const photos = [
+        { title: "", url: "https://drive.google.com/file/d/1YFZjn0JOxiwF1p99t8xMEakyWbeDERwX/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/162i5ou355aO6ZnmOoL2tGzs1EmHnN3c_/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1VRHHrMxMHQKOs-8kZCJAGPFEJGbqyTzy/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1WtqOCvpVua-6XRLE_KGgwXtRTywc5jHl/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1J3UGFIwiHJ8IOgEqmPu5RGW6DuxT8CoE/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1dsr8NAcvB2yP0IKt2VfhDLdLvEyCLARY/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1ocNq63VtNt8DvW5-vT8MQvB03BZOiH-y/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1OOW7pikmwrdRjdQUNjm_L361q3i9U1V6/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/167dVH73qTMrprn6nQvsv3hA4v3aypuD0/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1NKghJynzGkmzCfS4csIUrpQ6pQ1TBYD2/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1mUcPhsJEATMOShdf3c1K4i3YoU5r5veJ/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1rytzIAJv8PHC-0L3r-czehy0x6fJ9k9S/view?usp=sharing" },
+        { title: "", url: "https://drive.google.com/file/d/1Ayiuq8Ey9m7a_m34GZSt6EMg-pqrqSGw/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1LVuPTbbTk71ao9fw_TpTSRAnUhlakGn3/view?usp=drive_link" },
+        { title: "", url: "https://drive.google.com/file/d/1gkHgfFXJRP1L37OR5biTfJjrWaPqYH1F/view?usp=drive_link" },
+      ];
+
+      function getEmbedUrl(url) {
+        if (!url) return "";
+
+        try {
+          const cleanUrl = url.trim();
+
+          if (cleanUrl.includes("youtube.com/embed/")) return cleanUrl;
+
+          const parsed = new URL(cleanUrl);
+
+          if (parsed.hostname.includes("youtu.be")) {
+            const id = parsed.pathname.replace("/", "");
+            return `https://www.youtube.com/embed/${id}`;
+          }
+
+          if (parsed.hostname.includes("youtube.com")) {
+            const watchId = parsed.searchParams.get("v");
+
+            if (watchId) return `https://www.youtube.com/embed/${watchId}`;
+
+            if (parsed.pathname.includes("/shorts/")) {
+              const id = parsed.pathname.split("/shorts/")[1]?.split("/")[0];
+              return id ? `https://www.youtube.com/embed/${id}` : cleanUrl;
+            }
+
+            if (parsed.pathname.includes("/live/")) {
+              const id = parsed.pathname.split("/live/")[1]?.split("/")[0];
+              return id ? `https://www.youtube.com/embed/${id}` : cleanUrl;
+            }
+          }
+
+          return cleanUrl;
+        } catch {
+          return url;
+        }
+      }
+
+      function getPhotoUrl(url) {
+        if (!url) return "";
+
+        try {
+          const cleanUrl = url.trim();
+          const driveFileMatch = cleanUrl.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+
+          if (driveFileMatch && driveFileMatch[1]) {
+            return `https://drive.google.com/thumbnail?id=${driveFileMatch[1]}&sz=w2000`;
+          }
+
+          const parsed = new URL(cleanUrl);
+          const driveId = parsed.searchParams.get("id");
+
+          if (parsed.hostname.includes("drive.google.com") && driveId) {
+            return `https://drive.google.com/thumbnail?id=${driveId}&sz=w2000`;
+          }
+
+          return cleanUrl;
+        } catch {
+          return url;
+        }
+      }
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function renderVideos() {
+        const slider = document.getElementById("videoSlider");
+
+        slider.innerHTML = videos
+          .map((video, index) => {
+            const embedUrl = getEmbedUrl(video.url);
+            const title = video.title || `Embedded video ${index + 1}`;
+            const titleMarkup = video.title
+              ? `<div class="video-title">${escapeHtml(video.title)}</div>`
+              : "";
+
+            return `
+              <article class="video-card">
+                <div class="video-frame">
+                  ${
+                    embedUrl
+                      ? `<iframe src="${escapeHtml(embedUrl)}" title="${escapeHtml(title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+                      : `<div class="placeholder">Add video link</div>`
+                  }
+                </div>
+                ${titleMarkup}
+              </article>
+            `;
+          })
+          .join("");
+      }
+
+      function renderPhotos() {
+        const slider = document.getElementById("photoSlider");
+
+        slider.innerHTML = photos
+          .map((photo, index) => {
+            const photoUrl = getPhotoUrl(photo.url);
+            const alt = photo.title || `Media photo ${index + 1}`;
+            const titleMarkup = photo.title
+              ? `<div class="photo-title">${escapeHtml(photo.title)}</div>`
+              : "";
+
+            return `
+              <article class="photo-card">
+                <div class="photo-box">
+                  ${
+                    photoUrl
+                      ? `<img src="${escapeHtml(photoUrl)}" alt="${escapeHtml(alt)}" loading="lazy" />`
+                      : `<div class="photo-placeholder">Add photo link</div>`
+                  }
+                </div>
+                ${titleMarkup}
+              </article>
+            `;
+          })
+          .join("");
+      }
+
+      renderVideos();
+      renderPhotos();
+    </script>
+  </body>
+</html>
