@@ -6,9 +6,7 @@ import {
   Heart,
   Leaf,
   Sparkles,
-  BookOpen,
   MessageCircle,
-  Download,
   Star,
   Send,
   Menu,
@@ -24,37 +22,6 @@ const GOOGLE_REVIEW_LINK =
 
 const EMAIL = "theembodiedself@proton.me";
 const BOOKING_LINK = "https://calendly.com/therapywithtiffany/therapy-session";
-
-const resources = [
-  {
-    type: "Worksheet",
-    title: "Nervous System Reset",
-    description:
-      "A grounding worksheet for moments when your body feels overwhelmed, activated, or shut down.",
-    tag: "Regulation"
-  },
-  {
-    type: "Worksheet",
-    title: "Self-Love Check-In",
-    description:
-      "A gentle reflection to help you notice your needs, emotions, boundaries, and inner dialogue.",
-    tag: "Self-love"
-  },
-  {
-    type: "Worksheet",
-    title: "Inner Critic Reflection",
-    description:
-      "A guided tool for understanding where the critical voice came from and how to respond with compassion.",
-    tag: "Inner work"
-  },
-  {
-    type: "Article",
-    title: "Burnout or Just Motherhood?",
-    description:
-      "A reflection on overstimulation, emotional labor, resentment, and what your nervous system may be trying to say.",
-    tag: "Motherhood"
-  }
-];
 
 const reviews = [
   "Tiffany is a great Therapist. This was exactly what I needed to break free from my insecurities and start truly loving myself.",
@@ -74,10 +41,9 @@ function App() {
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} closeMenu={closeMenu} />
       <main>
         <Home />
-        <About />
+        <WhoThisIsFor />
         <Services />
         <SelfMethod />
-        <Resources />
         <Community />
         <Reviews />
         <Contact />
@@ -99,10 +65,9 @@ function Header({ menuOpen, setMenuOpen, closeMenu }) {
       </button>
 
       <nav className={menuOpen ? "nav navOpen" : "nav"}>
-        <a onClick={closeMenu} href="#about">About</a>
+        <a onClick={closeMenu} href="#who-this-is-for">Who This Is For</a>
         <a onClick={closeMenu} href="#services">Services</a>
         <a onClick={closeMenu} href="#method">SELF Method</a>
-        <a onClick={closeMenu} href="#resources">Resources</a>
         <a onClick={closeMenu} href="#community">Community</a>
         <a onClick={closeMenu} href="#contact">Contact</a>
         <a onClick={closeMenu} className="navButton" href={BOOKING_LINK} target="_blank" rel="noreferrer">
@@ -137,8 +102,8 @@ function Home() {
 
         <div className="stats">
           <div><strong>PA & NJ</strong><span>Virtual therapy</span></div>
-          <div><strong>$150</strong><span>50-minute session</span></div>
-          <div><strong>Somatic</strong><span>Mind-body support</span></div>
+          <div><strong>12+</strong><span>Years in practice</span></div>
+          <div><strong>400+</strong><span>Clients supported</span></div>
         </div>
       </div>
 
@@ -155,32 +120,42 @@ function Home() {
   );
 }
 
-function About() {
+function WhoThisIsFor() {
+  const items = [
+    [
+      "Emotionally overwhelmed",
+      "Your nervous system feels always on, even when life looks manageable from the outside."
+    ],
+    [
+      "Disconnected from yourself",
+      "You know what everyone else needs, but your own voice, desires, and needs feel harder to access."
+    ],
+    [
+      "Ready for something deeper",
+      "You want more than coping skills. You want to understand what is underneath and create real change."
+    ]
+  ];
+
   return (
-    <section id="about" className="section cream">
-      <div className="split">
-        <div>
-          <p className="eyebrow terra">About Tiffany</p>
-          <h2>Therapy rooted in presence, self-love, and nervous system healing.</h2>
-          <p>
-            I’m Tiffany Wright, LPC, a therapist offering virtual support in Pennsylvania
-            and New Jersey. My work blends traditional therapy with mindfulness, somatic
-            awareness, self-compassion, and deeper identity work.
-          </p>
-          <p>
-            This is a space for the woman who looks like she is managing everything, but
-            internally feels tired, disconnected, resentful, anxious, or unsure how to come
-            back to herself.
-          </p>
+    <section id="who-this-is-for" className="section whoSection">
+      <div className="whoWrap">
+        <div className="whoIntro">
+          <p className="eyebrow mutedEyebrow">Who this is for</p>
+          <h2>
+            For the woman who looks fine — and feels far from <em>herself.</em>
+          </h2>
         </div>
 
-        <div className="softPanel">
-          <Leaf size={34} />
-          <h3>My approach is gentle, honest, and body-aware.</h3>
-          <p>
-            We make room for your story, your nervous system, your younger self, your
-            boundaries, your voice, and the version of you that is ready to feel more free.
-          </p>
+        <div className="whoList">
+          {items.map(([title, text], index) => (
+            <article className="whoItem" key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -264,37 +239,6 @@ function SelfMethod() {
             <p className="phase">Phase {letter}</p>
             <h3>{title}</h3>
             <p>{text}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Resources() {
-  return (
-    <section id="resources" className="section sageLight">
-      <div className="sectionTop">
-        <div>
-          <p className="eyebrow terra">Resources</p>
-          <h2>Support for the moments between sessions.</h2>
-        </div>
-        <p className="topCopy">
-          Worksheets, reflections, articles, and gentle tools for self-love,
-          nervous system support, boundaries, motherhood, and emotional healing.
-        </p>
-      </div>
-
-      <div className="cardGrid two">
-        {resources.map((item) => (
-          <article className="resourceCard" key={item.title}>
-            <div className="iconCircle">
-              {item.type === "Worksheet" ? <Download size={20} /> : <BookOpen size={20} />}
-            </div>
-            <p className="resourceType">{item.type} · {item.tag}</p>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <button type="button">Coming Soon</button>
           </article>
         ))}
       </div>
