@@ -1,4 +1,3 @@
-// src/main.jsx
 import React from "react";
 import { createRoot } from "react-dom/client";
 import {
@@ -7,7 +6,6 @@ import {
   Heart,
   Sparkles,
   Star,
-  Send,
   Menu,
   X
 } from "lucide-react";
@@ -32,7 +30,6 @@ const reviews = [
 
 function App() {
   const [menuOpen, setMenuOpen] = React.useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -41,9 +38,9 @@ function App() {
       <main>
         <Home />
         <WhoThisIsFor />
-        <Services />
         <SelfMethod />
-        <Community />
+        <Services />
+        <LearnMore />
         <Reviews />
         <Contact />
       </main>
@@ -65,11 +62,17 @@ function Header({ menuOpen, setMenuOpen, closeMenu }) {
 
       <nav className={menuOpen ? "nav navOpen" : "nav"}>
         <a onClick={closeMenu} href="#who-this-is-for">Who This Is For</a>
-        <a onClick={closeMenu} href="#services">Services</a>
         <a onClick={closeMenu} href="#method">SELF Method</a>
-        <a onClick={closeMenu} href="#community">Community</a>
+        <a onClick={closeMenu} href="#services">Services</a>
+        <a onClick={closeMenu} href="#reviews">Reviews</a>
         <a onClick={closeMenu} href="#contact">Contact</a>
-        <a onClick={closeMenu} className="navButton" href={BOOKING_LINK} target="_blank" rel="noreferrer">
+        <a
+          onClick={closeMenu}
+          className="navButton"
+          href={BOOKING_LINK}
+          target="_blank"
+          rel="noreferrer"
+        >
           Book a Session
         </a>
       </nav>
@@ -83,7 +86,7 @@ function Home() {
       <div className="heroText">
         <p className="eyebrow">Virtual therapy · Pennsylvania & New Jersey</p>
         <h1>
-          Come back <span>to yourself.</span>
+          Come back <span>to your<em>self.</em></span>
         </h1>
         <p className="lede">
           Therapy for women carrying emotional overload, burnout, self-disconnection,
@@ -161,54 +164,6 @@ function WhoThisIsFor() {
   );
 }
 
-function Services() {
-  return (
-    <section id="services" className="section darkSection">
-      <div className="sectionTop">
-        <div>
-          <p className="eyebrow terra">Therapeutic offerings</p>
-          <h2>Support that meets you where you are.</h2>
-        </div>
-        <a className="button clay" href={BOOKING_LINK} target="_blank" rel="noreferrer">
-          Book a Session
-        </a>
-      </div>
-
-      <div className="cardGrid three">
-        <article className="serviceCard">
-          <span>01</span>
-          <h3>Outpatient Therapy</h3>
-          <p>
-            Weekly 50-minute therapy for anxiety, burnout, self-doubt, emotional overwhelm,
-            identity shifts, motherhood, and self-love.
-          </p>
-          <small>Virtual · PA & NJ</small>
-        </article>
-
-        <article className="serviceCard">
-          <span>02</span>
-          <h3>Therapy Intensives</h3>
-          <p>
-            Three-hour sessions for deeper emotional work, clarity, and integration when
-            you need more space than weekly therapy can offer.
-          </p>
-          <small>Virtual · PA & NJ</small>
-        </article>
-
-        <article className="serviceCard">
-          <span>03</span>
-          <h3>Mindful Movement</h3>
-          <p>
-            Somatic support using grounding, breath, and movement to help you reconnect
-            with your body and regulate your nervous system.
-          </p>
-          <small>No location restrictions</small>
-        </article>
-      </div>
-    </section>
-  );
-}
-
 function SelfMethod() {
   const phases = [
     ["S", "Shed the Story", "Identify the beliefs, roles, and survival patterns that taught you who you had to be."],
@@ -245,47 +200,76 @@ function SelfMethod() {
   );
 }
 
-function Community() {
+function Services() {
   return (
-    <section id="community" className="section cream">
-      <div className="split">
+    <section id="services" className="section servicesSection">
+      <div className="sectionTop servicesTop">
         <div>
-          <p className="eyebrow terra">Community reflections</p>
-          <h2>A soft place for honest questions.</h2>
+          <p className="eyebrow terra">Therapeutic offerings</p>
+          <h2>Support that meets you <em>where you are.</em></h2>
+        </div>
+        <a className="button dark" href={BOOKING_LINK} target="_blank" rel="noreferrer">
+          Book a Session
+        </a>
+      </div>
+
+      <div className="cardGrid three">
+        <article className="serviceCard">
+          <p className="serviceKicker">50-minute sessions</p>
+          <span className="serviceNumber">01</span>
+          <h3>Outpatient Therapy</h3>
           <p>
-            This space will hold anonymous community questions, therapist reflections,
-            and gentle tools for the things so many people carry quietly.
+            Weekly 50-minute therapy for anxiety, burnout, self-doubt, emotional overwhelm,
+            identity shifts, and rebuilding a steadier relationship with yourself.
           </p>
+          <small>Virtual · PA & NJ</small>
+        </article>
+
+        <article className="serviceCard">
+          <p className="serviceKicker">3-hour immersives</p>
+          <span className="serviceNumber">02</span>
+          <h3>Therapy Intensives</h3>
           <p>
-            Later, this section can connect to Airtable so approved submissions display
-            automatically from your database.
+            Extended sessions for deeper emotional work, clarity, and integration when
+            you need more space than weekly therapy can offer.
           </p>
+          <small>Virtual · PA & NJ</small>
+        </article>
+
+        <article className="serviceCard">
+          <p className="serviceKicker">Mind-body support</p>
+          <span className="serviceNumber">03</span>
+          <h3>Mindful Movement</h3>
+          <p>
+            Somatic support using grounding, breath, and movement to help you reconnect
+            with your body and regulate your nervous system.
+          </p>
+          <small>No location restrictions</small>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+function LearnMore() {
+  return (
+    <section className="section learnMoreSection">
+      <div className="learnMoreBox">
+        <div>
+          <p className="eyebrow terra">Explore more</p>
+          <h2>Learn more about the person and the support behind the <em>work.</em></h2>
         </div>
 
-        <form className="communityForm" onSubmit={(e) => e.preventDefault()}>
-          <label>
-            First name
-            <input type="text" placeholder="Your name" />
-          </label>
-
-          <label>
-            Email
-            <input type="email" placeholder="you@email.com" />
-          </label>
-
-          <label>
-            What have you been thinking about?
-            <textarea placeholder="Share a question, reflection, or something you want support around..." />
-          </label>
-
-          <button className="button dark" type="submit">
-            Submit Reflection <Send size={16} />
-          </button>
-
-          <p className="formNote">
-            This form is a placeholder until we connect Airtable or Google Apps Script.
+        <div className="learnMoreCopy">
+          <p>
+            Visit the About page to get a fuller sense of who I am, or explore
+            reflections and resources created for the moments between sessions.
           </p>
-        </form>
+          <div className="learnMoreActions">
+            <a href="#contact">About Me</a>
+            <a href="#services">Support for Moments in Between</a>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -293,11 +277,11 @@ function Community() {
 
 function Reviews() {
   return (
-    <section id="reviews" className="section darkSection">
-      <div className="sectionTop">
-        <div>
+    <section id="reviews" className="section reviewsSection">
+      <div className="reviewsIntro">
+        <div className="reviewsHeadline">
           <p className="eyebrow terra">Google reviews</p>
-          <h2>Words from people who have felt supported in this work.</h2>
+          <h2>Words from people who have felt supported in this <em>work.</em></h2>
         </div>
         <a className="button clay" href={GOOGLE_REVIEW_LINK} target="_blank" rel="noreferrer">
           Leave a Review
