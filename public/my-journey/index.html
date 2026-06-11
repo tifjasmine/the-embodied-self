@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Going Deeper | The Embodied Self</title>
+    <meta
+      name="description"
+      content="Tiffany Wright's deeper story behind The Embodied Self, movement, therapy, and coming home to yourself."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --clay-soft: #b89a87;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+        --line: rgba(28, 23, 18, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .tes-deep-about {
+        width: 100%;
+        overflow: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+      }
+
+      .tda-section {
+        padding: 96px 6vw;
+      }
+
+      .tda-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .tda-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--clay);
+        font-weight: 400;
+        margin-bottom: 26px;
+      }
+
+      .tda-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--clay);
+        flex-shrink: 0;
+      }
+
+      .tda-label-light {
+        color: var(--clay-soft);
+      }
+
+      .tda-label-light::after {
+        background: var(--clay-soft);
+      }
+
+      .tda-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(44px, 5.6vw, 84px);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+        font-weight: 300;
+        color: var(--charcoal);
+      }
+
+      .tda-title em,
+      .tda-hero-title em,
+      .tda-cta-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tda-title-light {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(40px, 5vw, 74px);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        font-weight: 300;
+        color: var(--cream);
+      }
+
+      .tda-title-light em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tda-copy {
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.9;
+        font-weight: 300;
+      }
+
+      .tda-copy p {
+        margin-bottom: 22px;
+      }
+
+      .tda-copy strong {
+        color: var(--charcoal);
+        font-weight: 500;
+      }
+
+      .tda-copy-dark {
+        color: rgba(250, 246, 240, 0.76);
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      .tda-copy-dark p {
+        margin-bottom: 22px;
+      }
+
+      .tda-copy-dark strong {
+        color: var(--cream);
+        font-weight: 500;
+      }
+
+      .tda-btn-dark,
+      .tda-btn-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 32px;
+        font-family: "Jost", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 400;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
+      .tda-btn-dark {
+        background: var(--charcoal);
+        color: var(--cream) !important;
+        border: 1px solid var(--charcoal);
+      }
+
+      .tda-btn-dark:hover {
+        background: var(--brown);
+        border-color: var(--brown);
+        transform: translateY(-1px);
+      }
+
+      .tda-btn-light {
+        background: var(--cream);
+        color: var(--charcoal) !important;
+        border: 1px solid rgba(28, 23, 18, 0.18);
+      }
+
+      .tda-btn-light:hover {
+        background: var(--cream-deep);
+        transform: translateY(-1px);
+      }
+
+      .tda-hero {
+        min-height: 92vh;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 70px;
+        align-items: center;
+        padding: 92px 6vw;
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.12), transparent 36%),
+          radial-gradient(ellipse at 88% 12%, rgba(122, 139, 110, 0.1), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+      }
+
+      .tda-hero-photo-wrap {
+        position: relative;
+        max-width: 540px;
+        justify-self: center;
+      }
+
+      .tda-hero-photo {
+        background: var(--cream);
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        padding: 16px;
+        box-shadow: 0 24px 70px rgba(28, 23, 18, 0.12);
+      }
+
+      .tda-hero-photo img {
+        display: block;
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+        object-position: center;
+        filter: grayscale(100%) contrast(1.03) brightness(1.04);
+      }
+
+      .tda-floating-note {
+        position: absolute;
+        left: -34px;
+        bottom: 42px;
+        width: min(340px, 82%);
+        background: rgba(250, 246, 240, 0.94);
+        border: 1px solid rgba(28, 23, 18, 0.08);
+        box-shadow: 0 18px 48px rgba(28, 23, 18, 0.1);
+        padding: 28px 26px;
+        backdrop-filter: blur(10px);
+      }
+
+      .tda-floating-note p {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(27px, 2.5vw, 40px);
+        line-height: 1.05;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--charcoal);
+        margin-bottom: 12px;
+      }
+
+      .tda-floating-note span {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--clay);
+        font-weight: 400;
+      }
+
+      .tda-hero-copy {
+        max-width: 740px;
+      }
+
+      .tda-hero-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(42px, 4.7vw, 70px);
+        line-height: 0.94;
+        letter-spacing: -0.035em;
+        font-weight: 300;
+        color: var(--charcoal);
+        margin-bottom: 32px;
+      }
+
+      .tda-hero-text {
+        color: var(--brown);
+        font-size: clamp(17px, 1.35vw, 20px);
+        line-height: 1.9;
+        max-width: 640px;
+        margin-bottom: 40px;
+      }
+
+      .tda-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .tda-dark {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .tda-story-grid {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 78px;
+        align-items: start;
+      }
+
+      .tda-story-cards {
+        display: grid;
+        gap: 18px;
+      }
+
+      .tda-story-card {
+        background: rgba(250, 246, 240, 0.055);
+        border: 1px solid rgba(250, 246, 240, 0.12);
+        padding: 34px;
+      }
+
+      .tda-story-card p {
+        color: rgba(250, 246, 240, 0.76);
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      .tda-story-card strong {
+        color: var(--cream);
+        font-weight: 500;
+      }
+
+      .tda-soft {
+        background: var(--cream);
+      }
+
+      .tda-split {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 78px;
+        align-items: center;
+      }
+
+      .tda-image-card {
+        background: var(--tan);
+        border: 1px solid var(--line);
+        padding: 16px;
+        box-shadow: 0 22px 60px rgba(28, 23, 18, 0.08);
+      }
+
+      .tda-image-card img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        filter: grayscale(100%) contrast(1.03) brightness(1.04);
+      }
+
+      .tda-quote {
+        background: var(--tan);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tda-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 10% 12%, rgba(250, 246, 240, 0.5), transparent 36%),
+          radial-gradient(ellipse at 92% 86%, rgba(196, 121, 90, 0.14), transparent 44%);
+        pointer-events: none;
+      }
+
+      .tda-quote-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 920px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .tda-large-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(38px, 5.2vw, 78px);
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        font-weight: 300;
+        color: var(--charcoal);
+      }
+
+      .tda-large-quote em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tda-quote-sub {
+        margin: 28px auto 0;
+        max-width: 650px;
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .tda-timeline {
+        background: var(--cream-deep);
+      }
+
+      .tda-timeline-head {
+        max-width: 860px;
+        margin-bottom: 54px;
+      }
+
+      .tda-timeline-head .tda-copy {
+        margin-top: 24px;
+        max-width: 720px;
+      }
+
+      .tda-timeline-list {
+        display: grid;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+
+      .tda-timeline-item {
+        background: var(--cream);
+        display: grid;
+        grid-template-columns: 230px 1fr;
+        gap: 40px;
+        padding: 38px 40px;
+      }
+
+      .tda-timeline-marker {
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--clay);
+        font-weight: 400;
+      }
+
+      .tda-timeline-item h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 3.2vw, 48px);
+        line-height: 1.02;
+        color: var(--charcoal);
+        font-weight: 300;
+        margin-bottom: 14px;
+      }
+
+      .tda-timeline-item p {
+        color: var(--brown);
+        font-size: 15.5px;
+        line-height: 1.85;
+      }
+
+      .tda-bali-thailand {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .tda-two-card-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 48px;
+      }
+
+      .tda-place-card {
+        background: rgba(250, 246, 240, 0.055);
+        border: 1px solid rgba(250, 246, 240, 0.12);
+        padding: 38px 34px;
+      }
+
+      .tda-place-card small {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--clay);
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+
+      .tda-place-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 3.8vw, 58px);
+        line-height: 0.98;
+        color: var(--cream);
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+
+      .tda-place-card p {
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 15.5px;
+        line-height: 1.85;
+      }
+
+      .tda-place-card p + p {
+        margin-top: 18px;
+      }
+
+      .tda-callout {
+        background: var(--cream);
+      }
+
+      .tda-callout-panel {
+        background: var(--charcoal);
+        color: var(--cream);
+        padding: 54px 52px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 46px;
+        align-items: center;
+      }
+
+      .tda-callout-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(36px, 4.4vw, 62px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-weight: 300;
+        color: var(--cream);
+      }
+
+      .tda-callout-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tda-present {
+        background: var(--tan);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tda-present::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 92% 14%, rgba(196, 121, 90, 0.16), transparent 45%),
+          radial-gradient(ellipse at 8% 86%, rgba(122, 139, 110, 0.12), transparent 50%);
+        pointer-events: none;
+      }
+
+      .tda-present .tda-inner {
+        position: relative;
+        z-index: 2;
+      }
+
+      .tda-present-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 78px;
+        align-items: center;
+      }
+
+      .tda-closing {
+        background: var(--charcoal);
+        color: var(--cream);
+        text-align: center;
+      }
+
+      .tda-closing-inner {
+        max-width: 880px;
+        margin: 0 auto;
+      }
+
+      .tda-closing-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(44px, 6vw, 86px);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+        font-weight: 300;
+        color: var(--cream);
+        margin-bottom: 30px;
+      }
+
+      .tda-closing-title em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .tda-closing-text {
+        color: rgba(250, 246, 240, 0.76);
+        font-size: 17px;
+        line-height: 1.9;
+        max-width: 680px;
+        margin: 0 auto 40px;
+      }
+
+      .tda-closing .tda-actions {
+        justify-content: center;
+      }
+
+      .tda-cta {
+        background: var(--tan);
+        padding: 96px 6vw;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tda-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 0%, rgba(196, 121, 90, 0.16) 0%, transparent 55%);
+        pointer-events: none;
+      }
+
+      .tda-cta-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .tda-cta-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(40px, 5.2vw, 76px);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        font-weight: 300;
+        color: var(--charcoal);
+        margin-bottom: 24px;
+      }
+
+      .tda-cta-text {
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.85;
+        margin: 0 auto 40px;
+        max-width: 650px;
+      }
+
+      .tda-cta .tda-actions {
+        justify-content: center;
+      }
+
+      @media (max-width: 1050px) {
+        .tda-hero,
+        .tda-story-grid,
+        .tda-split,
+        .tda-present-grid,
+        .tda-callout-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .tda-hero {
+          min-height: auto;
+        }
+
+        .tda-hero-photo-wrap {
+          width: 100%;
+          max-width: 620px;
+        }
+
+        .tda-hero-photo img,
+        .tda-image-card img {
+          height: 540px;
+        }
+
+        .tda-two-card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tda-timeline-item {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .tda-hero {
+          padding: 68px 22px;
+          gap: 42px;
+        }
+
+        .tda-section,
+        .tda-cta {
+          padding: 66px 22px;
+        }
+
+        .tda-label {
+          font-size: 10px;
+          line-height: 1.6;
+          margin-bottom: 22px;
+        }
+
+        .tda-label::after {
+          width: 22px;
+        }
+
+        .tda-hero-title {
+          font-size: clamp(39px, 11vw, 54px);
+          line-height: 0.98;
+          letter-spacing: -0.025em;
+          margin-bottom: 28px;
+        }
+
+        .tda-title,
+        .tda-title-light,
+        .tda-large-quote,
+        .tda-closing-title,
+        .tda-cta-title {
+          letter-spacing: -0.025em;
+        }
+
+        .tda-hero-text,
+        .tda-copy,
+        .tda-copy-dark,
+        .tda-quote-sub,
+        .tda-closing-text,
+        .tda-cta-text {
+          font-size: 15.5px;
+          line-height: 1.78;
+        }
+
+        .tda-actions {
+          align-items: stretch;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .tda-btn-dark,
+        .tda-btn-light {
+          width: 100%;
+          padding: 15px 20px;
+        }
+
+        .tda-hero-photo {
+          padding: 12px;
+        }
+
+        .tda-hero-photo img,
+        .tda-image-card img {
+          height: 420px;
+        }
+
+        .tda-floating-note {
+          position: relative;
+          left: auto;
+          bottom: auto;
+          width: 100%;
+          margin-top: 12px;
+          padding: 24px 22px;
+        }
+
+        .tda-story-card,
+        .tda-place-card,
+        .tda-callout-panel,
+        .tda-timeline-item {
+          padding: 30px 24px;
+        }
+
+        .tda-image-card {
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tes-deep-about">
+      <main>
+        <section class="tda-hero">
+          <div class="tda-hero-photo-wrap">
+            <div class="tda-hero-photo">
+              <img
+                src="https://dl.dropboxusercontent.com/scl/fi/ibyd16m9qnunqsxm6hx6m/IMG_6316-copy-2.JPG?rlkey=368vjc6gt57bk5zx3kp4tb8ra"
+                alt="Tiffany Wright, therapist and movement-based healing practitioner"
+              />
+            </div>
+
+            <div class="tda-floating-note">
+              <p>You are not broken. You are coming home.</p>
+              <span>The Embodied Self</span>
+            </div>
+          </div>
+
+          <div class="tda-hero-copy">
+            <div class="tda-label">My deeper story</div>
+
+            <h1 class="tda-hero-title">
+              Hi, I’m Tiffany — a woman who had to learn how to love herself
+              before she ever became a therapist.
+            </h1>
+
+            <p class="tda-hero-text">
+              I know what it feels like to lose yourself, to feel not enough, to
+              search for belonging in all the wrong places, and to slowly,
+              honestly, find your way back.
+            </p>
+
+            <div class="tda-actions">
+              <a
+                class="tda-btn-dark"
+                href="https://calendly.com/therapywithtiffany/therapy-session"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Session
+              </a>
+
+              <a class="tda-btn-light" href="/work-with-me/">Work With Me</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-dark">
+          <div class="tda-inner tda-story-grid">
+            <div>
+              <div class="tda-label tda-label-light">Before the work</div>
+
+              <h2 class="tda-title-light">
+                For a long time, I lived in the <em>in-between.</em>
+              </h2>
+            </div>
+
+            <div class="tda-story-cards">
+              <div class="tda-story-card">
+                <p>
+                  For as long as I can remember, I felt like I was trying to
+                  figure out where I belonged. Too much for some spaces, not
+                  enough for others. Not fully this, not fully that. Just
+                  floating, searching, and trying to become whatever version of
+                  me might finally be accepted.
+                </p>
+              </div>
+
+              <div class="tda-story-card">
+                <p>
+                  I spent so much of my childhood trying to read the room. What
+                  did people want from me? Who did I need to be to feel wanted,
+                  safe, chosen, or loved? By adolescence, that ache turned into
+                  rebellion, acting out, and looking for belonging in places
+                  that could never really give it to me.
+                </p>
+              </div>
+
+              <div class="tda-story-card">
+                <p>
+                  Underneath all of it was a quieter truth:
+                  <strong>I did not believe I was worth loving.</strong> Not
+                  pretty enough. Not good enough. Not wanted enough. Not worthy
+                  of softness, care, gentleness, or peace.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-soft">
+          <div class="tda-inner tda-split">
+            <div class="tda-copy">
+              <div class="tda-label">The ache underneath</div>
+
+              <h2 class="tda-title">
+                I know what it feels like to be far from <em>yourself.</em>
+              </h2>
+
+              <p style="margin-top: 28px">
+                There were moments in my life that felt incredibly dark.
+                Moments when I did not know how I would come out of what I was
+                feeling. But even then, there was something tender inside of me
+                that refused to give up.
+              </p>
+
+              <p>
+                That part of me did not have all the words yet. She did not
+                have the tools, the language, the support, or the
+                self-compassion. But she was still there. Waiting. Reaching.
+                Wanting a way back.
+              </p>
+
+              <p>
+                My healing did not begin with a perfect breakthrough. It began
+                slowly, through the body, through movement, through breath, and
+                through the first fragile moments of realizing I could feel
+                something other than shame.
+              </p>
+            </div>
+
+            <div class="tda-image-card">
+              <img
+                src="https://dl.dropboxusercontent.com/scl/fi/c5m6rewrg2y0ye72c3981/5725e7_4bd68c9a9ec14df5817c59a2d826c15b-mv2.png?rlkey=ceyesmbpu6kpbv2ym7cqlj4x7"
+                alt="A quiet image representing embodiment, movement, and coming home to yourself"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-quote">
+          <div class="tda-quote-inner">
+            <p class="tda-large-quote">
+              My healing did not start by understanding everything. It started
+              by learning how to <em>listen.</em>
+            </p>
+
+            <p class="tda-quote-sub">
+              Movement gave me access to parts of myself I had spent years
+              avoiding. It helped me feel present, strong, soft, emotional,
+              grounded, and alive in a way I had never known before.
+            </p>
+          </div>
+        </section>
+
+        <section class="tda-section tda-timeline">
+          <div class="tda-inner">
+            <div class="tda-timeline-head">
+              <div class="tda-label">The shift</div>
+
+              <h2 class="tda-title">
+                Movement became both my medicine and my <em>teacher.</em>
+              </h2>
+
+              <p class="tda-copy">
+                Yoga, acrobatics, breathwork, flexibility, dance, and somatic
+                practices helped me experience healing as something I could
+                feel, not just something I could think through.
+              </p>
+            </div>
+
+            <div class="tda-timeline-list">
+              <div class="tda-timeline-item">
+                <div class="tda-timeline-marker">Body</div>
+                <div>
+                  <h3>Presence became possible.</h3>
+                  <p>
+                    For the first time, I began to understand what it meant to
+                    be in my body instead of running from it. Movement helped me
+                    feel my emotions, listen inward, and experience strength and
+                    softness at the same time.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tda-timeline-item">
+                <div class="tda-timeline-marker">Breath</div>
+                <div>
+                  <h3>Softness stopped feeling like weakness.</h3>
+                  <p>
+                    Slow, grounding practices taught me that healing was not
+                    only about pushing through. It was also about pausing,
+                    breathing, receiving, resting, and letting myself be human.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tda-timeline-item">
+                <div class="tda-timeline-marker">Self</div>
+                <div>
+                  <h3>I started rebuilding trust with myself.</h3>
+                  <p>
+                    Piece by piece, I began letting go of the versions of myself
+                    I had created to survive. Not quickly. Not perfectly. Not
+                    always beautifully. But honestly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-bali-thailand">
+          <div class="tda-inner">
+            <div style="max-width: 840px">
+              <div class="tda-label tda-label-light">Places that shaped me</div>
+
+              <h2 class="tda-title-light">
+                Bali helped me feel seen. Thailand taught me how to see
+                <em>myself.</em>
+              </h2>
+            </div>
+
+            <div class="tda-two-card-grid">
+              <div class="tda-place-card">
+                <small>Bali, Indonesia</small>
+
+                <h3>The moment I felt seen.</h3>
+
+                <p>
+                  I went to Bali thinking I was there to deepen my acrobatics,
+                  to flip, fly, and live upside down. Instead, I found myself in
+                  slow, grounding yoga practices I used to roll my eyes at. What
+                  I thought would be “boring old yoga” became one of the most
+                  transformative parts of my life.
+                </p>
+
+                <p>
+                  One moment I will never forget was an eye-gazing exercise. We
+                  were asked to look into a stranger’s eyes for fifteen minutes.
+                  No talking. No hiding. No looking away. That stranger looked
+                  at me with more compassion than I had ever shown myself.
+                  Something inside me softened. For the first time in my life, I
+                  felt seen.
+                </p>
+              </div>
+
+              <div class="tda-place-card">
+                <small>Thailand</small>
+
+                <h3>The moment I learned to listen.</h3>
+
+                <p>
+                  In Thailand, I completed a 500-hour therapeutic yoga training.
+                  That experience deepened everything. Somatic awareness,
+                  breathwork, ritual, and slow intentional movement taught me
+                  that the body often knows the truth long before the mind is
+                  ready to say it out loud.
+                </p>
+
+                <p>
+                  Thailand taught me how to stop abandoning myself. It taught me
+                  how to listen inward, how to honor what my body was holding,
+                  and how to rebuild a relationship with the parts of me I had
+                  learned to ignore.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-callout">
+          <div class="tda-inner">
+            <div class="tda-callout-panel">
+              <h2 class="tda-callout-title">
+                The body held answers my mind could not <em>touch.</em>
+              </h2>
+
+              <div class="tda-copy-dark">
+                <p>
+                  Around the same time, I was studying psychology, earning my
+                  Master’s in Mental Health Counseling, and working across
+                  crisis, school-based, partial care, intensive outpatient, and
+                  behavioral health settings.
+                </p>
+
+                <p>
+                  The more I learned clinically, the more I understood that
+                  healing could not live only in insight. Insight matters, but
+                  so does the body. So does the nervous system. So does emotion.
+                  So does the quiet, tender process of learning how to be with
+                  yourself differently.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-present">
+          <div class="tda-inner tda-present-grid">
+            <div class="tda-copy">
+              <div class="tda-label">Where I am now</div>
+
+              <h2 class="tda-title">
+                Today, my life looks nothing like the girl who once doubted she
+                belonged here.
+              </h2>
+
+              <p style="margin-top: 28px">
+                I have a beautiful family, a grounded relationship with myself,
+                and a life where movement, artistry, motherhood, creativity, and
+                healing all intertwine.
+              </p>
+
+              <p>
+                I am a therapist, yes. But I am also a mover, performer,
+                acrobat, dancer, aerialist, creator, and lifelong student of the
+                body. I tell stories with movement now in ways I once could not
+                tell with words.
+              </p>
+
+              <p>
+                Every chapter of my journey shaped me — my heart, my purpose,
+                my work, and the way I sit with clients. It taught me how to
+                help others come home to themselves with the same gentleness I
+                had to learn from scratch.
+              </p>
+            </div>
+
+            <div class="tda-image-card">
+              <img
+                src="https://dl.dropboxusercontent.com/scl/fi/ibyd16m9qnunqsxm6hx6m/IMG_6316-copy-2.JPG?rlkey=368vjc6gt57bk5zx3kp4tb8ra"
+                alt="Tiffany Wright, therapist, performer, and movement practitioner"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-dark">
+          <div class="tda-inner tda-story-grid">
+            <div>
+              <div class="tda-label tda-label-light">Why this work matters</div>
+
+              <h2 class="tda-title-light">
+                The people I work with often remind me of who I used to be.
+              </h2>
+            </div>
+
+            <div class="tda-copy-dark">
+              <p>
+                The one who carried too much. The one who tried too hard. The
+                one who kept everyone else together while quietly falling apart.
+                The one who did not know how to love herself because no one had
+                ever really taught her how.
+              </p>
+
+              <p>
+                I know what it is like to feel disconnected from yourself while
+                still functioning. I know what it is like to perform okay. I
+                know what it is like to crave softness but not know how to
+                receive it.
+              </p>
+
+              <p>
+                That is why The Embodied Self exists. To offer the support,
+                compassion, honesty, guidance, and space I once needed. A place
+                where healing can be deep, human, creative, body-based, and
+                real.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-section tda-closing">
+          <div class="tda-closing-inner">
+            <h2 class="tda-closing-title">
+              You are not broken. <em>You are becoming.</em>
+            </h2>
+
+            <p class="tda-closing-text">
+              If you are moving through a season where you feel lost,
+              overwhelmed, disconnected, or far from who you truly are, I want
+              you to know that there is nothing wrong with you. There is a way
+              back to yourself. And you do not have to find it alone.
+            </p>
+
+            <div class="tda-actions">
+              <a
+                class="tda-btn-light"
+                href="https://calendly.com/therapywithtiffany/therapy-session"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Session
+              </a>
+
+              <a class="tda-btn-light" href="mailto:theembodiedself@proton.me">
+                Email Tiffany
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="tda-cta">
+          <div class="tda-cta-inner">
+            <div class="tda-label">Begin here</div>
+
+            <h2 class="tda-cta-title">
+              Step by step. Breath by breath. Back to <em>yourself.</em>
+            </h2>
+
+            <p class="tda-cta-text">
+              Therapy is not about arriving with the perfect words. It is about
+              having a place where your real self is allowed to show up, be
+              seen, and begin healing with support.
+            </p>
+
+            <div class="tda-actions">
+              <a
+                class="tda-btn-dark"
+                href="https://calendly.com/therapywithtiffany/therapy-session"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Session
+              </a>
+
+              <a class="tda-btn-light" href="/work-with-me/">Explore Services</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
