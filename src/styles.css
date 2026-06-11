@@ -9,11 +9,9 @@
   --sage-deep: #173529;
   --sage-soft: #d9ded2;
   --clay: #c86643;
-  --clay-dark: #a94f34;
   --ink: #27231d;
   --muted: #766d63;
   --line: rgba(39, 35, 29, 0.13);
-  --white-soft: rgba(255, 255, 255, 0.76);
 }
 
 * {
@@ -147,7 +145,7 @@ h3 {
 h1 {
   font-size: clamp(64px, 7vw, 106px);
   line-height: 0.92;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   margin-bottom: 30px;
 }
 
@@ -162,7 +160,7 @@ h1 em {
 h2 {
   font-size: clamp(44px, 5vw, 72px);
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
   margin-bottom: 26px;
 }
 
@@ -289,7 +287,7 @@ h3 {
   position: absolute;
   left: 38px;
   right: 38px;
-  bottom: 38px;
+  top: 38px;
   background: rgba(248, 241, 231, 0.92);
   padding: 28px;
   backdrop-filter: blur(12px);
@@ -320,10 +318,6 @@ h3 {
   background: var(--linen);
 }
 
-.sageLight {
-  background: var(--sage-soft);
-}
-
 .darkSection {
   background:
     radial-gradient(circle at top right, rgba(200, 102, 67, 0.12), transparent 26%),
@@ -340,6 +334,80 @@ h3 {
   color: rgba(255, 255, 255, 0.68);
 }
 
+.whoSection {
+  background: #19140f;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.whoWrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 84px;
+  align-items: center;
+}
+
+.whoIntro h2 {
+  color: var(--linen);
+  font-size: clamp(48px, 5.8vw, 86px);
+  line-height: 1.03;
+}
+
+.whoIntro h2 em {
+  display: inline;
+  color: var(--linen);
+}
+
+.mutedEyebrow {
+  color: rgba(248, 241, 231, 0.58);
+  position: relative;
+}
+
+.mutedEyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 44px;
+  height: 1px;
+  margin-left: 16px;
+  vertical-align: middle;
+  background: rgba(248, 241, 231, 0.35);
+}
+
+.whoList {
+  border-top: 1px solid rgba(248, 241, 231, 0.1);
+}
+
+.whoItem {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 32px;
+  padding: 34px 0;
+  border-bottom: 1px solid rgba(248, 241, 231, 0.1);
+}
+
+.whoItem span {
+  color: var(--clay);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  font-style: italic;
+}
+
+.whoItem h3 {
+  color: rgba(248, 241, 231, 0.84);
+  font-family: "Jost", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.whoItem p {
+  color: rgba(248, 241, 231, 0.58);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
 .split {
   max-width: 1280px;
   margin: 0 auto;
@@ -353,33 +421,6 @@ h3 {
   font-size: 17px;
   line-height: 1.9;
   color: #5a5048;
-}
-
-.softPanel {
-  min-height: 470px;
-  border-radius: 150px 150px 8px 8px;
-  background:
-    radial-gradient(circle at 78% 34%, rgba(200, 102, 67, 0.16), transparent 22%),
-    radial-gradient(circle at 22% 72%, rgba(95, 112, 94, 0.14), transparent 20%),
-    var(--cream2);
-  padding: 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  border: 1px solid var(--line);
-}
-
-.softPanel svg {
-  color: var(--sage);
-  margin-bottom: 28px;
-}
-
-.softPanel h3 {
-  color: var(--sage-dark);
-}
-
-.softPanel p {
-  margin-bottom: 0;
 }
 
 .sectionTop {
@@ -416,11 +457,6 @@ h3 {
 
 .cardGrid.three {
   grid-template-columns: repeat(3, 1fr);
-}
-
-.cardGrid.two {
-  grid-template-columns: repeat(2, 1fr);
-  border-color: rgba(39, 35, 29, 0.12);
 }
 
 .serviceCard {
@@ -496,49 +532,6 @@ h3 {
 .methodCard p:not(.phase) {
   color: #5a5048;
   line-height: 1.78;
-}
-
-.resourceCard {
-  background: rgba(255, 255, 255, 0.45);
-  padding: 42px;
-  border: 1px solid rgba(39, 35, 29, 0.07);
-}
-
-.iconCircle {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  background: var(--sage-dark);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 26px;
-}
-
-.resourceType {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--clay);
-  font-weight: 500;
-}
-
-.resourceCard p {
-  color: #5a5048;
-  line-height: 1.78;
-}
-
-.resourceCard button {
-  margin-top: 18px;
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--sage-dark);
-  padding: 12px 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 11px;
-  cursor: default;
 }
 
 .communityForm,
@@ -674,7 +667,8 @@ textarea:focus {
 
 @media (max-width: 1050px) {
   .hero,
-  .split {
+  .split,
+  .whoWrap {
     grid-template-columns: 1fr;
   }
 
@@ -691,7 +685,6 @@ textarea:focus {
   }
 
   .cardGrid.three,
-  .cardGrid.two,
   .methodGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -704,6 +697,10 @@ textarea:focus {
 @media (max-width: 760px) {
   .header {
     padding: 0 20px;
+  }
+
+  .brand {
+    font-size: 23px;
   }
 
   .menuButton {
@@ -774,7 +771,7 @@ textarea:focus {
   .quoteCard {
     left: 24px;
     right: 24px;
-    bottom: 24px;
+    top: 24px;
     padding: 22px;
   }
 
@@ -782,24 +779,27 @@ textarea:focus {
     font-size: 28px;
   }
 
-  .softPanel,
+  .whoWrap {
+    gap: 38px;
+  }
+
+  .whoItem {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 30px 0;
+  }
+
   .communityForm,
   .contactForm {
     padding: 30px;
   }
 
-  .softPanel {
-    border-radius: 90px 90px 8px 8px;
-  }
-
   .cardGrid.three,
-  .cardGrid.two,
   .methodGrid {
     grid-template-columns: 1fr;
   }
 
-  .serviceCard,
-  .resourceCard {
+  .serviceCard {
     padding: 32px;
   }
 
