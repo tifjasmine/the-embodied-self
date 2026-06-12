@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Regulated Mother | The Embodied Self</title>
+    <meta
+      name="description"
+      content="The Regulated Mother is a community-centered space for mothers to share honest thoughts, receive therapist reflection, and feel less alone."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+    <style>
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+        --line: rgba(28, 23, 18, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .trm-section {
+        padding: 90px 6vw;
+      }
+
+      .trm-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .trm-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--clay);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        margin-bottom: 26px;
+        text-transform: uppercase;
+      }
+
+      .trm-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--clay);
+      }
+
+      .trm-hero {
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.12), transparent 38%),
+          radial-gradient(ellipse at 88% 12%, rgba(122, 139, 110, 0.09), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+        padding: 94px 6vw 78px;
+      }
+
+      .trm-hero-grid {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 0.72fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 300;
+      }
+
+      h1 {
+        max-width: 850px;
+        font-size: clamp(50px, 6.8vw, 94px);
+        letter-spacing: -0.045em;
+        line-height: 0.94;
+        margin-bottom: 28px;
+      }
+
+      h1 em,
+      h2 em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .trm-copy {
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .trm-hero-copy {
+        max-width: 650px;
+        font-size: clamp(17px, 1.4vw, 20px);
+        margin-bottom: 38px;
+      }
+
+      .trm-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .trm-btn-dark,
+      .trm-btn-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        border: 1px solid rgba(28, 23, 18, 0.18);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        padding: 14px 28px;
+        text-transform: uppercase;
+      }
+
+      .trm-btn-dark {
+        background: var(--charcoal);
+        border-color: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .trm-btn-light {
+        background: rgba(250, 246, 240, 0.72);
+        color: var(--charcoal);
+      }
+
+      .trm-hero-card {
+        background: rgba(250, 246, 240, 0.82);
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 52px rgba(28, 23, 18, 0.06);
+        padding: 38px 34px;
+      }
+
+      .trm-hero-card h2 {
+        font-size: clamp(34px, 3.4vw, 50px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        margin-bottom: 18px;
+      }
+
+      .trm-dark {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .trm-dark h2,
+      .trm-dark h3 {
+        color: var(--cream);
+      }
+
+      .trm-dark .trm-copy {
+        color: rgba(250, 246, 240, 0.72);
+      }
+
+      .trm-title {
+        max-width: 820px;
+        font-size: clamp(40px, 4.8vw, 70px);
+        letter-spacing: -0.035em;
+        line-height: 1;
+        margin-bottom: 28px;
+      }
+
+      .trm-three {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(28, 23, 18, 0.1);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        margin-top: 44px;
+      }
+
+      .trm-card {
+        background: var(--cream);
+        padding: 34px 30px;
+      }
+
+      .trm-card small {
+        display: block;
+        color: var(--clay);
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+      }
+
+      .trm-card h3 {
+        font-size: 34px;
+        letter-spacing: -0.02em;
+        line-height: 1.04;
+        margin-bottom: 14px;
+      }
+
+      .trm-card p {
+        color: var(--brown);
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .trm-question {
+        background: var(--tan);
+      }
+
+      .trm-question-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 58px;
+        align-items: center;
+      }
+
+      .trm-panel {
+        background: var(--charcoal);
+        color: var(--cream);
+        padding: 42px 38px;
+        text-align: center;
+      }
+
+      .trm-panel h3 {
+        color: var(--cream);
+        font-size: clamp(34px, 4vw, 56px);
+        line-height: 1.04;
+        margin-bottom: 24px;
+      }
+
+      .trm-panel p {
+        color: rgba(250, 246, 240, 0.72);
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 30px;
+      }
+
+      .trm-panel .trm-actions {
+        justify-content: center;
+      }
+
+      .trm-panel .trm-btn-light {
+        background: var(--cream);
+        border-color: var(--cream);
+      }
+
+      .trm-note {
+        max-width: 760px;
+        color: rgba(250, 246, 240, 0.7);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 900px) {
+        .trm-hero-grid,
+        .trm-question-grid {
+          grid-template-columns: 1fr;
+          gap: 42px;
+        }
+
+        .trm-three {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .trm-hero,
+        .trm-section {
+          padding: 64px 22px;
+        }
+
+        h1 {
+          font-size: clamp(48px, 14vw, 68px);
+        }
+
+        .trm-actions {
+          flex-direction: column;
+        }
+
+        .trm-btn-dark,
+        .trm-btn-light {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="trm-hero">
+        <div class="trm-hero-grid">
+          <div>
+            <div class="trm-label">The Regulated Mother</div>
+            <h1>Ask a mother. Hear a therapist. Trust a <em>village.</em></h1>
+            <p class="trm-copy trm-hero-copy">
+              A community-centered space for the thoughts mothers carry quietly:
+              the guilt, resentment, loneliness, overstimulation, invisible labor,
+              and love that can all exist in the same breath.
+            </p>
+            <div class="trm-actions">
+              <a class="trm-btn-dark" href="/community/">Enter the Community</a>
+              <a class="trm-btn-light" href="/submit-your-truth/">Submit Your Truth</a>
+            </div>
+          </div>
+
+          <div class="trm-hero-card">
+            <h2>No perfect motherhood performance required.</h2>
+            <p class="trm-copy">
+              This is a place to name what is hard, hear what other mothers are
+              holding, and receive gentle therapist perspective without shame or
+              a “just be grateful” disclaimer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="trm-section trm-dark">
+        <div class="trm-inner">
+          <div class="trm-label">What lives here</div>
+          <h2 class="trm-title">
+            Honest support for motherhood, dysregulation, and emotional <em>load.</em>
+          </h2>
+          <p class="trm-copy trm-note">
+            The Regulated Mother connects anonymous community truths with
+            therapist reflection, grounding tools, and reminders that you are not
+            the only one who feels stretched thin by the work no one sees.
+          </p>
+        </div>
+      </section>
+
+      <section class="trm-section">
+        <div class="trm-inner">
+          <div class="trm-label">The village model</div>
+          <h2 class="trm-title">Three ways to feel less alone.</h2>
+
+          <div class="trm-three">
+            <article class="trm-card">
+              <small>01</small>
+              <h3>Share what is true.</h3>
+              <p>
+                Submit an anonymous thought, question, or reflection about what
+                you are actually carrying in motherhood.
+              </p>
+            </article>
+
+            <article class="trm-card">
+              <small>02</small>
+              <h3>Read what others carry.</h3>
+              <p>
+                Approved responses are shared so another mother can feel seen in
+                a thought she may have believed was only hers.
+              </p>
+            </article>
+
+            <article class="trm-card">
+              <small>03</small>
+              <h3>Receive grounding tools.</h3>
+              <p>
+                Tiffany offers therapist reflection and simple practices for
+                returning to yourself with more steadiness and compassion.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="trm-section trm-question">
+        <div class="trm-inner trm-question-grid">
+          <div>
+            <div class="trm-label">This month’s question</div>
+            <h2 class="trm-title">
+              What feels hardest to carry by the end of the <em>day?</em>
+            </h2>
+            <p class="trm-copy">
+              Answer with one sentence, one paragraph, or the thought you have
+              been afraid to say out loud. Responses are reviewed before they are
+              shared publicly.
+            </p>
+          </div>
+
+          <div class="trm-panel">
+            <h3>Join the conversation.</h3>
+            <p>
+              Submit your truth, ask Tiffany a question, or read what other
+              mothers have shared in The Dysregulated Truth.
+            </p>
+            <div class="trm-actions">
+              <a class="trm-btn-light" href="/community/">View Community</a>
+              <a class="trm-btn-light" href="/ask-tiffany/">Ask Tiffany</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
