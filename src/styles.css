@@ -70,19 +70,59 @@ textarea {
 .nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 0;
 }
 
-.nav a {
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
+.nav a,
+.navDropdown > a {
+  font-size: 12px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
   color: #322d28;
 }
 
+.nav > a,
+.navDropdown {
+  border-left: 1px solid rgba(39, 35, 29, 0.14);
+  padding: 0 18px;
+}
+
+.nav > a:first-child {
+  border-left: 0;
+}
+
 .nav a:hover {
   color: var(--clay);
+}
+
+.navDropdown {
+  position: relative;
+  min-height: 74px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navSubmenu {
+  position: absolute;
+  top: calc(100% - 10px);
+  right: 0;
+  min-width: 210px;
+  display: none;
+  background: rgba(248, 241, 231, 0.98);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 44px rgba(39, 35, 29, 0.1);
+  padding: 10px 14px;
+}
+
+.navSubmenu a {
+  display: block;
+  padding: 12px 0;
+}
+
+.navDropdown:hover .navSubmenu,
+.navDropdown:focus-within .navSubmenu {
+  display: block;
 }
 
 .navButton {
@@ -819,12 +859,15 @@ textarea:focus {
     padding: 0 24px;
   }
 
-  .nav {
-    gap: 16px;
+  .nav a,
+  .navDropdown > a {
+    font-size: 11px;
+    letter-spacing: 0.14em;
   }
 
-  .nav a {
-    font-size: 11px;
+  .nav > a,
+  .navDropdown {
+    padding: 0 12px;
   }
 }
 
@@ -905,6 +948,32 @@ textarea:focus {
   .nav a {
     padding: 16px 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .nav > a,
+  .navDropdown {
+    border-left: 0;
+    padding: 0;
+  }
+
+  .navDropdown {
+    display: block;
+    min-height: 0;
+  }
+
+  .navSubmenu {
+    position: static;
+    display: block;
+    min-width: 0;
+    box-shadow: none;
+    border: 0;
+    background: transparent;
+    padding: 0 0 0 18px;
+  }
+
+  .navSubmenu a {
+    color: rgba(50, 45, 40, 0.68);
+    font-size: 11px;
   }
 
   .navButton {
