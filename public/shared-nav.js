@@ -11,7 +11,7 @@
     </button>
     <nav class="tes-site-links" id="tesSiteLinks" aria-label="Main navigation">
       <a href="/">Home</a>
-      <a href="/work-with-me/">Work With Me</a>
+      <a href="/work-with-me/">Services</a>
       <a href="/about/">About Me</a>
       <a href="/resources/">Resources</a>
 
