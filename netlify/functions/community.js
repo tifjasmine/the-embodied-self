@@ -5,14 +5,15 @@ const FIELD_MAP = {
   email: process.env.AIRTABLE_FIELD_EMAIL || "Email",
   kidsAge: process.env.AIRTABLE_FIELD_KIDS_AGE || "Kids Age",
   heardFrom: process.env.AIRTABLE_FIELD_HEARD_FROM || "Heard From",
-  relatedQuestion: process.env.AIRTABLE_FIELD_RELATED_QUESTION || "Related Question",
-  questionIntro: process.env.AIRTABLE_FIELD_QUESTION_INTRO || "Question Intro",
-  questionActive: process.env.AIRTABLE_FIELD_QUESTION_ACTIVE || "Question Active",
-  questionText: process.env.AIRTABLE_FIELD_QUESTION_TEXT || "Question Text",
+  relatedQuestion:
+    process.env.AIRTABLE_FIELD_RELATED_QUESTION || "Related Question",
+  questionIntro:
+    process.env.AIRTABLE_FIELD_QUESTION_INTRO || "Question Intro",
+  questionActive:
+    process.env.AIRTABLE_FIELD_QUESTION_ACTIVE || "Question Active",
+  questionText:
+    process.env.AIRTABLE_FIELD_QUESTION_TEXT || "Question Text",
   featured: process.env.AIRTABLE_FIELD_FEATURED || "Featured",
-  therapistReflection: process.env.AIRTABLE_FIELD_THERAPIST_REFLECTION || "Therapist Reflection",
-  toolTitle: process.env.AIRTABLE_FIELD_TOOL_TITLE || "Tool Title",
-  toolInstructions: process.env.AIRTABLE_FIELD_TOOL_INSTRUCTIONS || "Tool Instructions",
 };
 
 function unwrapValue(value) {
@@ -39,7 +40,10 @@ function isTruthy(value) {
   if (value === true) return true;
 
   const text = unwrapValue(value).toLowerCase();
-  return ["true", "yes", "approved", "published", "public", "1"].includes(text);
+
+  return ["true", "yes", "approved", "published", "public", "1"].includes(
+    text
+  );
 }
 
 function firstValue(records, fieldName) {
@@ -66,10 +70,14 @@ async function fetchAllAirtableRecords() {
 
   do {
     const params = new URLSearchParams({ pageSize: "100" });
+
     if (offset) params.set("offset", offset);
     if (viewName) params.set("view", viewName);
 
-    const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}?${params}`;
+    const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(
+      tableName
+    )}?${params}`;
+
     const response = await fetch(url, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -96,13 +104,11 @@ exports.handler = async function handler() {
     const activeRecords = records.filter((record) =>
       isTruthy(record.fields?.[FIELD_MAP.questionActive])
     );
+
     const sourceRecords = activeRecords.length ? activeRecords : records;
 
     const currentQuestion = firstValue(sourceRecords, FIELD_MAP.questionText);
     const questionIntro = firstValue(sourceRecords, FIELD_MAP.questionIntro);
-    const therapistReflection = firstValue(sourceRecords, FIELD_MAP.therapistReflection);
-    const toolTitle = firstValue(sourceRecords, FIELD_MAP.toolTitle);
-    const toolInstructions = firstValue(sourceRecords, FIELD_MAP.toolInstructions);
 
     const responses = records
       .filter((record) => {
@@ -132,9 +138,6 @@ exports.handler = async function handler() {
         configured,
         currentQuestion,
         questionIntro,
-        therapistReflection,
-        toolTitle,
-        toolInstructions,
         responses,
       }),
     };
