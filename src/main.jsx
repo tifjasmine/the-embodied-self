@@ -261,11 +261,11 @@ function LearnMore() {
         <div className="learnMoreCopy">
           <p>
             Visit the About page to get a fuller sense of who I am, or explore
-            resources created for the moments between sessions.
+            Resources created for the moments between sessions.
           </p>
           <div className="learnMoreActions">
             <a href="/about/">About Me</a>
-            <a href="/resources/">Support for Moments in Between</a>
+            <a href="/resources/">Resources</a>
           </div>
         </div>
       </div>
