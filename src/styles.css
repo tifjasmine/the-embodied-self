@@ -70,12 +70,12 @@ textarea {
 .nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
 }
 
 .nav a {
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 500;
   color: #322d28;
