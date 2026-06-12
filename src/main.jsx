@@ -67,7 +67,7 @@ function Header({ menuOpen, setMenuOpen, closeMenu }) {
 
       <nav className={menuOpen ? "nav navOpen" : "nav"}>
         <a onClick={closeMenu} href="#home">Home</a>
-        <a onClick={closeMenu} href="/work-with-me/">Work With Me</a>
+        <a onClick={closeMenu} href="/work-with-me/">Services</a>
         <a onClick={closeMenu} href="/about/">About Me</a>
         <a onClick={closeMenu} href="/resources/">Resources</a>
         <a onClick={closeMenu} href="/the-regulated-mother/">The Regulated Mother</a>
