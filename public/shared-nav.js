@@ -14,7 +14,14 @@
       <a href="/work-with-me/">Work With Me</a>
       <a href="/about/">About Me</a>
       <a href="/resources/">Resources</a>
-      <a href="/the-regulated-mother/">The Regulated Mother</a>
+
+      <span class="tes-site-dropdown">
+        <a href="/the-regulated-mother/">The Regulated Mother</a>
+        <span class="tes-site-submenu">
+          <a href="/community/">Community</a>
+        </span>
+      </span>
+
       <a class="tes-site-book" href="${bookingLink}" target="_blank" rel="noopener noreferrer">Book a Session</a>
     </nav>
   `;
