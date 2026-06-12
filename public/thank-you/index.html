@@ -31,9 +31,7 @@
       body {
         margin: 0;
         min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 28px;
+        padding: 0;
         background: var(--cream);
         color: var(--charcoal);
         font-family: "Jost", sans-serif;
@@ -42,6 +40,7 @@
 
       .thankYouCard {
         width: min(920px, 100%);
+        margin: 84px auto;
         border: 1px solid var(--line);
         background: rgba(251, 247, 240, 0.78);
         box-shadow: 0 22px 80px rgba(39, 35, 29, 0.07);
@@ -111,8 +110,6 @@
       }
 
       @media (max-width: 560px) {
-        body {
-          padding: 18px;
         }
 
         .actions,
@@ -132,7 +129,6 @@
       </p>
       <div class="actions">
         <a class="primary" href="/">Return Home</a>
-        <a class="secondary" href="/#services">Explore Services</a>
       </div>
     </main>
   </body>
