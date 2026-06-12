@@ -283,59 +283,6 @@
         text-transform: uppercase;
       }
 
-      .tes-support-note {
-        background: var(--cream);
-      }
-
-      .tes-support-panel {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 46px;
-        align-items: center;
-        background: var(--charcoal);
-        color: var(--cream);
-        padding: 48px;
-      }
-
-      .tes-support-title {
-        color: var(--cream);
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(36px, 4.4vw, 60px);
-        font-weight: 300;
-        line-height: 1;
-        letter-spacing: 0;
-      }
-
-      .tes-support-title em {
-        color: var(--clay);
-        font-style: italic;
-      }
-
-      .tes-support-text {
-        margin-bottom: 28px;
-        color: rgba(250, 246, 240, 0.72);
-        font-size: 15.5px;
-        line-height: 1.85;
-      }
-
-      .tes-support-actions {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        flex-wrap: wrap;
-      }
-
-      .tes-support-panel .tes-btn-light {
-        background: var(--cream);
-        color: var(--charcoal) !important;
-        border-color: var(--cream);
-      }
-
-      .tes-support-panel .tes-btn-light:hover {
-        background: var(--tan);
-        border-color: var(--tan);
-      }
-
       @media (max-width: 1180px) {
         .tes-offers-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -343,8 +290,7 @@
       }
 
       @media (max-width: 900px) {
-        .tes-hero-inner,
-        .tes-support-panel {
+        .tes-hero-inner {
           grid-template-columns: 1fr;
         }
 
@@ -383,8 +329,7 @@
           line-height: 1.75;
         }
 
-        .tes-hero-actions,
-        .tes-support-actions {
+       .tes-hero-actions {
           align-items: stretch;
           flex-direction: column;
           gap: 12px;
@@ -418,9 +363,6 @@
           font-size: 34px;
         }
 
-        .tes-support-panel {
-          padding: 36px 24px;
-        }
       }
     </style>
     <link rel="stylesheet" href="/shared-nav.css" />
@@ -561,43 +503,6 @@
                 <div class="tes-offer-note">Online · No location restrictions</div>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="tes-section tes-support-note">
-        <div class="tes-inner">
-          <div class="tes-support-panel">
-            <div>
-              <h2 class="tes-support-title">
-                Not sure which option fits? <em>Start with therapy.</em>
-              </h2>
-            </div>
-
-            <div>
-              <p class="tes-support-text">
-                You do not have to know exactly what you need before reaching
-                out. Many people begin with a feeling: overwhelmed,
-                disconnected, anxious, stuck, exhausted, or ready for something
-                to change. We can start there and decide together what support
-                makes the most sense.
-              </p>
-
-              <div class="tes-support-actions">
-                <a
-                  class="tes-btn-light"
-                  href="https://calendly.com/therapywithtiffany/therapy-session"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book a Session
-                </a>
-
-                <a class="tes-btn-light" href="mailto:theembodiedself@proton.me">
-                  Email Tiffany
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
