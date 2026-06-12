@@ -67,9 +67,10 @@ function Header({ menuOpen, setMenuOpen, closeMenu }) {
 
       <nav className={menuOpen ? "nav navOpen" : "nav"}>
         <a onClick={closeMenu} href="#home">Home</a>
-        <a onClick={closeMenu} href="/work-with-me/">Work With Me / Services</a>
+        <a onClick={closeMenu} href="/work-with-me/">Work With Me</a>
         <a onClick={closeMenu} href="/about/">About Me</a>
         <a onClick={closeMenu} href="/resources/">Resources</a>
+        <a onClick={closeMenu} href="/the-regulated-mother/">The Regulated Mother</a>
         <a onClick={closeMenu} className="navButton" href={BOOKING_LINK} target="_blank" rel="noreferrer">
           Book a Session
         </a>
@@ -111,7 +112,7 @@ function Home() {
         <div className="portraitCard">
           <img src={HERO_IMAGE_URL} alt="The Embodied Self therapy visual" />
           <div className="quoteCard">
-            <p>You are not broken. You are coming home.</p>
+            <p>You are not broken. <br />You are coming home.</p>
             <span>The Embodied Self</span>
           </div>
         </div>
@@ -239,7 +240,6 @@ function SelfMethod() {
         {phases.map(([letter, title, text]) => (
           <article className="methodCard" key={letter}>
             <div className="bigLetter">{letter}</div>
-            <p className="phase">Phase {letter}</p>
             <h3>{title}</h3>
             <p>{text}</p>
           </article>
@@ -261,7 +261,7 @@ function LearnMore() {
         <div className="learnMoreCopy">
           <p>
             Visit the About page to get a fuller sense of who I am, or explore
-            reflections and resources created for the moments between sessions.
+            resources created for the moments between sessions.
           </p>
           <div className="learnMoreActions">
             <a href="/about/">About Me</a>
