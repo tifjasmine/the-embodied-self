@@ -40,21 +40,60 @@
 .tes-site-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 0;
 }
 
-.tes-site-links a {
+.tes-site-links a
+.tes-site-dropdown > a {
   color: #322d28;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.65em;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
 }
+.tes-site-links > a,
+.tes-site-dropdown {
+  border-left: 1px solid rgba(28, 23, 18, 0.14);
+  padding: 0 18px;
+}
+
+.tes-site-links > a:first-child {
+  border-left: 0;
+}
 
 .tes-site-links a:hover {
   color: var(--tes-clay);
+}
+
+.tes-site-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 74px;
+}
+
+.tes-site-submenu {
+  position: absolute;
+  top: calc(100% - 10px);
+  right: 0;
+  min-width: 210px;
+  display: none;
+  background: rgba(250, 246, 240, 0.98);
+  border: 1px solid var(--tes-line);
+  box-shadow: 0 18px 44px rgba(28, 23, 18, 0.1);
+  padding: 10px 14px;
+}
+
+.tes-site-submenu a {
+  display: block;
+  padding: 12px 0;
+}
+
+.tes-site-dropdown:hover .tes-site-submenu,
+.tes-site-dropdown:focus-within .tes-site-submenu {
+  display: block;
 }
 
 .tes-site-book {
