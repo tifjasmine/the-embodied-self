@@ -336,60 +336,6 @@
         border-color: var(--tan);
       }
 
-      .tes-cta {
-        position: relative;
-        overflow: hidden;
-        background: var(--tan);
-        padding: 92px 6vw;
-        text-align: center;
-      }
-
-      .tes-cta::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(ellipse at 50% 0%, rgba(196, 121, 90, 0.16) 0%, transparent 55%);
-        pointer-events: none;
-      }
-
-      .tes-cta-inner {
-        position: relative;
-        z-index: 1;
-        max-width: 760px;
-        margin: 0 auto;
-      }
-
-      .tes-cta-title {
-        margin-bottom: 22px;
-        color: var(--charcoal);
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(38px, 4.8vw, 66px);
-        font-weight: 300;
-        line-height: 1.02;
-        letter-spacing: 0;
-      }
-
-      .tes-cta-title em {
-        color: var(--clay);
-        font-style: italic;
-      }
-
-      .tes-cta-body {
-        margin-bottom: 38px;
-        color: var(--brown);
-        font-size: 16px;
-        font-weight: 300;
-        line-height: 1.85;
-      }
-
-      .tes-cta-actions {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
       @media (max-width: 1180px) {
         .tes-offers-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -413,8 +359,7 @@
           padding: 70px 22px 42px;
         }
 
-        .tes-section,
-        .tes-cta {
+        .tes-section {
           padding: 62px 22px;
         }
 
@@ -433,14 +378,12 @@
         }
 
         .tes-hero-text,
-        .tes-copy,
-        .tes-cta-body {
+        .tes-copy {
           font-size: 15.5px;
           line-height: 1.75;
         }
 
         .tes-hero-actions,
-        .tes-cta-actions,
         .tes-support-actions {
           align-items: stretch;
           flex-direction: column;
@@ -481,7 +424,7 @@
       }
     </style>
     <link rel="stylesheet" href="/shared-nav.css" />
-<script defer src="/shared-nav.js"></script>
+    <script defer src="/shared-nav.js"></script>
   </head>
   <body>
     <main class="tes-page">
@@ -655,38 +598,6 @@
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="tes-cta">
-        <div class="tes-cta-inner">
-          <div class="tes-label">Begin here</div>
-
-          <h2 class="tes-cta-title">
-            You do not have to wait until you fall apart to ask for
-            <em>support.</em>
-          </h2>
-
-          <p class="tes-cta-body">
-            Therapy can be the place where you stop performing okay and begin
-            telling the truth — gently, safely, and with someone in your
-            corner.
-          </p>
-
-          <div class="tes-cta-actions">
-            <a
-              class="tes-btn-dark"
-              href="https://calendly.com/therapywithtiffany/therapy-session"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book a Session
-            </a>
-
-            <a class="tes-btn-light" href="mailto:theembodiedself@proton.me">
-              Email Tiffany Directly
-            </a>
           </div>
         </div>
       </section>
