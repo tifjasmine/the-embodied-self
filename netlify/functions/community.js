@@ -93,17 +93,21 @@ exports.handler = async function handler() {
   try {
     const { configured, records } = await fetchAllAirtableRecords();
 
-    const currentQuestion = firstValue(records, FIELD_MAP.questionText);
-    const questionIntro = firstValue(records, FIELD_MAP.questionIntro);
-    const therapistReflection = firstValue(records, FIELD_MAP.therapistReflection);
-    const toolTitle = firstValue(records, FIELD_MAP.toolTitle);
-    const toolInstructions = firstValue(records, FIELD_MAP.toolInstructions);
+    const activeRecords = records.filter((record) =>
+      isTruthy(record.fields?.[FIELD_MAP.questionActive])
+    );
+    const sourceRecords = activeRecords.length ? activeRecords : records;
+
+    const currentQuestion = firstValue(sourceRecords, FIELD_MAP.questionText);
+    const questionIntro = firstValue(sourceRecords, FIELD_MAP.questionIntro);
+    const therapistReflection = firstValue(sourceRecords, FIELD_MAP.therapistReflection);
+    const toolTitle = firstValue(sourceRecords, FIELD_MAP.toolTitle);
+    const toolInstructions = firstValue(sourceRecords, FIELD_MAP.toolInstructions);
 
     const responses = records
       .filter((record) => {
         const approved = record.fields?.[FIELD_MAP.approved];
-        const active = record.fields?.[FIELD_MAP.questionActive];
-        return isTruthy(approved) && isTruthy(active);
+        return isTruthy(approved);
       })
       .map((record) => ({
         id: record.id,
