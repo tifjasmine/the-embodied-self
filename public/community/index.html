@@ -1,4 +1,4 @@
-wait, i messed it up. fixand give me full code - <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@ wait, i messed it up. fixand give me full code - <!doctype html>
     <title>Community | The Embodied Self</title>
     <meta
       name="description"
-      content="The Dysregulated Truth, a community space for honest anonymous reflections and therapist support."
+      content="The Dysregulated Truth, a community space for honest anonymous reflections and community support."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +14,9 @@ wait, i messed it up. fixand give me full code - <!doctype html>
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+
     <style>
       :root {
         --cream: #faf6f0;
@@ -78,19 +81,23 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         flex-shrink: 0;
       }
 
-      .tc-title {
-        max-width: 850px;
+      .tc-title,
+      .tc-section-title,
+      .tc-question {
         color: var(--charcoal);
         font-family: "Cormorant Garamond", serif;
-        font-size: clamp(46px, 5.8vw, 82px);
         font-weight: 300;
+      }
+
+      .tc-title {
+        max-width: 850px;
+        font-size: clamp(46px, 5.8vw, 82px);
         letter-spacing: -0.035em;
         line-height: 0.98;
       }
 
       .tc-title em,
       .tc-section-title em,
-      .tc-small-title em,
       .tc-question em {
         color: var(--clay);
         font-style: italic;
@@ -104,8 +111,7 @@ wait, i messed it up. fixand give me full code - <!doctype html>
       }
 
       .tc-btn-dark,
-      .tc-btn-light,
-      .tc-btn-soft {
+      .tc-btn-light {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -126,24 +132,14 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         color: var(--cream);
       }
 
-      .tc-btn-dark:hover {
-        background: var(--brown);
-        border-color: var(--brown);
-        transform: translateY(-1px);
-      }
-
-      .tc-btn-light,
-      .tc-btn-soft {
+      .tc-btn-light {
         background: var(--cream);
         color: var(--charcoal);
         border-color: rgba(28, 23, 18, 0.18);
       }
 
-      .tc-btn-light:hover,
-      .tc-btn-soft:hover {
-        background: var(--charcoal);
-        color: var(--cream);
-        border-color: var(--charcoal);
+      .tc-btn-dark:hover,
+      .tc-btn-light:hover {
         transform: translateY(-1px);
       }
 
@@ -200,6 +196,10 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         line-height: 1.82;
       }
 
+      .tc-feed {
+        background: var(--cream-deep);
+      }
+
       .tc-prompt {
         background: var(--charcoal);
         color: var(--cream);
@@ -218,9 +218,7 @@ wait, i messed it up. fixand give me full code - <!doctype html>
       .tc-question {
         margin-bottom: 28px;
         color: var(--cream);
-        font-family: "Cormorant Garamond", serif;
         font-size: clamp(36px, 4.6vw, 62px);
-        font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.04;
       }
@@ -241,39 +239,15 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         border-color: var(--cream);
       }
 
-      .tc-prompt .tc-btn-light:hover {
-        background: var(--tan);
-        border-color: var(--tan);
-      }
-
-      .tc-feed {
-        background: var(--cream-deep);
-      }
-
       .tc-section-head {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 32px;
-        flex-wrap: wrap;
         margin-bottom: 42px;
       }
 
       .tc-section-title {
         max-width: 760px;
-        color: var(--charcoal);
-        font-family: "Cormorant Garamond", serif;
         font-size: clamp(36px, 4.3vw, 60px);
-        font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.04;
-      }
-
-      .tc-section-note {
-        max-width: 410px;
-        color: var(--brown);
-        font-size: 15px;
-        line-height: 1.75;
       }
 
       .tc-slider {
@@ -288,18 +262,6 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         overscroll-behavior-inline: contain;
         -webkit-overflow-scrolling: touch;
         padding: 4px 4px 24px;
-      }
-
-      .tc-slider::-webkit-scrollbar {
-        height: 8px;
-      }
-
-      .tc-slider::-webkit-scrollbar-track {
-        background: rgba(28, 23, 18, 0.08);
-      }
-
-      .tc-slider::-webkit-scrollbar-thumb {
-        background: rgba(28, 23, 18, 0.28);
       }
 
       .tc-card {
@@ -361,67 +323,31 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         text-transform: uppercase;
       }
 
-      .tc-how {
+      .tc-safety {
         background: var(--tan);
       }
 
-      .tc-how-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        margin-top: 40px;
-        background: var(--line);
-        border: 1px solid var(--line);
+      .tc-safety-card {
+        max-width: 940px;
+        background: rgba(250, 246, 240, 0.74);
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        padding: 28px;
       }
 
-      .tc-how-card {
-        background: var(--cream);
-        padding: 32px 28px;
-      }
-
-      .tc-how-card small {
-        display: block;
-        margin-bottom: 18px;
-        color: var(--clay);
-        font-size: 10px;
-        font-weight: 400;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .tc-how-card h3 {
-        margin-bottom: 14px;
-        color: var(--charcoal);
-        font-family: "Cormorant Garamond", serif;
-        font-size: 32px;
-        font-weight: 300;
-        letter-spacing: -0.02em;
-        line-height: 1.05;
-      }
-
-      .tc-how-card p {
-        color: var(--brown);
-        font-size: 14.5px;
-        line-height: 1.72;
+      .tc-safety-card .tc-label {
+        margin-bottom: 12px;
       }
 
       .tc-note {
-        max-width: 860px;
-        margin-top: 34px;
         color: var(--brown);
         font-size: 13.5px;
         line-height: 1.7;
       }
 
       @media (max-width: 980px) {
-        .tc-hero-inner,
-        .tc-perspective-grid {
+        .tc-hero-inner {
           grid-template-columns: 1fr;
           gap: 44px;
-        }
-
-        .tc-how-grid {
-          grid-template-columns: 1fr;
         }
 
         .tc-slider {
@@ -430,10 +356,7 @@ wait, i messed it up. fixand give me full code - <!doctype html>
       }
 
       @media (max-width: 640px) {
-        .tc-hero {
-          padding: 62px 22px 56px;
-        }
-
+        .tc-hero,
         .tc-section {
           padding: 60px 22px;
         }
@@ -444,9 +367,7 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         }
 
         .tc-hero-text,
-        .tc-copy,
-        .tc-section-note,
-        .tc-perspective-box p {
+        .tc-copy {
           font-size: 15.5px;
           line-height: 1.75;
         }
@@ -457,22 +378,14 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         }
 
         .tc-btn-dark,
-        .tc-btn-light,
-        .tc-btn-soft {
+        .tc-btn-light {
           width: 100%;
           padding: 15px 20px;
         }
 
         .tc-hero-card,
-        .tc-perspective-box,
-        .tc-how-card {
+        .tc-safety-card {
           padding: 28px 24px;
-        }
-
-        .tc-section-head {
-          align-items: flex-start;
-          flex-direction: column;
-          margin-bottom: 30px;
         }
 
         .tc-section-title,
@@ -495,9 +408,8 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         }
       }
     </style>
-    <link rel="stylesheet" href="/shared-nav.css" />
-<script defer src="/shared-nav.js"></script>
   </head>
+
   <body>
     <main>
       <section class="tc-hero">
@@ -508,9 +420,9 @@ wait, i messed it up. fixand give me full code - <!doctype html>
             <h1 class="tc-title">The Dysregulated <em>Truth.</em></h1>
 
             <p class="tc-copy tc-hero-text">
-              A soft place for the thoughts many mothers carry quietly - the ones
-              about exhaustion, resentment, identity, love, guilt, overstimulation,
-              and needing more support.
+              A soft place for the thoughts many mothers carry quietly - the
+              ones about exhaustion, resentment, identity, love, guilt,
+              overstimulation, and needing more support.
             </p>
 
             <div class="tc-actions">
@@ -528,11 +440,24 @@ wait, i messed it up. fixand give me full code - <!doctype html>
             <h2>No names required. No perfect words needed.</h2>
 
             <p>
-              Submit what you are actually feeling. Approved responses are shared
-              anonymously after review so another mother can feel less alone in what
-              she has been holding.
+              Submit what you are actually feeling. Approved responses are
+              shared anonymously after review so another mother can feel less
+              alone in what she has been holding.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section class="tc-section tc-feed">
+        <div class="tc-inner">
+          <div class="tc-section-head">
+            <div class="tc-label">Hear from the village</div>
+            <h2 class="tc-section-title">
+              Dysregulated thoughts from the <em>village.</em>
+            </h2>
+          </div>
+
+          <div id="dysregulatedThoughtsArea"></div>
         </div>
       </section>
 
@@ -557,48 +482,27 @@ wait, i messed it up. fixand give me full code - <!doctype html>
       <section class="tc-section tc-feed">
         <div class="tc-inner">
           <div class="tc-section-head">
-            <div>
-              <div class="tc-label">Hear from the village</div>
-
-              <h2 class="tc-section-title">
-                Community responses to the above <em>question.</em>
-              </h2>
-            </div>
-
-          </div>
-
-          <div id="responsesArea"></div>
-        </div>
-      </section>
-
-      <section class="tc-section tc-perspective">
-        <div class="tc-inner tc-perspective-grid">
-          <div>
-            <div class="tc-label">The regulated perspective</div>
-
+            <div class="tc-label">Responses</div>
             <h2 class="tc-section-title">
-              A therapist's reflection on what the village is <em>carrying.</em>
+              Community responses to this month's <em>question.</em>
             </h2>
           </div>
 
-          <div class="tc-perspective-box">
-            <h3 class="tc-small-title">Thoughts from Tiffany</h3>
-
-            <div id="therapistReflection"></div>
-            <div id="toolArea"></div>
-          </div>
+          <div id="questionResponsesArea"></div>
         </div>
       </section>
 
-      <section class="tc-section tc-how tc-community-note-section">
+      <section class="tc-section tc-safety">
         <div class="tc-inner">
-
-          <p class="tc-note">
-            This community space is educational and supportive, but it is not
-            therapy or crisis support. If you are in immediate danger or need
-            urgent mental health support in the U.S., call or text 988 for the
-            Suicide & Crisis Lifeline, or go to your nearest emergency room.          
-          </p>
+          <div class="tc-safety-card">
+            <div class="tc-label">Safety note</div>
+            <p class="tc-note">
+              This community space is educational and supportive, but it is not
+              therapy or crisis support. If you are in immediate danger or need
+              urgent mental health support in the U.S., call or text 988 for the
+              Suicide & Crisis Lifeline, or go to your nearest emergency room.
+            </p>
+          </div>
         </div>
       </section>
     </main>
@@ -611,31 +515,8 @@ wait, i messed it up. fixand give me full code - <!doctype html>
         currentQuestion: "What feels hardest to carry by the end of the day?",
         questionIntro:
           "You can answer with one sentence, one paragraph, or the thought you have been afraid to say out loud.",
-        therapistReflection:
-          "Nobody said the dishes. Nobody said the laundry. What you are carrying is not only the work - it is what the work costs when no one sees it happening. The mental load, the guilt, the loneliness, the resentment. These are not separate problems. They are often the same thing showing up in different clothes.\n\nThe resentment is not the problem. It is the signal. It shows up when a need has been unmet long enough to harden into something louder. You are not failing to cope. You may be coping with too much, in too much silence, for too long.",
-        toolTitle: "The Nightly Offload",
-        toolInstructions:
-          "Before bed, grab a piece of paper and spend five minutes writing down everything your brain is still holding. Not a to-do list. Not a perfect journal. Just a dump. Then fold it up and put it somewhere physical. You are telling your nervous system it does not have to hold it overnight.",
-        responses: [
-          {
-            id: "fallback-1",
-            text: "Missing myself. By nighttime, I realize the whole day went to everyone else and I barely existed in it.",
-            name: "Amanda",
-            featured: true,
-          },
-          {
-            id: "fallback-2",
-            text: "The constant noise and input. By the end of the day, I feel like my whole body is bracing.",
-            name: "S",
-            featured: false,
-          },
-          {
-            id: "fallback-3",
-            text: "The mental load. Having to remember everything for everyone is exhausting.",
-            name: "Carla",
-            featured: false,
-          },
-        ],
+        dysregulatedThoughts: [],
+        questionResponses: [],
       };
 
       function escapeHtml(value) {
@@ -647,25 +528,15 @@ wait, i messed it up. fixand give me full code - <!doctype html>
           .replaceAll("'", "&#039;");
       }
 
-      function textToParagraphs(value) {
-        const parts = String(value || "")
-          .split(/\n{2,}/)
-          .map((part) => part.trim())
-          .filter(Boolean);
+      function renderCards(areaId, items, emptyMessage) {
+        const area = document.getElementById(areaId);
 
-        return parts.map((part) => `<p>${escapeHtml(part)}</p>`).join("");
-      }
-
-      function renderResponses(responses) {
-        const area = document.getElementById("responsesArea");
-
-        if (!responses || !responses.length) {
-          area.innerHTML =
-            '<div class="tc-empty">No approved responses are connected yet.</div>';
+        if (!items || !items.length) {
+          area.innerHTML = `<div class="tc-empty">${emptyMessage}</div>`;
           return;
         }
 
-        const cards = responses
+        const cards = items
           .map((item) => {
             const nameMarkup = item.name
               ? `<div class="tc-card-name">${escapeHtml(item.name)}</div>`
@@ -690,35 +561,23 @@ wait, i messed it up. fixand give me full code - <!doctype html>
       }
 
       function renderCommunity(data) {
-        const currentQuestion =
+        document.getElementById("currentQuestion").textContent =
           data.currentQuestion || fallbackData.currentQuestion;
-        const questionIntro = data.questionIntro || fallbackData.questionIntro;
-        const therapistReflection =
-          data.therapistReflection || fallbackData.therapistReflection;
-        const toolTitle = data.toolTitle || fallbackData.toolTitle;
-        const toolInstructions =
-          data.toolInstructions || fallbackData.toolInstructions;
-        const responses =
-          data.configured === false
-            ? fallbackData.responses
-            : data.responses || [];
 
-        document.getElementById("currentQuestion").textContent = currentQuestion;
-        document.getElementById("questionIntro").textContent = questionIntro;
-        document.getElementById("therapistReflection").innerHTML =
-          textToParagraphs(therapistReflection);
+        document.getElementById("questionIntro").textContent =
+          data.questionIntro || fallbackData.questionIntro;
 
-        document.getElementById("toolArea").innerHTML =
-          toolTitle || toolInstructions
-            ? `
-              <div class="tc-tool">
-                ${toolTitle ? `<h3>${escapeHtml(toolTitle)}</h3>` : ""}
-                ${toolInstructions ? textToParagraphs(toolInstructions) : ""}
-              </div>
-            `
-            : "";
+        renderCards(
+          "dysregulatedThoughtsArea",
+          data.dysregulatedThoughts || [],
+          "No approved Dysregulated Truth thoughts are connected yet."
+        );
 
-        renderResponses(responses);
+        renderCards(
+          "questionResponsesArea",
+          data.questionResponses || [],
+          "No approved responses to this month's question are connected yet."
+        );
       }
 
       async function loadCommunityData() {
