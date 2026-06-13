@@ -1,4 +1,5 @@
 const FIELD_MAP = {
+  entryType: process.env.AIRTABLE_FIELD_ENTRY_TYPE || "Entry Type",
   name: process.env.AIRTABLE_FIELD_NAME || "Name",
   approved: process.env.AIRTABLE_FIELD_APPROVED || "Approved",
   response: process.env.AIRTABLE_FIELD_RESPONSE || "Response",
@@ -36,6 +37,10 @@ function unwrapValue(value) {
   return String(value).trim();
 }
 
+function cleanType(value) {
+  return unwrapValue(value).toLowerCase();
+}
+
 function isTruthy(value) {
   if (value === true) return true;
 
@@ -53,6 +58,21 @@ function firstValue(records, fieldName) {
   }
 
   return "";
+}
+
+function responseItem(record) {
+  return {
+    id: record.id,
+    text: unwrapValue(record.fields?.[FIELD_MAP.response]),
+    name: unwrapValue(record.fields?.[FIELD_MAP.name]),
+    featured: isTruthy(record.fields?.[FIELD_MAP.featured]),
+  };
+}
+
+function sortFeaturedFirst(a, b) {
+  if (a.featured && !b.featured) return -1;
+  if (!a.featured && b.featured) return 1;
+  return 0;
 }
 
 async function fetchAllAirtableRecords() {
@@ -101,32 +121,43 @@ exports.handler = async function handler() {
   try {
     const { configured, records } = await fetchAllAirtableRecords();
 
-    const activeRecords = records.filter((record) =>
-      isTruthy(record.fields?.[FIELD_MAP.questionActive])
-    );
+    const questionRecords = records.filter((record) => {
+      const entryType = cleanType(record.fields?.[FIELD_MAP.entryType]);
+      const active = isTruthy(record.fields?.[FIELD_MAP.questionActive]);
 
-    const sourceRecords = activeRecords.length ? activeRecords : records;
+      return entryType === "monthly question" && active;
+    });
+
+    const sourceRecords = questionRecords.length
+      ? questionRecords
+      : records.filter((record) =>
+          isTruthy(record.fields?.[FIELD_MAP.questionActive])
+        );
 
     const currentQuestion = firstValue(sourceRecords, FIELD_MAP.questionText);
     const questionIntro = firstValue(sourceRecords, FIELD_MAP.questionIntro);
 
-    const responses = records
+    const dysregulatedThoughts = records
       .filter((record) => {
-        const approved = record.fields?.[FIELD_MAP.approved];
-        return isTruthy(approved);
+        const entryType = cleanType(record.fields?.[FIELD_MAP.entryType]);
+        const approved = isTruthy(record.fields?.[FIELD_MAP.approved]);
+        const response = unwrapValue(record.fields?.[FIELD_MAP.response]);
+
+        return entryType === "dysregulated thought" && approved && response;
       })
-      .map((record) => ({
-        id: record.id,
-        text: unwrapValue(record.fields?.[FIELD_MAP.response]),
-        name: unwrapValue(record.fields?.[FIELD_MAP.name]),
-        featured: isTruthy(record.fields?.[FIELD_MAP.featured]),
-      }))
-      .filter((item) => item.text)
-      .sort((a, b) => {
-        if (a.featured && !b.featured) return -1;
-        if (!a.featured && b.featured) return 1;
-        return 0;
-      });
+      .map(responseItem)
+      .sort(sortFeaturedFirst);
+
+    const questionResponses = records
+      .filter((record) => {
+        const entryType = cleanType(record.fields?.[FIELD_MAP.entryType]);
+        const approved = isTruthy(record.fields?.[FIELD_MAP.approved]);
+        const response = unwrapValue(record.fields?.[FIELD_MAP.response]);
+
+        return entryType === "question response" && approved && response;
+      })
+      .map(responseItem)
+      .sort(sortFeaturedFirst);
 
     return {
       statusCode: 200,
@@ -138,7 +169,8 @@ exports.handler = async function handler() {
         configured,
         currentQuestion,
         questionIntro,
-        responses,
+        dysregulatedThoughts,
+        questionResponses,
       }),
     };
   } catch (error) {
