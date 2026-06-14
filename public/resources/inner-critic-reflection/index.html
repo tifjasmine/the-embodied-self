@@ -8,6 +8,10 @@
       name="description"
       content="A gentle, editable inner critic reflection worksheet from The Embodied Self."
     />
+
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
 
@@ -45,12 +49,12 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
+        margin-bottom: 22px;
+        color: #c4795a;
         font-size: 10px;
+        font-weight: 400;
         letter-spacing: 0.2em;
         text-transform: uppercase;
-        color: #c4795a;
-        font-weight: 400;
-        margin-bottom: 22px;
       }
 
       .tes-label::after {
@@ -61,38 +65,40 @@
       }
 
       .tes-hero h1 {
+        margin: 0 0 20px;
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(44px, 6vw, 78px);
-        line-height: 0.96;
-        letter-spacing: -0.04em;
         font-weight: 300;
-        margin: 0 0 20px;
+        letter-spacing: -0.04em;
+        line-height: 0.96;
       }
 
       .tes-hero h1 em,
-      .tes-title em {
+      .tes-title em,
+      .tes-psychoed h2 em,
+      .tes-closing h2 em {
         color: #c4795a;
         font-style: italic;
       }
 
       .tes-hero p {
+        max-width: 680px;
+        margin: 0;
         color: rgba(250, 246, 240, 0.74);
         font-size: 16px;
         line-height: 1.82;
-        max-width: 760px;
-        margin: 0;
       }
 
       .tes-action-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
         background: #e8d9c8;
         border: 1px solid rgba(28, 23, 18, 0.1);
         border-top: 0;
         padding: 18px 24px;
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        align-items: center;
-        flex-wrap: wrap;
       }
 
       .tes-action-bar p {
@@ -115,9 +121,9 @@
         padding: 12px 18px;
         font-family: "Jost", sans-serif;
         font-size: 10px;
+        font-weight: 400;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        font-weight: 400;
         cursor: pointer;
       }
 
@@ -142,18 +148,18 @@
       }
 
       .tes-intro h2 {
+        margin: 0 0 14px;
         font-family: "Cormorant Garamond", serif;
         font-size: 36px;
         font-weight: 300;
         line-height: 1.05;
-        margin: 0 0 14px;
       }
 
       .tes-intro p {
+        margin: 0 0 14px;
         color: #3a2e28;
         font-size: 15px;
         line-height: 1.8;
-        margin: 0 0 14px;
       }
 
       .tes-intro p:last-child {
@@ -163,29 +169,27 @@
       .tes-psychoed {
         background: #1c1712;
         color: #faf6f0;
-        padding: 30px;
+        padding: 32px;
         margin-bottom: 38px;
       }
 
       .tes-psychoed h2 {
+        margin: 0 0 18px;
         font-family: "Cormorant Garamond", serif;
-        font-size: 34px;
-        line-height: 1.05;
+        font-size: clamp(32px, 4vw, 46px);
         font-weight: 300;
-        margin: 0 0 12px;
-      }
-
-      .tes-psychoed h2 em,
-      .tes-closing h2 em {
-        color: #c4795a;
-        font-style: italic;
+        line-height: 1.05;
       }
 
       .tes-psychoed p {
-        color: rgba(250, 246, 240, 0.74);
-        font-size: 15px;
-        line-height: 1.8;
-        margin: 0;
+        margin: 0 0 16px;
+        color: rgba(250, 246, 240, 0.76);
+        font-size: 15.5px;
+        line-height: 1.82;
+      }
+
+      .tes-psychoed p:last-child {
+        margin-bottom: 0;
       }
 
       .tes-section {
@@ -201,32 +205,32 @@
       }
 
       .tes-num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 44px;
         height: 44px;
         border: 1px solid rgba(196, 121, 90, 0.42);
         color: #c4795a;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         font-family: "Cormorant Garamond", serif;
         font-size: 24px;
         font-style: italic;
       }
 
       .tes-title {
+        margin: 0 0 8px;
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(31px, 4vw, 44px);
-        line-height: 1.02;
-        letter-spacing: -0.025em;
         font-weight: 300;
-        margin: 0 0 8px;
+        letter-spacing: -0.025em;
+        line-height: 1.02;
       }
 
       .tes-desc {
+        margin: 0;
         color: #3a2e28;
         font-size: 14.5px;
         line-height: 1.75;
-        margin: 0;
       }
 
       .tes-grid {
@@ -244,32 +248,28 @@
         gap: 8px;
       }
 
-      .tes-field + .tes-field {
-        margin-top: 18px;
-      }
-
       .tes-field label {
         color: #8f6d5a;
         font-size: 10.5px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
         font-weight: 400;
+        letter-spacing: 0.14em;
         line-height: 1.5;
+        text-transform: uppercase;
       }
 
       .tes-field input,
       .tes-field textarea {
         width: 100%;
         border: 1px solid rgba(28, 23, 18, 0.16);
+        border-radius: 0;
         background: rgba(250, 246, 240, 0.86);
         color: #1c1712;
         font-family: "Jost", sans-serif;
         font-size: 15px;
         font-weight: 300;
         line-height: 1.6;
-        padding: 14px 15px;
         outline: none;
-        border-radius: 0;
+        padding: 14px 15px;
       }
 
       .tes-field textarea {
@@ -307,19 +307,19 @@
         min-height: 56px;
         border: 1px solid rgba(28, 23, 18, 0.12);
         background: rgba(250, 246, 240, 0.78);
-        padding: 14px;
         color: #3a2e28;
+        cursor: pointer;
         font-size: 14px;
         line-height: 1.45;
-        cursor: pointer;
+        padding: 14px;
       }
 
       .tes-check span::before {
         content: "";
         width: 16px;
         height: 16px;
-        border: 1px solid rgba(28, 23, 18, 0.28);
         margin-top: 2px;
+        border: 1px solid rgba(28, 23, 18, 0.28);
         flex-shrink: 0;
       }
 
@@ -341,19 +341,20 @@
       }
 
       .tes-closing h2 {
+        margin: 0 0 16px;
+        color: #faf6f0;
         font-family: "Cormorant Garamond", serif;
         font-size: clamp(34px, 4.4vw, 56px);
-        line-height: 1;
-        letter-spacing: -0.03em;
         font-weight: 300;
-        margin: 0 0 16px;
+        letter-spacing: -0.03em;
+        line-height: 1;
       }
 
       .tes-closing p {
+        margin: 0;
         color: rgba(250, 246, 240, 0.74);
         font-size: 15px;
         line-height: 1.8;
-        margin: 0;
       }
 
       @media (max-width: 760px) {
@@ -387,15 +388,50 @@
         .tes-head {
           grid-template-columns: 1fr;
         }
+
+        .tes-psychoed,
+        .tes-closing {
+          padding: 28px 24px;
+        }
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .shared-nav,
+        .tes-action-bar {
+          display: none !important;
+        }
+
+        .tes-wrap {
+          max-width: none;
+          padding: 0;
+        }
+
+        .tes-content {
+          border: 0;
+        }
+
+        .tes-section,
+        .tes-intro,
+        .tes-psychoed,
+        .tes-closing {
+          break-inside: avoid;
+        }
       }
     </style>
   </head>
+
   <body>
     <div class="tes-worksheet">
       <div class="tes-wrap">
         <section class="tes-hero">
           <div class="tes-label">The Embodied Self</div>
+
           <h1>Inner Critic <em>Reflection</em></h1>
+
           <p>
             A gentle worksheet for noticing the voice of self-criticism,
             understanding what it may be trying to protect, and practicing a
@@ -405,8 +441,12 @@
 
         <section class="tes-action-bar">
           <p>Type directly into the worksheet. Your answers autosave in this browser.</p>
+
           <div class="tes-buttons">
-            <button class="tes-button" type="button" id="downloadPdf">Download PDF</button>
+            <button class="tes-button" type="button" id="downloadPdf">
+              Download PDF
+            </button>
+
             <button class="tes-button secondary" type="button" id="clearWorksheet">
               Clear Answers
             </button>
@@ -430,13 +470,32 @@
 
           <section class="tes-psychoed">
             <h2>Your inner critic is often a protective <em>part.</em></h2>
+
             <p>
-              Many people think the inner critic is simply “the truth,” but it is
-              often a learned protective strategy. It may use pressure, shame,
-              comparison, or perfectionism to try to prevent rejection, failure,
-              conflict, disappointment, or vulnerability. The goal is not to
-              fight this part of you. The goal is to notice it, understand what
-              it is afraid of, and help it soften.
+              The inner critic can sound like truth because it often speaks with
+              certainty, urgency, and authority. But many critical thoughts are
+              protective strategies, not objective facts. The critic may use
+              pressure, shame, comparison, perfectionism, or worst-case thinking
+              to try to prevent rejection, failure, conflict, disappointment,
+              vulnerability, or loss of control.
+            </p>
+
+            <p>
+              This voice often develops in environments where self-criticism felt
+              safer than being criticized by someone else. If you could criticize
+              yourself first, you may have felt more prepared, less exposed, or
+              less likely to make a mistake. What began as a survival strategy
+              can eventually become a pattern that keeps you small, anxious,
+              ashamed, or disconnected from your own needs.
+            </p>
+
+            <p>
+              Working with the inner critic does not mean arguing with every
+              thought or pretending painful things are not real. It means
+              separating the critic’s fear from the whole truth. You can listen
+              for what the critic is trying to protect while responding with
+              clarity instead of cruelty. Compassion does not remove
+              accountability; it makes growth possible without shame.
             </p>
           </section>
 
@@ -451,26 +510,29 @@
                 </p>
               </div>
             </div>
+
             <div class="tes-grid two">
               <div class="tes-field">
                 <label for="date">Date</label>
-                <input id="date" type="date" data-field="date" />
+                <input id="date" name="date" type="date" />
               </div>
+
               <div class="tes-field">
                 <label for="situation">What situation brought this up?</label>
                 <input
                   id="situation"
+                  name="situation"
                   type="text"
-                  data-field="situation"
                   placeholder="Example: I made a mistake, got feedback, compared myself, felt rejected..."
                 />
               </div>
             </div>
+
             <div class="tes-field" style="margin-top: 18px">
               <label for="bodyReaction">What did I notice in my body or emotions?</label>
               <textarea
                 id="bodyReaction"
-                data-field="bodyReaction"
+                name="bodyReaction"
                 placeholder="Example: tight chest, shame, heat, numbness, urge to hide, anxiety..."
               ></textarea>
             </div>
@@ -487,21 +549,23 @@
                 </p>
               </div>
             </div>
+
             <div class="tes-field">
               <label for="criticWords">The inner critic said...</label>
               <textarea
-                class="large"
                 id="criticWords"
-                data-field="criticWords"
+                name="criticWords"
+                class="large"
                 placeholder="Example: You always mess things up. You should be further along. Everyone else is better."
               ></textarea>
             </div>
-            <div class="tes-field">
+
+            <div class="tes-field" style="margin-top: 18px">
               <label for="criticTone">What tone did it use?</label>
               <input
                 id="criticTone"
+                name="criticTone"
                 type="text"
-                data-field="criticTone"
                 placeholder="Example: harsh, disappointed, panicked, cold, urgent, shaming..."
               />
             </div>
@@ -518,16 +582,28 @@
                 </p>
               </div>
             </div>
-            <div class="tes-checks" id="criticPatternOptions"></div>
-            <div class="tes-field">
-              <label for="patternOther">Any other pattern I notice?</label>
-              <textarea class="small" id="patternOther" data-field="patternOther"></textarea>
+
+            <div class="tes-checks">
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The perfectionist voice" /><span>The perfectionist voice</span></label>
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The comparer voice" /><span>The comparer voice</span></label>
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The catastrophizing voice" /><span>The catastrophizing voice</span></label>
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The shame voice" /><span>The shame voice</span></label>
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The people-pleasing voice" /><span>The people-pleasing voice</span></label>
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The hyper-responsible voice" /><span>The hyper-responsible voice</span></label>
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The inner parent / old authority voice" /><span>The inner parent / old authority voice</span></label>
+              <label class="tes-check"><input type="checkbox" name="criticPatterns" value="The dismissive voice that minimizes my needs" /><span>The dismissive voice that minimizes my needs</span></label>
             </div>
-            <div class="tes-field">
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="patternOther">Any other pattern I notice?</label>
+              <textarea id="patternOther" name="patternOther" class="small"></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
               <label for="oldMessage">
                 Does this voice remind me of an old message, person, or season of life?
               </label>
-              <textarea id="oldMessage" data-field="oldMessage"></textarea>
+              <textarea id="oldMessage" name="oldMessage"></textarea>
             </div>
           </section>
 
@@ -542,21 +618,23 @@
                 </p>
               </div>
             </div>
+
             <div class="tes-field">
               <label for="protectionFear">
                 What might this critic be afraid would happen if it stopped pushing me?
               </label>
               <textarea
                 id="protectionFear"
-                data-field="protectionFear"
+                name="protectionFear"
                 placeholder="Example: I’ll fail. I’ll be rejected. I’ll disappoint someone. I’ll be seen as too much."
               ></textarea>
             </div>
-            <div class="tes-field">
+
+            <div class="tes-field" style="margin-top: 18px">
               <label for="unmetNeed">What need might be underneath the criticism?</label>
               <textarea
                 id="unmetNeed"
-                data-field="unmetNeed"
+                name="unmetNeed"
                 placeholder="Example: reassurance, safety, acceptance, rest, support, belonging..."
               ></textarea>
             </div>
@@ -573,22 +651,24 @@
                 </p>
               </div>
             </div>
+
             <div class="tes-grid two">
               <div class="tes-field">
                 <label for="facts">What are the actual facts?</label>
                 <textarea
-                  class="large"
                   id="facts"
-                  data-field="facts"
+                  name="facts"
+                  class="large"
                   placeholder="Example: I made one mistake. Someone gave me feedback. I had a hard day."
                 ></textarea>
               </div>
+
               <div class="tes-field">
                 <label for="story">What story is my critic adding?</label>
                 <textarea
-                  class="large"
                   id="story"
-                  data-field="story"
+                  name="story"
+                  class="large"
                   placeholder="Example: I’m a failure. I’m not good enough. I always ruin things."
                 ></textarea>
               </div>
@@ -606,19 +686,21 @@
                 </p>
               </div>
             </div>
+
             <div class="tes-field">
               <label for="compassionateTruth">A more compassionate truth might be...</label>
               <textarea
                 id="compassionateTruth"
-                data-field="compassionateTruth"
+                name="compassionateTruth"
                 placeholder="Example: I made a mistake, and I can repair it. This is hard, but it does not define me."
               ></textarea>
             </div>
-            <div class="tes-field">
+
+            <div class="tes-field" style="margin-top: 18px">
               <label for="response">How can I respond to the critic without letting it lead?</label>
               <textarea
                 id="response"
-                data-field="response"
+                name="response"
                 placeholder="Example: I hear that you’re scared. I’m going to move with care, not shame."
               ></textarea>
             </div>
@@ -635,10 +717,21 @@
                 </p>
               </div>
             </div>
-            <div class="tes-checks" id="practiceOptions"></div>
-            <div class="tes-field">
+
+            <div class="tes-checks">
+              <label class="tes-check"><input type="checkbox" name="practices" value="Pause before believing the thought" /><span>Pause before believing the thought</span></label>
+              <label class="tes-check"><input type="checkbox" name="practices" value="Place a hand on my body and breathe" /><span>Place a hand on my body and breathe</span></label>
+              <label class="tes-check"><input type="checkbox" name="practices" value="Name the critic as a part, not the whole truth" /><span>Name the critic as a part, not the whole truth</span></label>
+              <label class="tes-check"><input type="checkbox" name="practices" value="Write a kinder response" /><span>Write a kinder response</span></label>
+              <label class="tes-check"><input type="checkbox" name="practices" value="Lower the expectation" /><span>Lower the expectation</span></label>
+              <label class="tes-check"><input type="checkbox" name="practices" value="Ask for support" /><span>Ask for support</span></label>
+              <label class="tes-check"><input type="checkbox" name="practices" value="Choose rest instead of punishment" /><span>Choose rest instead of punishment</span></label>
+              <label class="tes-check"><input type="checkbox" name="practices" value="Take one grounded next step" /><span>Take one grounded next step</span></label>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
               <label for="nextStep">The caring next step I am choosing is...</label>
-              <textarea id="nextStep" data-field="nextStep"></textarea>
+              <textarea id="nextStep" name="nextStep"></textarea>
             </div>
           </section>
 
@@ -653,22 +746,25 @@
                 </p>
               </div>
             </div>
+
             <div class="tes-field">
               <label for="letter">What I want this part of me to know is...</label>
               <textarea
                 id="letter"
-                data-field="letter"
+                name="letter"
                 placeholder="Example: You do not have to keep attacking me to keep me safe."
               ></textarea>
             </div>
-            <div class="tes-field">
+
+            <div class="tes-field" style="margin-top: 18px">
               <label for="reminder">One reminder I want to carry with me is...</label>
-              <textarea class="large" id="reminder" data-field="reminder"></textarea>
+              <textarea id="reminder" name="reminder" class="large"></textarea>
             </div>
           </section>
 
           <section class="tes-closing">
             <h2>You are allowed to grow without <em>shaming yourself.</em></h2>
+
             <p>
               Your inner critic may have developed to protect you, but it does
               not have to be the voice that leads your life. You can listen for
@@ -683,255 +779,81 @@
     <script>
       const STORAGE_KEY = "tes-inner-critic-reflection";
 
-      const defaultData = {
-        date: "",
-        situation: "",
-        bodyReaction: "",
-        criticWords: "",
-        criticTone: "",
-        criticPatterns: [],
-        patternOther: "",
-        oldMessage: "",
-        protectionFear: "",
-        unmetNeed: "",
-        facts: "",
-        story: "",
-        compassionateTruth: "",
-        response: "",
-        practices: [],
-        nextStep: "",
-        letter: "",
-        reminder: "",
-      };
-
-      const criticPatternOptions = [
-        "The perfectionist voice",
-        "The comparer voice",
-        "The catastrophizing voice",
-        "The shame voice",
-        "The people-pleasing voice",
-        "The hyper-responsible voice",
-        "The inner parent / old authority voice",
-        "The dismissive voice that minimizes my needs",
-      ];
-
-      const practiceOptions = [
-        "Pause before believing the thought",
-        "Place a hand on my body and breathe",
-        "Name the critic as a part, not the whole truth",
-        "Write a kinder response",
-        "Lower the expectation",
-        "Ask for support",
-        "Choose rest instead of punishment",
-        "Take one grounded next step",
-      ];
-
-      let data = { ...defaultData };
-
-      function loadSavedData() {
-        try {
-          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-          if (saved) data = { ...defaultData, ...saved };
-        } catch (error) {
-          data = { ...defaultData };
-        }
+      function getFields() {
+        return Array.from(
+          document.querySelectorAll("input[name], textarea[name]")
+        );
       }
 
-      function saveData() {
+      function saveWorksheet() {
+        const data = {};
+
+        getFields().forEach((field) => {
+          if (field.type === "checkbox") {
+            if (!data[field.name]) data[field.name] = [];
+            if (field.checked) data[field.name].push(field.value);
+            return;
+          }
+
+          data[field.name] = field.value;
+        });
+
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       }
 
-      function updateField(field, value) {
-        data[field] = value;
-        saveData();
-      }
+      function loadWorksheet() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
 
-      function toggleArray(field, value) {
-        const current = data[field] || [];
-        const exists = current.includes(value);
-        data[field] = exists
-          ? current.filter((item) => item !== value)
-          : [...current, value];
-        saveData();
-      }
+          getFields().forEach((field) => {
+            const value = saved[field.name];
 
-      function createCheckboxOptions(containerId, field, options) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = "";
-        options.forEach((option) => {
-          const label = document.createElement("label");
-          label.className = "tes-check";
-          const input = document.createElement("input");
-          input.type = "checkbox";
-          input.checked = (data[field] || []).includes(option);
-          input.addEventListener("change", () => toggleArray(field, option));
-          const span = document.createElement("span");
-          span.textContent = option;
-          label.appendChild(input);
-          label.appendChild(span);
-          container.appendChild(label);
-        });
-      }
+            if (field.type === "checkbox") {
+              field.checked = Array.isArray(value) && value.includes(field.value);
+              return;
+            }
 
-      function hydrateFields() {
-        document.querySelectorAll("[data-field]").forEach((field) => {
-          const key = field.getAttribute("data-field");
-          field.value = data[key] || "";
-          field.addEventListener("input", (event) => {
-            updateField(key, event.target.value);
+            field.value = value || "";
           });
-        });
+        } catch (error) {
+          console.error(error);
+        }
       }
 
       function clearWorksheet() {
-        const confirmed = window.confirm("Clear all saved answers on this worksheet?");
-        if (!confirmed) return;
-        localStorage.removeItem(STORAGE_KEY);
-        data = { ...defaultData };
-        renderWorksheet();
-      }
+        const confirmed = window.confirm(
+          "Clear all saved answers on this worksheet?"
+        );
 
-      function loadHtml2Pdf() {
-        return new Promise((resolve, reject) => {
-          if (window.html2pdf) {
-            resolve(window.html2pdf);
-            return;
+        if (!confirmed) return;
+
+        localStorage.removeItem(STORAGE_KEY);
+
+        getFields().forEach((field) => {
+          if (field.type === "checkbox") {
+            field.checked = false;
+          } else {
+            field.value = "";
           }
-          const script = document.createElement("script");
-          script.src =
-            "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
-          script.onload = () => resolve(window.html2pdf);
-          script.onerror = () => reject(new Error("Could not load PDF generator."));
-          document.body.appendChild(script);
         });
       }
 
-      function escapeHtml(value) {
-        return String(value || "")
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#039;");
-      }
+      document.addEventListener("DOMContentLoaded", () => {
+        loadWorksheet();
 
-      function answer(value) {
-        const cleanValue = String(value || "").trim();
-        return cleanValue
-          ? escapeHtml(cleanValue).replace(/\n/g, "<br />")
-          : '<span class="blank-line"></span>';
-      }
+        getFields().forEach((field) => {
+          field.addEventListener("input", saveWorksheet);
+          field.addEventListener("change", saveWorksheet);
+        });
 
-      function listItems(items) {
-        if (!items || !items.length) {
-          return '<li><span class="blank-line"></span></li>';
-        }
-        return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
-      }
+        document
+          .getElementById("clearWorksheet")
+          .addEventListener("click", clearWorksheet);
 
-      async function downloadPdf() {
-        try {
-          const html2pdf = await loadHtml2Pdf();
-          const overlay = document.createElement("div");
-          overlay.style.position = "fixed";
-          overlay.style.inset = "0";
-          overlay.style.background = "#ffffff";
-          overlay.style.zIndex = "999999";
-          overlay.style.overflow = "auto";
-          overlay.style.padding = "30px 0";
-
-          const pdfElement = document.createElement("div");
-          pdfElement.className = "tes-pdf-only";
-          pdfElement.innerHTML = `
-            <style>
-              @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
-              .tes-pdf-only { width: 8.5in; background: #ffffff; color: #1c1712; font-family: 'Jost', Arial, sans-serif; font-weight: 300; line-height: 1.65; padding: 0.45in; margin: 0 auto; }
-              .pdf-hero { background: #1c1712; color: #faf6f0; padding: 38px 42px; margin-bottom: 34px; }
-              .pdf-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #c4795a; margin-bottom: 18px; }
-              .pdf-hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 54px; line-height: 0.95; letter-spacing: -0.03em; font-weight: 300; margin: 0 0 16px; color: #faf6f0; }
-              .pdf-hero em, .pdf-closing em { color: #c4795a; font-style: italic; }
-              .pdf-hero p { color: rgba(250, 246, 240, 0.74); font-size: 14px; line-height: 1.7; margin: 0; }
-              .pdf-psychoed { background: #f7f0e6; border: 1px solid rgba(28, 23, 18, 0.12); padding: 18px 20px; margin-bottom: 30px; break-inside: avoid; page-break-inside: avoid; }
-              .pdf-psychoed strong { color: #1c1712; font-weight: 500; }
-              .pdf-psychoed p { color: #3a2e28; font-size: 13px; line-height: 1.7; margin: 0; }
-              .pdf-section { margin-bottom: 30px; break-inside: avoid; page-break-inside: avoid; }
-              .pdf-head { display: grid; grid-template-columns: 42px 1fr; gap: 16px; align-items: start; margin-bottom: 16px; }
-              .pdf-num { width: 42px; height: 42px; border: 1px solid rgba(196, 121, 90, 0.45); color: #c4795a; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-style: italic; }
-              .pdf-section h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 33px; line-height: 1.05; font-weight: 300; letter-spacing: -0.02em; margin: 0 0 6px; color: #1c1712; }
-              .pdf-desc { color: #3a2e28; font-size: 13px; line-height: 1.65; margin: 0; }
-              .pdf-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-              .pdf-mini-label { color: #8f6d5a; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; margin: 14px 0 6px; }
-              .pdf-answer { border: 1px solid rgba(28, 23, 18, 0.14); background: #fffaf5; padding: 14px; min-height: 52px; color: #3a2e28; font-size: 13px; line-height: 1.65; white-space: pre-wrap; }
-              .pdf-answer.large { min-height: 105px; }
-              .blank-line { display: block; width: 75%; height: 1px; border-bottom: 1px solid rgba(28, 23, 18, 0.42); margin-top: 12px; }
-              .pdf-section ul { margin: 10px 0 0; padding-left: 22px; color: #3a2e28; font-size: 13px; line-height: 1.65; }
-              .pdf-section li { margin-bottom: 7px; }
-              .pdf-closing { background: #1c1712; color: #faf6f0; padding: 28px; margin-top: 34px; break-inside: avoid; page-break-inside: avoid; }
-              .pdf-closing h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 36px; line-height: 1; letter-spacing: -0.025em; font-weight: 300; margin: 0 0 12px; color: #faf6f0; }
-              .pdf-closing p { color: rgba(250, 246, 240, 0.74); margin: 0; font-size: 13px; line-height: 1.7; }
-              .pdf-footer { border-top: 1px solid rgba(28, 23, 18, 0.12); margin-top: 26px; padding-top: 16px; color: #8f6d5a; font-size: 10.5px; line-height: 1.5; }
-            </style>
-            <section class="pdf-hero">
-              <div class="pdf-label">The Embodied Self</div>
-              <h1>Inner Critic <em>Reflection</em></h1>
-              <p>A gentle worksheet for noticing the voice of self-criticism, understanding what it may be trying to protect, and practicing a more compassionate response.</p>
-            </section>
-            <section class="pdf-psychoed"><p><strong>Psychoeducation:</strong> The inner critic is often a protective part of us. It may use shame, pressure, comparison, or perfectionism to try to prevent rejection, failure, disappointment, conflict, or vulnerability. The goal is not to fight this part of you. The goal is to notice it, understand it, and help it soften.</p></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">1</div><div><h2>Notice when the critic showed up</h2><p class="pdf-desc">Inner criticism often gets louder when something touches fear, shame, pressure, or old pain.</p></div></div><div class="pdf-two"><div><div class="pdf-mini-label">Date</div><div class="pdf-answer">${answer(data.date)}</div></div><div><div class="pdf-mini-label">What situation brought this up?</div><div class="pdf-answer">${answer(data.situation)}</div></div></div><div class="pdf-mini-label">What did I notice in my body or emotions?</div><div class="pdf-answer large">${answer(data.bodyReaction)}</div></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">2</div><div><h2>Write down what the critic said</h2><p class="pdf-desc">Putting the thought on paper helps create space between you and the thought.</p></div></div><div class="pdf-mini-label">The inner critic said...</div><div class="pdf-answer large">${answer(data.criticWords)}</div><div class="pdf-mini-label">What tone did it use?</div><div class="pdf-answer">${answer(data.criticTone)}</div></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">3</div><div><h2>Name the pattern</h2><p class="pdf-desc">Naming the pattern helps you see this as a learned response, not an absolute truth.</p></div></div><ul>${listItems(data.criticPatterns)}</ul><div class="pdf-mini-label">Any other pattern I notice?</div><div class="pdf-answer">${answer(data.patternOther)}</div><div class="pdf-mini-label">Does this voice remind me of an old message, person, or season of life?</div><div class="pdf-answer large">${answer(data.oldMessage)}</div></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">4</div><div><h2>Ask what it is trying to protect</h2><p class="pdf-desc">Many critical thoughts are trying to prevent pain, even if the method is harsh.</p></div></div><div class="pdf-mini-label">What might this critic be afraid would happen if it stopped pushing me?</div><div class="pdf-answer large">${answer(data.protectionFear)}</div><div class="pdf-mini-label">What need might be underneath the criticism?</div><div class="pdf-answer large">${answer(data.unmetNeed)}</div></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">5</div><div><h2>Separate fact from story</h2><p class="pdf-desc">The nervous system often turns pain into a story about who we are. This step helps create clarity.</p></div></div><div class="pdf-two"><div><div class="pdf-mini-label">What are the actual facts?</div><div class="pdf-answer large">${answer(data.facts)}</div></div><div><div class="pdf-mini-label">What story is my critic adding?</div><div class="pdf-answer large">${answer(data.story)}</div></div></div></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">6</div><div><h2>Offer a compassionate truth</h2><p class="pdf-desc">Compassion is not lying to yourself. It is telling the truth without cruelty.</p></div></div><div class="pdf-mini-label">A more compassionate truth might be...</div><div class="pdf-answer large">${answer(data.compassionateTruth)}</div><div class="pdf-mini-label">How can I respond to the critic without letting it lead?</div><div class="pdf-answer large">${answer(data.response)}</div></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">7</div><div><h2>Choose one caring next step</h2><p class="pdf-desc">The next step does not need to be big. It just needs to be less punishing and more supportive.</p></div></div><ul>${listItems(data.practices)}</ul><div class="pdf-mini-label">The caring next step I am choosing is...</div><div class="pdf-answer large">${answer(data.nextStep)}</div></section>
-            <section class="pdf-section"><div class="pdf-head"><div class="pdf-num">8</div><div><h2>Speak to the part of you that learned criticism</h2><p class="pdf-desc">A younger or more vulnerable part of you may have learned criticism as a way to survive.</p></div></div><div class="pdf-mini-label">What I want this part of me to know is...</div><div class="pdf-answer large">${answer(data.letter)}</div><div class="pdf-mini-label">One reminder I want to carry with me is...</div><div class="pdf-answer large">${answer(data.reminder)}</div></section>
-            <section class="pdf-closing"><h2>You are allowed to grow without <em>shaming yourself.</em></h2><p>Your inner critic may have developed to protect you, but it does not have to be the voice that leads your life. You can listen for the fear underneath and respond with truth, care, and steadier self-trust.</p></section>
-            <footer class="pdf-footer">The Embodied Self · This worksheet is for reflection and support. It is not a replacement for therapy, crisis care, or medical support.</footer>
-          `;
-
-          overlay.appendChild(pdfElement);
-          document.body.appendChild(overlay);
-
-          if (document.fonts && document.fonts.ready) await document.fonts.ready;
-          await new Promise((resolve) => setTimeout(resolve, 600));
-
-          await html2pdf()
-            .set({
-              margin: 0,
-              filename: "inner-critic-reflection-worksheet.pdf",
-              image: { type: "jpeg", quality: 0.98 },
-              html2canvas: {
-                scale: 2,
-                useCORS: true,
-                backgroundColor: "#ffffff",
-                scrollX: 0,
-                scrollY: 0,
-              },
-              jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-              pagebreak: { mode: ["css", "legacy"] },
-            })
-            .from(pdfElement)
-            .save();
-
-          overlay.remove();
-        } catch (error) {
-          alert("The PDF download did not load. Please try again.");
-          console.error(error);
-          const existingOverlay = document.querySelector(".tes-pdf-only")?.parentElement;
-          if (existingOverlay) existingOverlay.remove();
-        }
-      }
-
-      function renderWorksheet() {
-        hydrateFields();
-        createCheckboxOptions("criticPatternOptions", "criticPatterns", criticPatternOptions);
-        createCheckboxOptions("practiceOptions", "practices", practiceOptions);
-      }
-
-      loadSavedData();
-      renderWorksheet();
-      document.getElementById("downloadPdf").addEventListener("click", downloadPdf);
-      document.getElementById("clearWorksheet").addEventListener("click", clearWorksheet);
+        document.getElementById("downloadPdf").addEventListener("click", () => {
+          window.print();
+        });
+      });
     </script>
   </body>
 </html>
