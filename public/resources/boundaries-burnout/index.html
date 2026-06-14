@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boundaries & Burnout Worksheet | The Embodied Self</title>
+    <meta
+      name="description"
+      content="A gentle, editable boundaries and burnout worksheet from The Embodied Self."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #faf6f0;
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      .tes-worksheet {
+        width: 100%;
+        background: #faf6f0;
+        color: #1c1712;
+      }
+
+      .tes-wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 54px 22px;
+      }
+
+      .tes-hero {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 52px;
+      }
+
+      .tes-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+        color: #c4795a;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .tes-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: #c4795a;
+      }
+
+      .tes-hero h1 {
+        margin: 0 0 20px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(44px, 6vw, 78px);
+        font-weight: 300;
+        letter-spacing: -0.04em;
+        line-height: 0.96;
+      }
+
+      .tes-hero h1 em,
+      .tes-title em,
+      .tes-closing h2 em {
+        color: #c4795a;
+        font-style: italic;
+      }
+
+      .tes-hero p {
+        max-width: 700px;
+        margin: 0;
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.82;
+      }
+
+      .tes-action-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 18px 24px;
+        background: #e8d9c8;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+      }
+
+      .tes-action-bar p {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .tes-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .tes-button {
+        border: 1px solid #1c1712;
+        background: #1c1712;
+        color: #faf6f0;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        padding: 12px 18px;
+        text-transform: uppercase;
+      }
+
+      .tes-button.secondary {
+        background: #faf6f0;
+        color: #1c1712;
+        border-color: rgba(28, 23, 18, 0.18);
+      }
+
+      .tes-content {
+        background: rgba(250, 246, 240, 0.92);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+        padding: 48px;
+      }
+
+      .tes-intro {
+        background: #f7f0e6;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 30px;
+        margin-bottom: 38px;
+      }
+
+      .tes-intro h2,
+      .tes-psychoed h2 {
+        margin: 0 0 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tes-intro p {
+        margin: 0 0 14px;
+        color: #3a2e28;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .tes-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-psychoed {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 32px;
+        margin-bottom: 38px;
+      }
+
+      .tes-psychoed h2 {
+        margin-bottom: 18px;
+        font-size: clamp(32px, 4vw, 46px);
+      }
+
+      .tes-psychoed p {
+        margin: 0 0 16px;
+        color: rgba(250, 246, 240, 0.76);
+        font-size: 15.5px;
+        line-height: 1.82;
+      }
+
+      .tes-psychoed p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-section {
+        margin-bottom: 42px;
+      }
+
+      .tes-head {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        align-items: start;
+        margin-bottom: 20px;
+      }
+
+      .tes-num {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(196, 121, 90, 0.42);
+        color: #c4795a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-style: italic;
+      }
+
+      .tes-title {
+        margin: 0 0 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(31px, 4vw, 44px);
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        line-height: 1.02;
+      }
+
+      .tes-desc {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 14.5px;
+        line-height: 1.75;
+      }
+
+      .tes-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tes-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tes-field label {
+        color: #8f6d5a;
+        font-size: 10.5px;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      .tes-field input,
+      .tes-field textarea {
+        width: 100%;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        border-radius: 0;
+        background: rgba(250, 246, 240, 0.86);
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.6;
+        outline: none;
+        padding: 14px 15px;
+      }
+
+      .tes-field textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .tes-field textarea.small {
+        min-height: 86px;
+      }
+
+      .tes-field textarea.large {
+        min-height: 165px;
+      }
+
+      .tes-checks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .tes-check {
+        position: relative;
+      }
+
+      .tes-check input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-check span {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        min-height: 56px;
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        background: rgba(250, 246, 240, 0.78);
+        color: #3a2e28;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1.45;
+        padding: 14px;
+      }
+
+      .tes-check span::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid rgba(28, 23, 18, 0.28);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .tes-check input:checked + span {
+        background: #e8d9c8;
+        border-color: rgba(196, 121, 90, 0.45);
+      }
+
+      .tes-check input:checked + span::before {
+        background: #c4795a;
+        border-color: #c4795a;
+        box-shadow: inset 0 0 0 3px #e8d9c8;
+      }
+
+      .tes-scale {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 7px;
+      }
+
+      .tes-scale label {
+        cursor: pointer;
+      }
+
+      .tes-scale input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-scale span {
+        min-height: 44px;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        background: rgba(250, 246, 240, 0.78);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .tes-scale input:checked + span {
+        background: #1c1712;
+        color: #faf6f0;
+        border-color: #1c1712;
+      }
+
+      .tes-closing {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 36px;
+      }
+
+      .tes-closing h2 {
+        margin: 0 0 16px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 4.4vw, 56px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .tes-closing p {
+        margin: 0;
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .tes-wrap {
+          max-width: none;
+          padding: 0;
+        }
+
+        .tes-action-bar,
+        .tes-button {
+          display: none;
+        }
+
+        .tes-content {
+          border: 0;
+        }
+
+        .tes-section,
+        .tes-intro,
+        .tes-closing {
+          break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .tes-wrap {
+          padding: 0;
+        }
+
+        .tes-hero,
+        .tes-content {
+          padding: 34px 22px;
+        }
+
+        .tes-action-bar {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .tes-buttons {
+          flex-direction: column;
+        }
+
+        .tes-button {
+          width: 100%;
+        }
+
+        .two,
+        .tes-checks {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-head {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-scale {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+  </head>
+  <body>
+    <div class="tes-worksheet">
+      <div class="tes-wrap">
+        <section class="tes-hero">
+          <div class="tes-label">The Embodied Self</div>
+
+          <h1>Boundaries &amp; <em>Burnout</em></h1>
+
+          <p>
+            A gentle worksheet for noticing where you are overextending,
+            identifying what your burnout may be asking for, and choosing one
+            boundary that protects your energy.
+          </p>
+        </section>
+
+        <section class="tes-action-bar">
+          <p>Type directly into the worksheet. Your answers autosave in this browser.</p>
+
+          <div class="tes-buttons">
+            <button class="tes-button" type="button" id="downloadPdf">Download PDF</button>
+            <button class="tes-button secondary" type="button" id="clearWorksheet">
+              Clear Answers
+            </button>
+          </div>
+        </section>
+
+        <main class="tes-content">
+          <section class="tes-intro">
+            <h2>Before you begin</h2>
+            <p>
+              Burnout is not a personal failure. It is often a sign that your
+              capacity, needs, limits, and responsibilities have been out of
+              balance for too long.
+            </p>
+            <p>
+              Move slowly. You do not have to justify every boundary before you
+              are allowed to have one.
+            </p>
+          </section>
+
+          <section class="tes-psychoed">
+            <h2>Burnout is a capacity problem, not a character flaw.</h2>
+
+            <p>
+              Burnout often develops when the demands on your nervous system
+              exceed your available recovery for too long. It is not just being
+              tired. It can show up as irritability, resentment, numbness,
+              decision fatigue, avoidance, emotional shutdown, or feeling like
+              even small requests are too much. When your body has been
+              operating in survival mode, it may start protecting you through
+              withdrawal, reactivity, procrastination, or collapse.
+            </p>
+
+            <p>
+              Boundaries are one way your nervous system communicates capacity.
+              A boundary is not only a rule you give someone else; it is
+              information about what your body, energy, time, and emotions can
+              realistically hold. When boundaries are missing, unclear, or
+              repeatedly overridden, resentment often becomes the signal.
+              Resentment is not always proof that you are unkind. Sometimes it
+              is the part of you that knows something has become unsustainable.
+            </p>
+
+            <p>
+              Many people struggle with boundaries because they learned that
+              being good, lovable, safe, or needed meant being endlessly
+              available. If your body associates saying no with rejection,
+              conflict, guilt, or disappointing others, even a healthy boundary
+              can feel threatening at first. The goal is not to become harsh or
+              unavailable. The goal is to build enough self-trust to honor your
+              limits before your body has to force them through burnout.
+            </p>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">1</div>
+              <div>
+                <h2 class="tes-title">Notice where you are starting</h2>
+                <p class="tes-desc">
+                  Begin by naming what burnout feels like in your body, mind,
+                  and energy today.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="date">Date</label>
+                <input id="date" type="date" data-field="date" />
+              </div>
+
+              <div class="tes-field">
+                <label for="burnoutFeeling">How does burnout feel right now?</label>
+                <input
+                  id="burnoutFeeling"
+                  type="text"
+                  data-field="burnoutFeeling"
+                  placeholder="Example: heavy, irritable, checked out, resentful, overwhelmed..."
+                />
+              </div>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="bodySigns">What signs am I noticing in my body or behavior?</label>
+              <textarea
+                id="bodySigns"
+                data-field="bodySigns"
+                placeholder="Example: exhaustion, snapping, avoiding messages, headaches, numbness, wanting to disappear..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">2</div>
+              <div>
+                <h2 class="tes-title">Name what is draining you</h2>
+                <p class="tes-desc">Choose anything that has been costing you energy.</p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="drainOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="drainOther">Anything else that has been draining me?</label>
+              <textarea class="small" id="drainOther" data-field="drainOther"></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">3</div>
+              <div>
+                <h2 class="tes-title">Rate the depletion</h2>
+                <p class="tes-desc">
+                  On a scale from 1 to 10, how depleted do you feel right now?
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-scale" id="depletionOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="depletionReason">What makes it feel like that number?</label>
+              <textarea id="depletionReason" data-field="depletionReason"></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">4</div>
+              <div>
+                <h2 class="tes-title">Find the boundary underneath</h2>
+                <p class="tes-desc">
+                  Boundaries often point to a need that has been ignored or
+                  delayed.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="boundaryOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="boundaryNeed">What need is this boundary trying to protect?</label>
+              <textarea
+                id="boundaryNeed"
+                data-field="boundaryNeed"
+                placeholder="Example: rest, space, honesty, quiet, support, time, dignity, emotional safety..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">5</div>
+              <div>
+                <h2 class="tes-title">Notice the fear or guilt</h2>
+                <p class="tes-desc">
+                  Many boundaries bring up guilt, fear, or old stories about
+                  being too much.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="fearStory">What am I afraid might happen if I set this boundary?</label>
+              <textarea
+                id="fearStory"
+                data-field="fearStory"
+                placeholder="Example: They will be upset. I will disappoint someone. I will seem selfish. I will be rejected."
+              ></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="trueStory">What is a kinder, truer way to see this?</label>
+              <textarea
+                id="trueStory"
+                data-field="trueStory"
+                placeholder="Example: A boundary is not punishment. It is information. I can care about someone and still have limits."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">6</div>
+              <div>
+                <h2 class="tes-title">Choose one boundary script</h2>
+                <p class="tes-desc">
+                  Keep it simple, clear, and kind. You do not have to over-explain.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="scriptOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="customScript">The boundary I want to practice saying is...</label>
+              <textarea
+                id="customScript"
+                data-field="customScript"
+                placeholder="Example: I cannot take that on today. I need more time before I answer. I am not available for this conversation right now."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">7</div>
+              <div>
+                <h2 class="tes-title">Make it supportive</h2>
+                <p class="tes-desc">
+                  A boundary is easier to keep when your next step supports
+                  your nervous system.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="supportStep">What is one supportive action I can take?</label>
+                <textarea
+                  id="supportStep"
+                  data-field="supportStep"
+                  placeholder="Example: turn my phone off, ask for help, rest, reschedule, leave the room, drink water..."
+                ></textarea>
+              </div>
+
+              <div class="tes-field">
+                <label for="supportPerson">Who or what can help me hold this boundary?</label>
+                <textarea
+                  id="supportPerson"
+                  data-field="supportPerson"
+                  placeholder="Example: a partner, friend, therapist, reminder note, calendar block, alarm..."
+                ></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">8</div>
+              <div>
+                <h2 class="tes-title">Leave with a reminder</h2>
+                <p class="tes-desc">Write one sentence you want to carry with you.</p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="reminder">Right now, I want to remember...</label>
+              <textarea
+                class="large"
+                id="reminder"
+                data-field="reminder"
+                placeholder="Example: I am allowed to have limits before I reach collapse."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-closing">
+            <h2>Burnout is information. <em>Your limits matter.</em></h2>
+            <p>
+              Boundaries are not walls against love. They are a way to protect
+              the conditions that make connection, rest, honesty, and self-trust
+              possible.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "tes-boundaries-burnout";
+
+      const defaultData = {
+        date: "",
+        burnoutFeeling: "",
+        bodySigns: "",
+        drains: [],
+        drainOther: "",
+        depletion: "",
+        depletionReason: "",
+        boundaries: [],
+        boundaryNeed: "",
+        fearStory: "",
+        trueStory: "",
+        scripts: [],
+        customScript: "",
+        supportStep: "",
+        supportPerson: "",
+        reminder: "",
+      };
+
+      const drainOptions = [
+        "Saying yes when I mean no",
+        "Being available all the time",
+        "Carrying everyone else's emotions",
+        "Over-explaining myself",
+        "Taking responsibility for things that are not mine",
+        "Ignoring my need for rest",
+        "Doing invisible labor without support",
+        "Avoiding conflict until I feel resentful",
+      ];
+
+      const boundaryOptions = [
+        "I need more rest",
+        "I need more space",
+        "I need clearer expectations",
+        "I need help or shared responsibility",
+        "I need time before I answer",
+        "I need to stop over-explaining",
+        "I need emotional safety",
+        "I need permission to disappoint someone",
+      ];
+
+      const scriptOptions = [
+        "I cannot take that on today.",
+        "I need time to think before I answer.",
+        "That does not work for me.",
+        "I am not available for this conversation right now.",
+        "I can help with part of this, but not all of it.",
+        "I need support with this.",
+        "I am going to pause instead of saying yes immediately.",
+        "I care about you, and I still need this boundary.",
+      ];
+
+      let data = { ...defaultData };
+
+      function loadData() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+          if (saved) data = { ...defaultData, ...saved };
+        } catch (error) {}
+      }
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function updateField(field, value) {
+        data[field] = value;
+        saveData();
+      }
+
+      function toggleArray(field, value) {
+        const current = data[field] || [];
+        data[field] = current.includes(value)
+          ? current.filter((item) => item !== value)
+          : [...current, value];
+        saveData();
+      }
+
+      function renderChecks(containerId, field, options) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = options
+          .map(
+            (option) => `
+              <label class="tes-check">
+                <input type="checkbox" value="${option}" />
+                <span>${option}</span>
+              </label>
+            `
+          )
+          .join("");
+
+        container.querySelectorAll("input").forEach((input) => {
+          input.checked = (data[field] || []).includes(input.value);
+          input.addEventListener("change", () => toggleArray(field, input.value));
+        });
+      }
+
+      function renderScale() {
+        const container = document.getElementById("depletionOptions");
+        container.innerHTML = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+          .map(
+            (num) => `
+              <label>
+                <input type="radio" name="depletion" value="${num}" />
+                <span>${num}</span>
+              </label>
+            `
+          )
+          .join("");
+
+        container.querySelectorAll("input").forEach((input) => {
+          input.checked = data.depletion === input.value;
+          input.addEventListener("change", () => updateField("depletion", input.value));
+        });
+      }
+
+      function hydrateFields() {
+        document.querySelectorAll("[data-field]").forEach((field) => {
+          field.value = data[field.dataset.field] || "";
+          field.addEventListener("input", () => {
+            updateField(field.dataset.field, field.value);
+          });
+        });
+      }
+
+      function clearWorksheet() {
+        const confirmed = window.confirm("Clear all saved answers on this worksheet?");
+        if (!confirmed) return;
+
+        localStorage.removeItem(STORAGE_KEY);
+        data = { ...defaultData };
+        hydrateFields();
+        renderChecks("drainOptions", "drains", drainOptions);
+        renderChecks("boundaryOptions", "boundaries", boundaryOptions);
+        renderChecks("scriptOptions", "scripts", scriptOptions);
+        renderScale();
+      }
+
+      loadData();
+      hydrateFields();
+      renderChecks("drainOptions", "drains", drainOptions);
+      renderChecks("boundaryOptions", "boundaries", boundaryOptions);
+      renderChecks("scriptOptions", "scripts", scriptOptions);
+      renderScale();
+
+      document.getElementById("clearWorksheet").addEventListener("click", clearWorksheet);
+      document.getElementById("downloadPdf").addEventListener("click", () => window.print());
+    </script>
+  </body>
+</html>
