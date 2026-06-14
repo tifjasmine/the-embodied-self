@@ -8,6 +8,10 @@
       name="description"
       content="A gentle, editable boundaries and burnout worksheet from The Embodied Self."
     />
+
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
 
@@ -71,6 +75,7 @@
 
       .tes-hero h1 em,
       .tes-title em,
+      .tes-psychoed h2 em,
       .tes-closing h2 em {
         color: #c4795a;
         font-style: italic;
@@ -142,8 +147,7 @@
         margin-bottom: 38px;
       }
 
-      .tes-intro h2,
-      .tes-psychoed h2 {
+      .tes-intro h2 {
         margin: 0 0 14px;
         font-family: "Cormorant Garamond", serif;
         font-size: 36px;
@@ -170,8 +174,11 @@
       }
 
       .tes-psychoed h2 {
-        margin-bottom: 18px;
+        margin: 0 0 18px;
+        font-family: "Cormorant Garamond", serif;
         font-size: clamp(32px, 4vw, 46px);
+        font-weight: 300;
+        line-height: 1.05;
       }
 
       .tes-psychoed p {
@@ -385,14 +392,15 @@
           background: #ffffff;
         }
 
+        .shared-nav,
+        .tes-action-bar,
+        .tes-button {
+          display: none !important;
+        }
+
         .tes-wrap {
           max-width: none;
           padding: 0;
-        }
-
-        .tes-action-bar,
-        .tes-button {
-          display: none;
         }
 
         .tes-content {
@@ -401,6 +409,7 @@
 
         .tes-section,
         .tes-intro,
+        .tes-psychoed,
         .tes-closing {
           break-inside: avoid;
         }
@@ -441,11 +450,15 @@
         .tes-scale {
           grid-template-columns: repeat(5, 1fr);
         }
+
+        .tes-psychoed,
+        .tes-closing {
+          padding: 28px 24px;
+        }
       }
     </style>
-    <link rel="stylesheet" href="/shared-nav.css" />
-    <script defer src="/shared-nav.js"></script>
   </head>
+
   <body>
     <div class="tes-worksheet">
       <div class="tes-wrap">
@@ -465,7 +478,10 @@
           <p>Type directly into the worksheet. Your answers autosave in this browser.</p>
 
           <div class="tes-buttons">
-            <button class="tes-button" type="button" id="downloadPdf">Download PDF</button>
+            <button class="tes-button" type="button" id="downloadPdf">
+              Download PDF
+            </button>
+
             <button class="tes-button secondary" type="button" id="clearWorksheet">
               Clear Answers
             </button>
@@ -821,6 +837,7 @@
 
       function renderChecks(containerId, field, options) {
         const container = document.getElementById(containerId);
+
         container.innerHTML = options
           .map(
             (option) => `
@@ -840,6 +857,7 @@
 
       function renderScale() {
         const container = document.getElementById("depletionOptions");
+
         container.innerHTML = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
           .map(
             (num) => `
@@ -853,7 +871,9 @@
 
         container.querySelectorAll("input").forEach((input) => {
           input.checked = data.depletion === input.value;
-          input.addEventListener("change", () => updateField("depletion", input.value));
+          input.addEventListener("change", () => {
+            updateField("depletion", input.value);
+          });
         });
       }
 
@@ -872,6 +892,7 @@
 
         localStorage.removeItem(STORAGE_KEY);
         data = { ...defaultData };
+
         hydrateFields();
         renderChecks("drainOptions", "drains", drainOptions);
         renderChecks("boundaryOptions", "boundaries", boundaryOptions);
@@ -879,15 +900,22 @@
         renderScale();
       }
 
-      loadData();
-      hydrateFields();
-      renderChecks("drainOptions", "drains", drainOptions);
-      renderChecks("boundaryOptions", "boundaries", boundaryOptions);
-      renderChecks("scriptOptions", "scripts", scriptOptions);
-      renderScale();
+      document.addEventListener("DOMContentLoaded", () => {
+        loadData();
+        hydrateFields();
+        renderChecks("drainOptions", "drains", drainOptions);
+        renderChecks("boundaryOptions", "boundaries", boundaryOptions);
+        renderChecks("scriptOptions", "scripts", scriptOptions);
+        renderScale();
 
-      document.getElementById("clearWorksheet").addEventListener("click", clearWorksheet);
-      document.getElementById("downloadPdf").addEventListener("click", () => window.print());
+        document
+          .getElementById("clearWorksheet")
+          .addEventListener("click", clearWorksheet);
+
+        document.getElementById("downloadPdf").addEventListener("click", () => {
+          window.print();
+        });
+      });
     </script>
   </body>
 </html>
