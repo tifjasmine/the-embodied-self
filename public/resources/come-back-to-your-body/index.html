@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Come Back to Your Body Worksheet | The Embodied Self</title>
+    <meta
+      name="description"
+      content="A gentle, editable body-based reflection worksheet from The Embodied Self."
+    />
+
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #faf6f0;
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      .tes-worksheet {
+        width: 100%;
+        background: #faf6f0;
+        color: #1c1712;
+      }
+
+      .tes-wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 54px 22px;
+      }
+
+      .tes-hero {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 52px;
+      }
+
+      .tes-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+        color: #c4795a;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .tes-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: #c4795a;
+      }
+
+      .tes-hero h1 {
+        margin: 0 0 20px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(44px, 6vw, 78px);
+        font-weight: 300;
+        letter-spacing: -0.04em;
+        line-height: 0.96;
+      }
+
+      .tes-hero h1 em,
+      .tes-title em,
+      .tes-psychoed h2 em,
+      .tes-closing h2 em {
+        color: #c4795a;
+        font-style: italic;
+      }
+
+      .tes-hero p {
+        max-width: 700px;
+        margin: 0;
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.82;
+      }
+
+      .tes-action-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 18px 24px;
+        background: #e8d9c8;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+      }
+
+      .tes-action-bar p {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .tes-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .tes-button {
+        border: 1px solid #1c1712;
+        background: #1c1712;
+        color: #faf6f0;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        padding: 12px 18px;
+        text-transform: uppercase;
+      }
+
+      .tes-button.secondary {
+        background: #faf6f0;
+        color: #1c1712;
+        border-color: rgba(28, 23, 18, 0.18);
+      }
+
+      .tes-content {
+        background: rgba(250, 246, 240, 0.92);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+        padding: 48px;
+      }
+
+      .tes-intro {
+        background: #f7f0e6;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 30px;
+        margin-bottom: 38px;
+      }
+
+      .tes-intro h2 {
+        margin: 0 0 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tes-intro p {
+        margin: 0 0 14px;
+        color: #3a2e28;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .tes-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-psychoed {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 32px;
+        margin-bottom: 38px;
+      }
+
+      .tes-psychoed h2 {
+        margin: 0 0 18px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 4vw, 46px);
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tes-psychoed p {
+        margin: 0 0 16px;
+        color: rgba(250, 246, 240, 0.76);
+        font-size: 15.5px;
+        line-height: 1.82;
+      }
+
+      .tes-psychoed p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-section {
+        margin-bottom: 42px;
+      }
+
+      .tes-head {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        align-items: start;
+        margin-bottom: 20px;
+      }
+
+      .tes-num {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(196, 121, 90, 0.42);
+        color: #c4795a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-style: italic;
+      }
+
+      .tes-title {
+        margin: 0 0 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(31px, 4vw, 44px);
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        line-height: 1.02;
+      }
+
+      .tes-desc {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 14.5px;
+        line-height: 1.75;
+      }
+
+      .tes-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tes-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tes-field label {
+        color: #8f6d5a;
+        font-size: 10.5px;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      .tes-field input,
+      .tes-field textarea {
+        width: 100%;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        border-radius: 0;
+        background: rgba(250, 246, 240, 0.86);
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.6;
+        outline: none;
+        padding: 14px 15px;
+      }
+
+      .tes-field textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .tes-field textarea.small {
+        min-height: 86px;
+      }
+
+      .tes-field textarea.large {
+        min-height: 165px;
+      }
+
+      .tes-checks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .tes-check {
+        position: relative;
+      }
+
+      .tes-check input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-check span {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        min-height: 56px;
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        background: rgba(250, 246, 240, 0.78);
+        color: #3a2e28;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1.45;
+        padding: 14px;
+      }
+
+      .tes-check span::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid rgba(28, 23, 18, 0.28);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .tes-check input:checked + span {
+        background: #e8d9c8;
+        border-color: rgba(196, 121, 90, 0.45);
+      }
+
+      .tes-check input:checked + span::before {
+        background: #c4795a;
+        border-color: #c4795a;
+        box-shadow: inset 0 0 0 3px #e8d9c8;
+      }
+
+      .tes-practice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .tes-practice {
+        background: #f7f0e6;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 22px;
+      }
+
+      .tes-practice h3 {
+        margin: 0 0 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 31px;
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tes-practice p {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      .tes-closing {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 36px;
+      }
+
+      .tes-closing h2 {
+        margin: 0 0 16px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 4.4vw, 56px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .tes-closing p {
+        margin: 0;
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .shared-nav,
+        .tes-action-bar,
+        .tes-button {
+          display: none !important;
+        }
+
+        .tes-wrap {
+          max-width: none;
+          padding: 0;
+        }
+
+        .tes-content {
+          border: 0;
+        }
+
+        .tes-section,
+        .tes-intro,
+        .tes-psychoed,
+        .tes-closing {
+          break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .tes-wrap {
+          padding: 0;
+        }
+
+        .tes-hero,
+        .tes-content {
+          padding: 34px 22px;
+        }
+
+        .tes-action-bar {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .tes-buttons {
+          flex-direction: column;
+        }
+
+        .tes-button {
+          width: 100%;
+        }
+
+        .two,
+        .tes-checks,
+        .tes-practice-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-head {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-psychoed,
+        .tes-closing {
+          padding: 28px 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tes-worksheet">
+      <div class="tes-wrap">
+        <section class="tes-hero">
+          <div class="tes-label">The Embodied Self</div>
+
+          <h1>Come Back to Your <em>Body</em></h1>
+
+          <p>
+            A gentle body-based reflection for noticing sensations, emotions,
+            tension, and what your body may be trying to communicate.
+          </p>
+        </section>
+
+        <section class="tes-action-bar">
+          <p>Type directly into the worksheet. Your answers autosave in this browser.</p>
+
+          <div class="tes-buttons">
+            <button class="tes-button" type="button" id="downloadPdf">
+              Download PDF
+            </button>
+
+            <button class="tes-button secondary" type="button" id="clearWorksheet">
+              Clear Answers
+            </button>
+          </div>
+        </section>
+
+        <main class="tes-content">
+          <section class="tes-intro">
+            <h2>Before you begin</h2>
+            <p>
+              This worksheet is not about analyzing your body or forcing it to
+              relax. It is about practicing a slower, kinder way of listening to
+              the information your body may already be carrying.
+            </p>
+            <p>
+              You can pause at any point. If something feels overwhelming, open
+              your eyes, look around the room, feel your feet, and come back to
+              the present moment.
+            </p>
+          </section>
+
+          <section class="tes-psychoed">
+            <h2>Your body often speaks before your thoughts do.</h2>
+
+            <p>
+              The body is not separate from your emotional life. Stress,
+              protection, grief, anger, shame, desire, fear, and longing can all
+              show up as sensation before they become clear thoughts. Tightness
+              in the chest, heaviness in the limbs, a clenched jaw, shallow
+              breathing, buzzing energy, or numbness can be ways your nervous
+              system communicates what feels safe, unsafe, unfinished, or too
+              much.
+            </p>
+
+            <p>
+              Many people learn to override the body in order to function. You
+              may push through hunger, ignore exhaustion, dismiss tension, or
+              disconnect from discomfort because there are responsibilities to
+              handle and people to care for. Over time, this can make the body
+              feel like an inconvenience instead of a source of information.
+              Coming back to your body is a practice of rebuilding trust with
+              the parts of you that have been trying to get your attention.
+            </p>
+
+            <p>
+              Body awareness does not mean every sensation needs to be fixed. It
+              means you can notice sensation with curiosity and choice. When you
+              can name what is happening in your body, you create more space to
+              respond with care instead of pushing past your limits, shutting
+              down, or assuming your body is betraying you.
+            </p>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">1</div>
+              <div>
+                <h2 class="tes-title">Arrive in the present moment</h2>
+                <p class="tes-desc">
+                  Begin by noticing where you are and what feels available right now.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="date">Date</label>
+                <input id="date" type="date" data-field="date" />
+              </div>
+
+              <div class="tes-field">
+                <label for="presentMoment">What helped me pause and check in?</label>
+                <input
+                  id="presentMoment"
+                  type="text"
+                  data-field="presentMoment"
+                  placeholder="Example: I feel tense, tired, disconnected, emotional..."
+                />
+              </div>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="roomNotice">What do I notice around me right now?</label>
+              <textarea
+                id="roomNotice"
+                data-field="roomNotice"
+                placeholder="Example: light in the room, my feet on the floor, a sound nearby, the chair holding me..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">2</div>
+              <div>
+                <h2 class="tes-title">Scan for sensation</h2>
+                <p class="tes-desc">
+                  Choose anything you notice. There is no right answer.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="sensationOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="sensationOther">Anything else I notice in my body?</label>
+              <textarea
+                class="small"
+                id="sensationOther"
+                data-field="sensationOther"
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">3</div>
+              <div>
+                <h2 class="tes-title">Locate the strongest signal</h2>
+                <p class="tes-desc">
+                  Pick one area of the body that feels most present.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="bodyLocation">Where do I feel the strongest sensation?</label>
+              <textarea
+                id="bodyLocation"
+                data-field="bodyLocation"
+                placeholder="Example: throat, chest, stomach, shoulders, jaw, hands, back, legs..."
+              ></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="sensationDescription">How would I describe this sensation?</label>
+              <textarea
+                id="sensationDescription"
+                data-field="sensationDescription"
+                placeholder="Example: tight, heavy, buzzing, warm, cold, numb, sharp, soft, restless, collapsed..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">4</div>
+              <div>
+                <h2 class="tes-title">Listen for the emotion underneath</h2>
+                <p class="tes-desc">
+                  Sensation may be connected to emotion, need, memory, or stress.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="emotionOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="emotionWords">If this sensation had words, it might say...</label>
+              <textarea
+                id="emotionWords"
+                data-field="emotionWords"
+                placeholder="Example: I am tired. I need space. I feel unseen. I am bracing. I want comfort."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">5</div>
+              <div>
+                <h2 class="tes-title">Notice what your body has been holding</h2>
+                <p class="tes-desc">
+                  Your body may be carrying something you have not had space to process.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="bodyHolding">What might my body be holding for me?</label>
+              <textarea
+                id="bodyHolding"
+                data-field="bodyHolding"
+                placeholder="Example: stress, grief, pressure, anger, responsibility, fear, sadness, a need I have ignored..."
+              ></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="bodyNeed">What might my body need from me right now?</label>
+              <textarea
+                id="bodyNeed"
+                data-field="bodyNeed"
+                placeholder="Example: rest, warmth, movement, stillness, food, water, support, reassurance, a pause..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">6</div>
+              <div>
+                <h2 class="tes-title">Choose one body-based support</h2>
+                <p class="tes-desc">
+                  Choose one small practice. Let it be simple and doable.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-practice-grid">
+              <article class="tes-practice">
+                <h3>Soften</h3>
+                <p>
+                  Unclench your jaw, lower your shoulders, or relax your hands
+                  by one percent. Notice what changes.
+                </p>
+              </article>
+
+              <article class="tes-practice">
+                <h3>Support</h3>
+                <p>
+                  Place one hand somewhere steady: chest, belly, arm, or face.
+                  Let your body feel contact and warmth.
+                </p>
+              </article>
+
+              <article class="tes-practice">
+                <h3>Move</h3>
+                <p>
+                  Stretch, sway, shake out your hands, roll your shoulders, or
+                  walk slowly for a minute.
+                </p>
+              </article>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="chosenSupport">The body-based support I am choosing is...</label>
+              <textarea
+                id="chosenSupport"
+                data-field="chosenSupport"
+                class="small"
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">7</div>
+              <div>
+                <h2 class="tes-title">Check back in</h2>
+                <p class="tes-desc">
+                  After offering support, notice whether anything shifted.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="afterBody">What do I notice in my body now?</label>
+                <textarea
+                  id="afterBody"
+                  data-field="afterBody"
+                  class="small"
+                ></textarea>
+              </div>
+
+              <div class="tes-field">
+                <label for="afterEmotion">What emotion feels present now?</label>
+                <textarea
+                  id="afterEmotion"
+                  data-field="afterEmotion"
+                  class="small"
+                ></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">8</div>
+              <div>
+                <h2 class="tes-title">Leave with a message from your body</h2>
+                <p class="tes-desc">
+                  Write one sentence you want to remember.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="bodyMessage">My body wants me to know...</label>
+              <textarea
+                class="large"
+                id="bodyMessage"
+                data-field="bodyMessage"
+                placeholder="Example: I am allowed to listen sooner. I do not have to push past every signal."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-closing">
+            <h2>Your body is not the problem. <em>It is part of the conversation.</em></h2>
+
+            <p>
+              Coming back to your body does not require perfection. It begins
+              with one moment of listening, one breath of curiosity, and one
+              small choice to respond with care.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "tes-come-back-to-your-body";
+
+      const defaultData = {
+        date: "",
+        presentMoment: "",
+        roomNotice: "",
+        sensations: [],
+        sensationOther: "",
+        bodyLocation: "",
+        sensationDescription: "",
+        emotions: [],
+        emotionWords: "",
+        bodyHolding: "",
+        bodyNeed: "",
+        chosenSupport: "",
+        afterBody: "",
+        afterEmotion: "",
+        bodyMessage: "",
+      };
+
+      const sensationOptions = [
+        "Tightness",
+        "Heaviness",
+        "Buzzing or activation",
+        "Numbness",
+        "Warmth",
+        "Coldness",
+        "Restlessness",
+        "Softness or ease",
+      ];
+
+      const emotionOptions = [
+        "Anxiety",
+        "Anger",
+        "Sadness",
+        "Grief",
+        "Shame",
+        "Fear",
+        "Relief",
+        "Tenderness",
+      ];
+
+      let data = { ...defaultData };
+
+      function loadData() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+          if (saved) data = { ...defaultData, ...saved };
+        } catch (error) {}
+      }
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function updateField(field, value) {
+        data[field] = value;
+        saveData();
+      }
+
+      function toggleArray(field, value) {
+        const current = data[field] || [];
+        data[field] = current.includes(value)
+          ? current.filter((item) => item !== value)
+          : [...current, value];
+        saveData();
+      }
+
+      function renderChecks(containerId, field, options) {
+        const container = document.getElementById(containerId);
+
+        container.innerHTML = options
+          .map(
+            (option) => `
+              <label class="tes-check">
+                <input type="checkbox" value="${option}" />
+                <span>${option}</span>
+              </label>
+            `
+          )
+          .join("");
+
+        container.querySelectorAll("input").forEach((input) => {
+          input.checked = (data[field] || []).includes(input.value);
+          input.addEventListener("change", () => toggleArray(field, input.value));
+        });
+      }
+
+      function hydrateFields() {
+        document.querySelectorAll("[data-field]").forEach((field) => {
+          field.value = data[field.dataset.field] || "";
+          field.addEventListener("input", () => {
+            updateField(field.dataset.field, field.value);
+          });
+        });
+      }
+
+      function clearWorksheet() {
+        const confirmed = window.confirm("Clear all saved answers on this worksheet?");
+        if (!confirmed) return;
+
+        localStorage.removeItem(STORAGE_KEY);
+        data = { ...defaultData };
+
+        hydrateFields();
+        renderChecks("sensationOptions", "sensations", sensationOptions);
+        renderChecks("emotionOptions", "emotions", emotionOptions);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        loadData();
+        hydrateFields();
+        renderChecks("sensationOptions", "sensations", sensationOptions);
+        renderChecks("emotionOptions", "emotions", emotionOptions);
+
+        document
+          .getElementById("clearWorksheet")
+          .addEventListener("click", clearWorksheet);
+
+        document.getElementById("downloadPdf").addEventListener("click", () => {
+          window.print();
+        });
+      });
+    </script>
+  </body>
+</html>
