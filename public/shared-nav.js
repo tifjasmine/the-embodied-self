@@ -37,6 +37,8 @@
     menuButton.textContent = isOpen ? "Close" : "Menu";
   });
 
+    if (window.TES_SKIP_GLOBAL_FOOTER) return;
+  
   const footer = document.createElement("footer");
   footer.className = "tes-global-footer";
   footer.innerHTML = `
