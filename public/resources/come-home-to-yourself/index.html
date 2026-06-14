@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What It Means to Come Home to Yourself | The Embodied Self</title>
+    <meta
+      name="description"
+      content="A compassionate article about self-trust, inner safety, nervous system healing, and what it means to come home to yourself after years of performing, pleasing, or disconnecting."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      :root {
+        --cream: #faf6f0;
+        --cream-deep: #f7f0e6;
+        --clay: #c4795a;
+        --charcoal: #1c1712;
+        --brown: #3a2e28;
+        --tan: #e8d9c8;
+        --muted: #8f6d5a;
+        --line: rgba(28, 23, 18, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .article-page {
+        width: 100%;
+        background: var(--cream);
+      }
+
+      .article-hero {
+        background:
+          radial-gradient(ellipse at 12% 18%, rgba(196, 121, 90, 0.12), transparent 38%),
+          radial-gradient(ellipse at 88% 12%, rgba(122, 139, 110, 0.09), transparent 38%),
+          linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+        padding: 96px 6vw 78px;
+      }
+
+      .article-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      .article-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.44fr;
+        gap: 58px;
+        align-items: end;
+      }
+
+      .article-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        color: var(--clay);
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .article-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: var(--clay);
+        flex-shrink: 0;
+      }
+
+      .article-label-light {
+        color: #b89a87;
+      }
+
+      .article-label-light::after {
+        background: #b89a87;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--charcoal);
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 300;
+      }
+
+      h1 {
+        max-width: 900px;
+        margin-bottom: 26px;
+        font-size: clamp(48px, 6.2vw, 88px);
+        letter-spacing: -0.04em;
+        line-height: 0.96;
+      }
+
+      h1 em,
+      h2 em,
+      .pull-quote em {
+        color: var(--clay);
+        font-style: italic;
+      }
+
+      .article-deck {
+        max-width: 720px;
+        color: var(--brown);
+        font-size: clamp(17px, 1.35vw, 20px);
+        line-height: 1.85;
+      }
+
+      .article-meta {
+        background: rgba(250, 246, 240, 0.8);
+        border: 1px solid var(--line);
+        padding: 30px 28px;
+        box-shadow: 0 18px 52px rgba(28, 23, 18, 0.06);
+      }
+
+      .article-meta p {
+        color: var(--brown);
+        font-size: 14.5px;
+        line-height: 1.75;
+      }
+
+      .article-meta strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--clay);
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .article-body-wrap {
+        background: var(--cream);
+        padding: 76px 6vw 0;
+      }
+
+      .article-body {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .article-body p {
+        margin-bottom: 24px;
+        color: var(--brown);
+        font-size: 18px;
+        line-height: 1.9;
+      }
+
+      .article-body p.lead {
+        color: var(--charcoal);
+        font-size: clamp(23px, 2.2vw, 34px);
+        font-family: "Cormorant Garamond", serif;
+        letter-spacing: -0.02em;
+        line-height: 1.18;
+      }
+
+      .article-body h2 {
+        margin: 58px 0 20px;
+        font-size: clamp(36px, 4vw, 58px);
+        letter-spacing: -0.035em;
+        line-height: 1.02;
+      }
+
+      .article-body h3 {
+        margin: 38px 0 14px;
+        color: var(--clay);
+        font-size: clamp(28px, 3vw, 40px);
+        letter-spacing: -0.02em;
+        line-height: 1.04;
+      }
+
+      .article-body strong {
+        color: var(--charcoal);
+        font-weight: 500;
+      }
+
+      .pull-quote {
+        margin: 52px 0;
+        padding: 38px 40px;
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+
+      .pull-quote p {
+        margin: 0;
+        color: var(--cream);
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 4.2vw, 58px);
+        letter-spacing: -0.035em;
+        line-height: 1.02;
+      }
+
+      .soft-box {
+        margin: 44px 0;
+        padding: 34px 34px;
+        background: var(--cream-deep);
+        border: 1px solid var(--line);
+      }
+
+      .soft-box h3 {
+        margin-top: 0;
+      }
+
+      .soft-box ul {
+        display: grid;
+        gap: 14px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .soft-box li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        color: var(--brown);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .soft-box li::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        margin-top: 10px;
+        border-radius: 999px;
+        background: var(--clay);
+      }
+
+      .reflection {
+        margin: 54px 0;
+        padding: 38px 38px;
+        background: var(--tan);
+        border: 1px solid rgba(28, 23, 18, 0.08);
+      }
+
+      .reflection h2 {
+        margin-top: 0;
+      }
+
+      .reflection ol {
+        display: grid;
+        gap: 18px;
+        margin-left: 22px;
+        color: var(--brown);
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .article-cta {
+        margin-top: 72px;
+        background: var(--charcoal);
+        color: var(--cream);
+        padding: 74px 6vw;
+      }
+
+      .article-cta-grid {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 54px;
+        align-items: center;
+      }
+
+      .article-cta h2 {
+        color: var(--cream);
+        font-size: clamp(38px, 4.6vw, 66px);
+        letter-spacing: -0.035em;
+        line-height: 1;
+      }
+
+      .article-cta p {
+        margin-bottom: 30px;
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .article-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .article-btn-dark,
+      .article-btn-light {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 14px 28px;
+        border: 1px solid var(--cream);
+        font-family: "Jost", sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+      }
+
+      .article-btn-light {
+        background: var(--cream);
+        color: var(--charcoal);
+      }
+
+      .article-btn-light:hover {
+        background: var(--tan);
+        border-color: var(--tan);
+        transform: translateY(-1px);
+      }
+
+      .article-btn-dark {
+        background: transparent;
+        color: var(--cream);
+      }
+
+      .article-btn-dark:hover {
+        background: var(--cream);
+        color: var(--charcoal);
+        transform: translateY(-1px);
+      }
+
+      .article-footer-note {
+        background: var(--cream-deep);
+        padding: 28px 6vw;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      .article-footer-note .article-inner {
+        max-width: 860px;
+      }
+
+      @media (max-width: 900px) {
+        .article-hero-grid,
+        .article-cta-grid {
+          grid-template-columns: 1fr;
+          gap: 38px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .article-hero {
+          padding: 66px 22px 54px;
+        }
+
+        .article-body-wrap {
+          padding: 56px 22px 0;
+        }
+
+        .article-label {
+          margin-bottom: 18px;
+          font-size: 10px;
+          line-height: 1.6;
+        }
+
+        .article-label::after {
+          width: 22px;
+        }
+
+        h1 {
+          font-size: clamp(46px, 13vw, 64px);
+          line-height: 0.98;
+        }
+
+        .article-deck,
+        .article-body p,
+        .reflection ol {
+          font-size: 16px;
+          line-height: 1.78;
+        }
+
+        .article-body p.lead {
+          font-size: clamp(25px, 8vw, 34px);
+          line-height: 1.16;
+        }
+
+        .article-body h2 {
+          margin-top: 46px;
+          font-size: clamp(36px, 10.5vw, 50px);
+        }
+
+        .article-meta,
+        .pull-quote,
+        .soft-box,
+        .reflection {
+          padding: 28px 24px;
+        }
+
+        .pull-quote p {
+          font-size: clamp(34px, 10vw, 48px);
+        }
+
+        .article-cta {
+          padding: 60px 22px;
+        }
+
+        .article-actions {
+          flex-direction: column;
+        }
+
+        .article-btn-dark,
+        .article-btn-light {
+          width: 100%;
+        }
+      }
+    </style>
+    <script>
+      window.TES_SKIP_GLOBAL_FOOTER = true;
+    </script>
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+  </head>
+  <body>
+    <main class="article-page">
+      <section class="article-hero">
+        <div class="article-inner article-hero-grid">
+          <div>
+            <div class="article-label">Article</div>
+            <h1>What it means to come <em>home to yourself.</em></h1>
+            <p class="article-deck">
+              Coming home to yourself is not about becoming calmer, better, or
+              more polished. It is about returning to the inner place you had to
+              leave in order to be accepted, needed, impressive, or safe.
+            </p>
+          </div>
+
+          <aside class="article-meta">
+            <strong>The Embodied Self</strong>
+            <p>
+              A psychoeducational reflection on self-trust, nervous system
+              safety, emotional disconnection, and the slow work of belonging to
+              yourself again.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="article-body-wrap">
+        <article class="article-body">
+          <p class="lead">
+            Sometimes you do not realize how far you have moved away from
+            yourself until stillness feels unfamiliar.
+          </p>
+
+          <p>
+            You may be functioning. You may be kind. You may be successful,
+            responsible, thoughtful, and deeply loved. And still, there may be a
+            quiet ache underneath everything that says, <strong>I miss me.</strong>
+          </p>
+
+          <p>
+            Not because you disappeared all at once. Most people do not lose
+            themselves dramatically. They leave themselves slowly. A yes when
+            they meant no. A smile when they were hurt. A swallowed need. A
+            preference they stopped naming. A boundary they talked themselves
+            out of. A body signal they ignored because the day had to keep
+            moving.
+          </p>
+
+          <p>
+            Over time, self-abandonment can become so familiar that it starts to
+            feel like personality. You may call yourself easygoing when you are
+            actually disconnected from your preferences. You may call yourself
+            responsible when you are actually overfunctioning. You may call
+            yourself low-maintenance when you have learned that having needs
+            creates risk.
+          </p>
+
+          <p>
+            Coming home to yourself begins with the gentle but disruptive
+            realization that you were never meant to earn belonging by leaving
+            yourself behind.
+          </p>
+
+          <div class="pull-quote">
+            <p>Coming home is not self-improvement. It is self-return.</p>
+          </div>
+
+          <h2>Why we leave ourselves.</h2>
+
+          <p>
+            Most self-abandonment begins as adaptation. At some point, your
+            nervous system learned what helped you stay connected, protected, or
+            acceptable. Maybe you learned to be helpful so people would not be
+            disappointed. Maybe you learned to be quiet so you would not be
+            criticized. Maybe you learned to read everyone else's mood because
+            emotional safety depended on noticing the room before the room
+            noticed you.
+          </p>
+
+          <p>
+            These strategies are intelligent. They are not evidence that you are
+            broken. They are evidence that some part of you figured out how to
+            survive the emotional conditions you were in. The problem is that
+            survival strategies can keep running long after the original danger
+            is gone.
+          </p>
+
+          <p>
+            This is why healing can feel confusing. A boundary may be healthy,
+            but your body may register it as dangerous. Rest may be necessary,
+            but guilt may flood in. Being honest may be freeing, but your chest
+            may tighten as if honesty threatens connection. Your mind may know
+            you are allowed to have needs while your body still expects
+            consequences.
+          </p>
+
+          <div class="soft-box">
+            <h3>You may have learned to leave yourself if...</h3>
+            <ul>
+              <li>You automatically scan for what other people want before asking what you want.</li>
+              <li>You feel guilty resting unless everything and everyone is taken care of first.</li>
+              <li>You minimize your pain because someone else has it worse.</li>
+              <li>You struggle to know what you need until resentment shows up.</li>
+              <li>You confuse being loved with being useful, agreeable, or impressive.</li>
+              <li>You feel anxious when you disappoint people, even kindly and appropriately.</li>
+            </ul>
+          </div>
+
+          <h2>Self-trust is built through small moments of self-honoring.</h2>
+
+          <p>
+            Self-trust is often talked about like confidence, but it is much
+            deeper than that. Self-trust is the felt sense that you will not
+            abandon yourself when something gets hard. It is knowing you will
+            listen inward, tell yourself the truth, and respond with care even
+            when someone else is uncomfortable.
+          </p>
+
+          <p>
+            If you have spent years overriding yourself, self-trust may not
+            return because you repeat affirmations or make one big brave choice.
+            It often returns through repetition: noticing a body signal and
+            pausing, naming a preference, letting yourself need something,
+            telling the truth a little sooner, recovering after you people-please
+            instead of shaming yourself for it.
+          </p>
+
+          <p>
+            Your nervous system learns through experience. If you keep showing
+            yourself that your feelings matter, your limits matter, your body
+            matters, and your needs will not be punished by you, a new kind of
+            inner safety can begin to form.
+          </p>
+
+          <h2>Inner safety does not mean nothing hurts.</h2>
+
+          <p>
+            Inner safety means you have somewhere compassionate to land inside
+            yourself when something does hurt. It means sadness does not have to
+            become self-attack. Anger does not have to become shame. Fear does
+            not have to become proof that you are failing. A mistake does not
+            have to become a verdict on your worth.
+          </p>
+
+          <p>
+            Many people are not afraid of their feelings because feelings are
+            inherently dangerous. They are afraid because they never learned how
+            to be with those feelings without being overwhelmed, dismissed,
+            punished, or left alone. So the system does what it can: it numbs,
+            performs, intellectualizes, controls, disconnects, appeases, or
+            stays busy.
+          </p>
+
+          <p>
+            Coming home to yourself asks for a different relationship with your
+            inner world. Not one where every feeling gets to drive the car, but
+            one where every feeling is allowed to knock on the door and be
+            understood.
+          </p>
+
+          <div class="pull-quote">
+            <p>
+              The goal is not to be regulated all the time. The goal is to stop
+              exiling yourself when you are not.
+            </p>
+          </div>
+
+          <h2>Your body is part of the home.</h2>
+
+          <p>
+            For many people, coming home to yourself cannot happen only through
+            thinking. The body has been there the whole time. It remembers what
+            you had to brace for, swallow, carry, and survive. It holds the
+            tight jaw, the shallow breath, the stomach drop, the heavy chest,
+            the collapsed shoulders, the buzzing, the numbness.
+          </p>
+
+          <p>
+            This does not mean you have to force yourself into intense body
+            work. Sometimes the most healing body practice is simply noticing:
+            My shoulders are up. My breath is short. My stomach tightened when I
+            said yes. My body relaxed when I imagined cancelling. My chest
+            softened when I told the truth.
+          </p>
+
+          <p>
+            The body often tells the truth before the mind has permission to.
+            Learning to listen does not mean every sensation is an emergency. It
+            means your body becomes part of the conversation again.
+          </p>
+
+          <h2>Coming home may disappoint the roles you were performing.</h2>
+
+          <p>
+            This is the part people do not always say out loud: returning to
+            yourself can disrupt old agreements. If people are used to you
+            overextending, your boundaries may feel inconvenient. If people are
+            used to your silence, your honesty may feel like conflict. If people
+            are used to your availability, your rest may feel like rejection.
+          </p>
+
+          <p>
+            That does not automatically mean you are doing something wrong. It
+            may mean the relationship is adjusting to a version of you who is no
+            longer abandoning herself to keep everything smooth.
+          </p>
+
+          <p>
+            Coming home requires grief sometimes. You may grieve how long you
+            went without support. You may grieve the years you called yourself
+            dramatic when you were actually overwhelmed. You may grieve the
+            younger version of you who learned that love had to be earned by
+            being easy.
+          </p>
+
+          <p>
+            Grief is not a sign that healing is going badly. Sometimes grief is
+            what happens when the truth finally has somewhere safe to land.
+          </p>
+
+          <div class="soft-box">
+            <h3>Coming home can look like...</h3>
+            <ul>
+              <li>Pausing before saying yes.</li>
+              <li>Letting your body have an opinion.</li>
+              <li>Resting before you are completely depleted.</li>
+              <li>Admitting that something hurt you.</li>
+              <li>Choosing repair instead of self-punishment.</li>
+              <li>Letting yourself want what you want without immediately editing it.</li>
+              <li>Noticing when you are performing okay and asking what is actually true.</li>
+            </ul>
+          </div>
+
+          <h2>This is not a linear return.</h2>
+
+          <p>
+            You will still leave yourself sometimes. You will still say yes too
+            quickly, ignore your body, over-explain, overgive, shut down, or
+            look for approval outside yourself. That does not mean you are back
+            at the beginning. It means you are human, and the pattern is
+            becoming visible.
+          </p>
+
+          <p>
+            Healing is not never leaving yourself again. Healing is noticing
+            sooner. Returning more gently. Repairing the rupture with yourself
+            instead of turning it into another reason to feel ashamed.
+          </p>
+
+          <p>
+            You come home in moments. A breath. A no. A cry. A boundary. A hand
+            on your chest. A sentence in your journal that sounds more honest
+            than polished. A moment when you realize you do not have to earn care
+            by being less complicated.
+          </p>
+
+          <div class="reflection">
+            <h2>A gentle reflection</h2>
+            <ol>
+              <li>Where have I been performing okay instead of telling myself the truth?</li>
+              <li>What part of me have I been asking to be quiet?</li>
+              <li>What does my body seem to know before my mind admits it?</li>
+              <li>What is one small way I can honor myself today?</li>
+            </ol>
+          </div>
+
+          <p>
+            Coming home to yourself is not a destination where you finally
+            become perfectly healed, perfectly regulated, or perfectly
+            self-loving. It is a relationship. It is the practice of turning
+            toward yourself with honesty and care, again and again.
+          </p>
+
+          <p>
+            You are allowed to return slowly. You are allowed to need support.
+            You are allowed to become someone who no longer disappears in order
+            to be loved.
+          </p>
+        </article>
+      </section>
+
+      <section class="article-cta">
+        <div class="article-cta-grid">
+          <div>
+            <div class="article-label article-label-light">Need support?</div>
+            <h2>You can come back to yourself with support.</h2>
+          </div>
+
+          <div>
+            <p>
+              Therapy can offer a space to rebuild self-trust, listen to your
+              body, understand old protection patterns, and practice relating to
+              yourself with more steadiness and compassion.
+            </p>
+
+            <div class="article-actions">
+              <a
+                class="article-btn-light"
+                href="https://calendly.com/therapywithtiffany/therapy-session"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a Session
+              </a>
+              <a class="article-btn-dark" href="/resources/">Back to Resources</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-footer-note">
+        <div class="article-inner">
+          This article is educational and supportive. It is not a replacement
+          for therapy, diagnosis, crisis care, or medical support.
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
