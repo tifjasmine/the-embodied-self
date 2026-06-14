@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Overfunctioning Audit Worksheet | The Embodied Self</title>
+    <meta
+      name="description"
+      content="A gentle, editable overfunctioning audit worksheet from The Embodied Self."
+    />
+
+    <link rel="stylesheet" href="/shared-nav.css" />
+    <script defer src="/shared-nav.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #faf6f0;
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-weight: 300;
+      }
+
+      .tes-worksheet {
+        width: 100%;
+        background: #faf6f0;
+        color: #1c1712;
+      }
+
+      .tes-wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 54px 22px;
+      }
+
+      .tes-hero {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 52px;
+      }
+
+      .tes-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+        color: #c4795a;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+      }
+
+      .tes-label::after {
+        content: "";
+        width: 30px;
+        height: 1px;
+        background: #c4795a;
+      }
+
+      .tes-hero h1 {
+        margin: 0 0 20px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(44px, 6vw, 78px);
+        font-weight: 300;
+        letter-spacing: -0.04em;
+        line-height: 0.96;
+      }
+
+      .tes-hero h1 em,
+      .tes-title em,
+      .tes-psychoed h2 em,
+      .tes-closing h2 em {
+        color: #c4795a;
+        font-style: italic;
+      }
+
+      .tes-hero p {
+        max-width: 700px;
+        margin: 0;
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 16px;
+        line-height: 1.82;
+      }
+
+      .tes-action-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 18px 24px;
+        background: #e8d9c8;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+      }
+
+      .tes-action-bar p {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .tes-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .tes-button {
+        border: 1px solid #1c1712;
+        background: #1c1712;
+        color: #faf6f0;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        letter-spacing: 0.15em;
+        padding: 12px 18px;
+        text-transform: uppercase;
+      }
+
+      .tes-button.secondary {
+        background: #faf6f0;
+        color: #1c1712;
+        border-color: rgba(28, 23, 18, 0.18);
+      }
+
+      .tes-content {
+        background: rgba(250, 246, 240, 0.92);
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        border-top: 0;
+        padding: 48px;
+      }
+
+      .tes-intro {
+        background: #f7f0e6;
+        border: 1px solid rgba(28, 23, 18, 0.1);
+        padding: 30px;
+        margin-bottom: 38px;
+      }
+
+      .tes-intro h2 {
+        margin: 0 0 14px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 36px;
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tes-intro p {
+        margin: 0 0 14px;
+        color: #3a2e28;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .tes-intro p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-psychoed {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 32px;
+        margin-bottom: 38px;
+      }
+
+      .tes-psychoed h2 {
+        margin: 0 0 18px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(32px, 4vw, 46px);
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .tes-psychoed p {
+        margin: 0 0 16px;
+        color: rgba(250, 246, 240, 0.76);
+        font-size: 15.5px;
+        line-height: 1.82;
+      }
+
+      .tes-psychoed p:last-child {
+        margin-bottom: 0;
+      }
+
+      .tes-section {
+        margin-bottom: 42px;
+      }
+
+      .tes-head {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 16px;
+        align-items: start;
+        margin-bottom: 20px;
+      }
+
+      .tes-num {
+        width: 44px;
+        height: 44px;
+        border: 1px solid rgba(196, 121, 90, 0.42);
+        color: #c4795a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-style: italic;
+      }
+
+      .tes-title {
+        margin: 0 0 8px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(31px, 4vw, 44px);
+        font-weight: 300;
+        letter-spacing: -0.025em;
+        line-height: 1.02;
+      }
+
+      .tes-desc {
+        margin: 0;
+        color: #3a2e28;
+        font-size: 14.5px;
+        line-height: 1.75;
+      }
+
+      .tes-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .two {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tes-field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tes-field label {
+        color: #8f6d5a;
+        font-size: 10.5px;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      .tes-field input,
+      .tes-field textarea {
+        width: 100%;
+        border: 1px solid rgba(28, 23, 18, 0.16);
+        border-radius: 0;
+        background: rgba(250, 246, 240, 0.86);
+        color: #1c1712;
+        font-family: "Jost", sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.6;
+        outline: none;
+        padding: 14px 15px;
+      }
+
+      .tes-field textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .tes-field textarea.small {
+        min-height: 86px;
+      }
+
+      .tes-field textarea.large {
+        min-height: 165px;
+      }
+
+      .tes-checks {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .tes-check {
+        position: relative;
+      }
+
+      .tes-check input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .tes-check span {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        min-height: 56px;
+        border: 1px solid rgba(28, 23, 18, 0.12);
+        background: rgba(250, 246, 240, 0.78);
+        color: #3a2e28;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1.45;
+        padding: 14px;
+      }
+
+      .tes-check span::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        border: 1px solid rgba(28, 23, 18, 0.28);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .tes-check input:checked + span {
+        background: #e8d9c8;
+        border-color: rgba(196, 121, 90, 0.45);
+      }
+
+      .tes-check input:checked + span::before {
+        background: #c4795a;
+        border-color: #c4795a;
+        box-shadow: inset 0 0 0 3px #e8d9c8;
+      }
+
+      .tes-closing {
+        background: #1c1712;
+        color: #faf6f0;
+        padding: 36px;
+      }
+
+      .tes-closing h2 {
+        margin: 0 0 16px;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 4.4vw, 56px);
+        font-weight: 300;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .tes-closing p {
+        margin: 0;
+        color: rgba(250, 246, 240, 0.74);
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        .shared-nav,
+        .tes-action-bar,
+        .tes-button {
+          display: none !important;
+        }
+
+        .tes-wrap {
+          max-width: none;
+          padding: 0;
+        }
+
+        .tes-content {
+          border: 0;
+        }
+
+        .tes-section,
+        .tes-intro,
+        .tes-psychoed,
+        .tes-closing {
+          break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .tes-wrap {
+          padding: 0;
+        }
+
+        .tes-hero,
+        .tes-content {
+          padding: 34px 22px;
+        }
+
+        .tes-action-bar {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .tes-buttons {
+          flex-direction: column;
+        }
+
+        .tes-button {
+          width: 100%;
+        }
+
+        .two,
+        .tes-checks {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-head {
+          grid-template-columns: 1fr;
+        }
+
+        .tes-psychoed,
+        .tes-closing {
+          padding: 28px 24px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tes-worksheet">
+      <div class="tes-wrap">
+        <section class="tes-hero">
+          <div class="tes-label">The Embodied Self</div>
+
+          <h1>The Overfunctioning <em>Audit</em></h1>
+
+          <p>
+            A supportive worksheet for noticing where you feel responsible for
+            everyone else while quietly abandoning yourself.
+          </p>
+        </section>
+
+        <section class="tes-action-bar">
+          <p>Type directly into the worksheet. Your answers autosave in this browser.</p>
+
+          <div class="tes-buttons">
+            <button class="tes-button" type="button" id="downloadPdf">
+              Download PDF
+            </button>
+
+            <button class="tes-button secondary" type="button" id="clearWorksheet">
+              Clear Answers
+            </button>
+          </div>
+        </section>
+
+        <main class="tes-content">
+          <section class="tes-intro">
+            <h2>Before you begin</h2>
+            <p>
+              Overfunctioning can look like competence from the outside, but it
+              often feels like pressure, resentment, exhaustion, and loneliness
+              on the inside.
+            </p>
+            <p>
+              This worksheet is not about blaming you for doing too much. It is
+              about helping you notice what you have been carrying and where you
+              may need more support, limits, or choice.
+            </p>
+          </section>
+
+          <section class="tes-psychoed">
+            <h2>Overfunctioning is often a learned form of <em>safety.</em></h2>
+
+            <p>
+              Overfunctioning happens when you habitually take on more
+              responsibility than is truly yours. It may look like anticipating
+              everyone’s needs, managing other people’s emotions, solving
+              problems before anyone asks, preventing conflict, remembering
+              every detail, or stepping in so things do not fall apart. The body
+              can begin to confuse being needed with being safe.
+            </p>
+
+            <p>
+              Many people learn overfunctioning in environments where rest was
+              not modeled, needs were dismissed, mistakes felt costly, or love
+              felt connected to usefulness. If you were praised for being mature,
+              easy, helpful, responsible, or low-maintenance, you may have
+              learned to scan for what others need before checking in with
+              yourself.
+            </p>
+
+            <p>
+              Healing overfunctioning is not about becoming careless or
+              unavailable. It is about returning responsibility to its rightful
+              place. When you stop carrying what belongs to everyone else, you
+              create space for mutual care, honest connection, and a self that
+              does not have to disappear in order to keep things running.
+            </p>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">1</div>
+              <div>
+                <h2 class="tes-title">Notice the pattern</h2>
+                <p class="tes-desc">
+                  Begin by naming where overfunctioning may be showing up.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="date">Date</label>
+                <input id="date" type="date" data-field="date" />
+              </div>
+
+              <div class="tes-field">
+                <label for="patternArea">Where is this showing up most?</label>
+                <input
+                  id="patternArea"
+                  type="text"
+                  data-field="patternArea"
+                  placeholder="Example: parenting, partnership, work, family, friendships..."
+                />
+              </div>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="currentPressure">What pressure am I carrying right now?</label>
+              <textarea
+                id="currentPressure"
+                data-field="currentPressure"
+                placeholder="Example: keeping everyone okay, preventing conflict, remembering everything, making sure nothing falls apart..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">2</div>
+              <div>
+                <h2 class="tes-title">Name what you are taking on</h2>
+                <p class="tes-desc">
+                  Choose anything that feels familiar.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="takingOnOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="takingOnOther">Anything else I am taking on?</label>
+              <textarea
+                class="small"
+                id="takingOnOther"
+                data-field="takingOnOther"
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">3</div>
+              <div>
+                <h2 class="tes-title">Listen for the cost</h2>
+                <p class="tes-desc">
+                  Overfunctioning often has an emotional, physical, or relational cost.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="bodyCost">How does this show up in my body?</label>
+              <textarea
+                id="bodyCost"
+                data-field="bodyCost"
+                placeholder="Example: tight chest, jaw tension, exhaustion, headaches, shallow breathing, heaviness..."
+              ></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="emotionalCost">What does this cost me emotionally?</label>
+              <textarea
+                id="emotionalCost"
+                data-field="emotionalCost"
+                placeholder="Example: resentment, loneliness, irritation, sadness, numbness, anxiety, feeling unseen..."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">4</div>
+              <div>
+                <h2 class="tes-title">Find the belief underneath</h2>
+                <p class="tes-desc">
+                  Overfunctioning is often held in place by an old belief or fear.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="beliefOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="beliefOther">The belief or fear underneath this might be...</label>
+              <textarea
+                id="beliefOther"
+                data-field="beliefOther"
+                placeholder="Example: If I stop, everything will fall apart. If I need help, I am a burden."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">5</div>
+              <div>
+                <h2 class="tes-title">Separate yours from theirs</h2>
+                <p class="tes-desc">
+                  Not everything you can carry belongs to you.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-grid two">
+              <div class="tes-field">
+                <label for="mine">What is actually mine to hold?</label>
+                <textarea
+                  id="mine"
+                  data-field="mine"
+                  placeholder="Example: my feelings, my limits, my choices, my communication, my repair..."
+                ></textarea>
+              </div>
+
+              <div class="tes-field">
+                <label for="notMine">What may not be mine to hold?</label>
+                <textarea
+                  id="notMine"
+                  data-field="notMine"
+                  placeholder="Example: someone else's mood, reaction, responsibilities, avoidance, discomfort..."
+                ></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">6</div>
+              <div>
+                <h2 class="tes-title">Practice giving something back</h2>
+                <p class="tes-desc">
+                  Choose one small place to stop carrying more than your share.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="giveBack">One thing I can stop taking responsibility for is...</label>
+              <textarea
+                id="giveBack"
+                data-field="giveBack"
+                placeholder="Example: managing their disappointment, reminding everyone repeatedly, fixing a problem I did not create..."
+              ></textarea>
+            </div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="supportRequest">One support request I can make is...</label>
+              <textarea
+                id="supportRequest"
+                data-field="supportRequest"
+                placeholder="Example: Can you take this task? Can we make a plan? I need help with bedtime tonight."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">7</div>
+              <div>
+                <h2 class="tes-title">Choose a new response</h2>
+                <p class="tes-desc">
+                  Choose a response that creates more choice and less automatic carrying.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-checks" id="responseOptions"></div>
+
+            <div class="tes-field" style="margin-top: 18px">
+              <label for="chosenResponse">The new response I want to practice is...</label>
+              <textarea
+                id="chosenResponse"
+                data-field="chosenResponse"
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-section">
+            <div class="tes-head">
+              <div class="tes-num">8</div>
+              <div>
+                <h2 class="tes-title">Leave with a reminder</h2>
+                <p class="tes-desc">
+                  Write one sentence you want to remember.
+                </p>
+              </div>
+            </div>
+
+            <div class="tes-field">
+              <label for="reminder">Right now, I want to remind myself...</label>
+              <textarea
+                class="large"
+                id="reminder"
+                data-field="reminder"
+                placeholder="Example: I am allowed to be loved without carrying everything."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="tes-closing">
+            <h2>You do not have to disappear to keep everything <em>together.</em></h2>
+
+            <p>
+              Letting go of overfunctioning is not letting people down. It is
+              making room for shared responsibility, honest connection, and a
+              life where you get to exist too.
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      const STORAGE_KEY = "tes-overfunctioning-audit";
+
+      const defaultData = {
+        date: "",
+        patternArea: "",
+        currentPressure: "",
+        takingOn: [],
+        takingOnOther: "",
+        bodyCost: "",
+        emotionalCost: "",
+        beliefs: [],
+        beliefOther: "",
+        mine: "",
+        notMine: "",
+        giveBack: "",
+        supportRequest: "",
+        responses: [],
+        chosenResponse: "",
+        reminder: "",
+      };
+
+      const takingOnOptions = [
+        "Managing everyone else's emotions",
+        "Remembering every detail",
+        "Preventing conflict",
+        "Solving problems before anyone asks",
+        "Doing things because it is easier than asking",
+        "Anticipating needs before my own",
+        "Over-explaining or over-apologizing",
+        "Feeling responsible for how others react",
+      ];
+
+      const beliefOptions = [
+        "If I do not do it, it will not get done",
+        "If someone is upset, it is my job to fix it",
+        "My needs are less important",
+        "Asking for help makes me a burden",
+        "Rest has to be earned",
+        "I am only safe when I am useful",
+        "It is easier to do everything myself",
+        "If I disappoint someone, I have failed",
+      ];
+
+      const responseOptions = [
+        "Pause before stepping in",
+        "Ask directly for help",
+        "Let someone else be responsible",
+        "Say what I need without over-explaining",
+        "Let discomfort exist without fixing it",
+        "Choose rest before collapse",
+        "Name what is not mine to carry",
+        "Practice doing enough instead of everything",
+      ];
+
+      let data = { ...defaultData };
+
+      function loadData() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+          if (saved) data = { ...defaultData, ...saved };
+        } catch (error) {}
+      }
+
+      function saveData() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+
+      function updateField(field, value) {
+        data[field] = value;
+        saveData();
+      }
+
+      function toggleArray(field, value) {
+        const current = data[field] || [];
+        data[field] = current.includes(value)
+          ? current.filter((item) => item !== value)
+          : [...current, value];
+        saveData();
+      }
+
+      function renderChecks(containerId, field, options) {
+        const container = document.getElementById(containerId);
+
+        container.innerHTML = options
+          .map(
+            (option) => `
+              <label class="tes-check">
+                <input type="checkbox" value="${option}" />
+                <span>${option}</span>
+              </label>
+            `
+          )
+          .join("");
+
+        container.querySelectorAll("input").forEach((input) => {
+          input.checked = (data[field] || []).includes(input.value);
+          input.addEventListener("change", () => toggleArray(field, input.value));
+        });
+      }
+
+      function hydrateFields() {
+        document.querySelectorAll("[data-field]").forEach((field) => {
+          field.value = data[field.dataset.field] || "";
+          field.addEventListener("input", () => {
+            updateField(field.dataset.field, field.value);
+          });
+        });
+      }
+
+      function clearWorksheet() {
+        const confirmed = window.confirm("Clear all saved answers on this worksheet?");
+        if (!confirmed) return;
+
+        localStorage.removeItem(STORAGE_KEY);
+        data = { ...defaultData };
+
+        hydrateFields();
+        renderChecks("takingOnOptions", "takingOn", takingOnOptions);
+        renderChecks("beliefOptions", "beliefs", beliefOptions);
+        renderChecks("responseOptions", "responses", responseOptions);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        loadData();
+        hydrateFields();
+        renderChecks("takingOnOptions", "takingOn", takingOnOptions);
+        renderChecks("beliefOptions", "beliefs", beliefOptions);
+        renderChecks("responseOptions", "responses", responseOptions);
+
+        document
+          .getElementById("clearWorksheet")
+          .addEventListener("click", clearWorksheet);
+
+        document.getElementById("downloadPdf").addEventListener("click", () => {
+          window.print();
+        });
+      });
+    </script>
+  </body>
+</html>
